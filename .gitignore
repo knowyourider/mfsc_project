@@ -1,0 +1,14 @@
+# extensions
+*.pyc
+*.log
+*.jpg
+*.png
+*.gif
+
+# files
+.DS_Store
+
+# directories
+**/.sass-cache
+**/.sass-cache/*
+static/
