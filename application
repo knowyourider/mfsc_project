@@ -9,9 +9,8 @@ try:
 except IOError:
    pass
 sys.path.append(os.path.expanduser('~'))
-#sys.path.append(os.path.expanduser('~') + '/ROOT/')
-sys.path.append(os.path.expanduser('~') + '/ROOT/mfsc_project/mfsc')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'ROOT.mfsc_project.mfsc.config.settings'
+sys.path.append(os.path.expanduser('~') + '/ROOT/mfsc')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'ROOT.mfsc.config.settings'
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 
