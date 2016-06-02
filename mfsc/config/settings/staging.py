@@ -23,7 +23,3 @@ DATABASES = {
 # dirname(file) get parent dir
 # STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'static')
 STATIC_ROOT = BASE_DIR.ancestor(3).child("static")
-
-STATICFILES_DIRS = (
-    BASE_DIR.ancestor(1).child("local_static"),
-)
