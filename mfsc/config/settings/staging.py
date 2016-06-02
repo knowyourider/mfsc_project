@@ -2,7 +2,7 @@
 Production Django settings for impression project.
 """
 from .base import *
-import sys
+#import sys
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
