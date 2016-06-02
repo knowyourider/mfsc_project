@@ -12,6 +12,8 @@ virtenv already present
 Edit the suggested wsgi.py file to our actual directory structure.
 Sym link application to the wsgi.py file or just rename it "application"
 
+Static outside of ROOT
+
 To install psycopg2 per
 [How to Deploy Mezzanine CMS to Jelastic](http://blog.jelastic.com/2016/05/05/how-to-get-mezzanine-cms-inside-jelastic-cloud/)
 ::

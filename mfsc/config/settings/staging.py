@@ -2,6 +2,7 @@
 Production Django settings for impression project.
 """
 from .base import *
+import sys
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -19,7 +20,6 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = os.path.join(DATA_DIR, 'ROOT', 'static')
-STATICFILES_DIRS = (      
-    os.path.join(BASE_DIR, 'ROOT', 'static_local'),
-)
+#STATIC_ROOT = os.path.join(DATA_DIR, 'ROOT', 'static')
+# dirname(file) get parent dir
+STATIC_ROOT = os.path.join(dirname(dirname(DATA_DIR)), 'static')
