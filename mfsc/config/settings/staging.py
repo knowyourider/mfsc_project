@@ -22,4 +22,5 @@ DATABASES = {
 #STATIC_ROOT = os.path.join(DATA_DIR, 'ROOT', 'static')
 # dirname(file) get parent dir
 # STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'static')
-STATIC_ROOT = BASE_DIR.ancestor(3).child("static")
+# in this Jelastic environment I need to put static inside of the project
+STATIC_ROOT = BASE_DIR.ancestor(1).child("static")
