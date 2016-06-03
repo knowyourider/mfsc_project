@@ -1,8 +1,13 @@
-Maintenance
+Jelastic Maintenance
 ===========
 
-Jelastic
+Control Panel
 ---------
+
+Restart Apache after GIT update 
+
+Shell
+------
 
 Shell access:
 ::

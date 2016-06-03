@@ -12,6 +12,8 @@ virtenv already present
 Edit the suggested wsgi.py file to our actual directory structure.
 Sym link application to the wsgi.py file or just rename it "application"
 
+If a requirements.txt file is present Jelastic will try to re-install everything everytime you restart the server -- so I'm leaving it out
+
 Static outside of ROOT
 
 To install psycopg2 per
