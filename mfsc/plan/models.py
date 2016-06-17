@@ -53,8 +53,25 @@ class Rec(CommonModel):
     """docstring for Rec - Recommendation"""
     goal = models.ForeignKey('plan.Goal')
     rec_num = models.IntegerField(default=0)
-    description = models.CharField(max_length=255)
+    description = models.TextField()
     related = models.CharField(max_length=128, blank=True, default='')
+    responsible = models.CharField(max_length=128, blank=True, default='')
+    stakeholder = models.CharField(max_length=255, blank=True, default='')
+    
+    class Meta:
+        ordering = ['id']
+        verbose_name = "Recommendation"
+
+    def __str__(self):
+        return self.description
+
+
+class Action(CommonModel):
+    """docstring for Action """
+    rec = models.ForeignKey('plan.Rec')
+    action_num = models.IntegerField(default=0)
+    description = models.TextField()
+    related = models.CharField(max_length=255, blank=True, default='')
     responsible = models.CharField(max_length=128, blank=True, default='')
     stakeholder = models.CharField(max_length=255, blank=True, default='')
     
