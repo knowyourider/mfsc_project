@@ -3,13 +3,14 @@ from .models import Sector, Goal
 
 class SectorAdmin(admin.ModelAdmin):
     """docstring for ContentTypeAdmin"""
+    change_form_template = 'plan/admin/sector_change_form.html'
     fields = ['slug', 'title', 'body_text']
     list_display = ('slug', 'id', 'title')
             
 admin.site.register(Sector, SectorAdmin)
 
 class GoalAdmin(admin.ModelAdmin):
-    #change_form_template = 'stories/admin/chapter_change_form.html'
+    change_form_template = 'plan/admin/goal_change_form.html'
     fieldsets = [
         (None,  {'fields': ['sector', 'goal_num', 'description', 'term',
             'body_text']}),
