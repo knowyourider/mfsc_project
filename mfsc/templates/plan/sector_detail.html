@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Plan{% endblock %}
+
+{% block breadcrumbs %}
+<a href="/plan/">Plan</a>
+{% endblock breadcrumbs %}
+
+{% block content_area %}
+  <h1>Sector {{ object.id }}: {{ object.title }} </h1>
+
+  {{ object.body_text|safe }}
+
+  <h4>Goals:</h4>
+  <ul>
+  {% for goal in object.goal_list %}
+    <li>
+      <a href="{% url 'plan:goal_detail' goal.id %}">
+      {{ goal.sector.id }}.{{ goal.goal_num }}</a>: {{ goal.description|safe }}
+    </li>
+  {% endfor %}
+  </ul>  
+
+{% endblock content_area %}

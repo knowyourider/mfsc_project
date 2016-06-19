@@ -33,6 +33,7 @@ class RecAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,  {'fields': ['goal', 'rec_num', 'description', 'term']}),
         #('Tags',   {'fields': ['people', 'evidence', 'contexts']}),
+        ('Meta info',   {'fields': ['background', 'progress', 'metrics']}),
         ('Notes',   {'fields': ['related', 'responsible', 'stakeholder']}),
     ]
     inlines = [ActionInline]

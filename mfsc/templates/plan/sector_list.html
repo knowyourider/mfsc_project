@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Plan{% endblock %}
+
+{% block content_area %}
+
+
+  <h1>Plan Sectors</h1>
+
+
+  <ul>
+  {% for object in object_list %}
+    <li>
+      {{ object.id }}. <a href="{% url 'plan:sector_detail' object.slug %}">
+      {{ object.title|safe }}</a>
+    </li>
+  {% endfor %}
+  </ul>  
+
+
+{% endblock content_area %}

@@ -13,12 +13,19 @@ class CommonModel(models.Model):
         (6,'6 - long'),
     )
     term = models.IntegerField(default=0, choices=TERMS)
+    description = models.TextField()
+    related = models.CharField(max_length=128, blank=True, default='')
+    responsible = models.CharField(max_length=128, blank=True, default='')
+    stakeholder = models.CharField(max_length=255, blank=True, default='')
+    background = models.CharField(max_length=255, blank=True, default='')
+    progress = models.CharField(max_length=255, blank=True, default='')
+    metrics = models.CharField(max_length=255, blank=True, default='')
 
     class Meta:
         abstract = True
 
     def __str__(self):
-        return self.term
+        return self.description[:20]
 
 
 class Sector(models.Model):
@@ -27,6 +34,11 @@ class Sector(models.Model):
     title = models.CharField(max_length=32)
     body_text = models.TextField(blank=True, default='')
     
+   # list of goals for given sector
+    @property
+    def goal_list(self):
+        return Goal.objects.filter(sector_id=self.id)
+
     class Meta:
         ordering = ['id']
 
@@ -38,11 +50,18 @@ class Goal(CommonModel):
     """docstring for Goal"""
     sector = models.ForeignKey('plan.Sector')
     goal_num = models.IntegerField(default=0)
-    description = models.CharField(max_length=255)
-    responsible = models.CharField(max_length=255, blank=True, default='')
-    stakeholder = models.CharField(max_length=255, blank=True, default='')
     body_text = models.TextField(blank=True, default='')
     
+   # list of recs for given goal
+    @property
+    def rec_list(self):
+        return Rec.objects.filter(goal_id=self.id)
+
+   # short goal description
+    @property
+    def short_description(self):
+        return self.description[:24] + "..."
+
     class Meta:
         ordering = ['id']
 
@@ -53,11 +72,17 @@ class Rec(CommonModel):
     """docstring for Rec - Recommendation"""
     goal = models.ForeignKey('plan.Goal')
     rec_num = models.IntegerField(default=0)
-    description = models.TextField()
-    related = models.CharField(max_length=128, blank=True, default='')
-    responsible = models.CharField(max_length=128, blank=True, default='')
-    stakeholder = models.CharField(max_length=255, blank=True, default='')
     
+   # list of actions for given rec
+    @property
+    def action_list(self):
+        return Action.objects.filter(rec_id=self.id)
+
+   # short rec description
+    @property
+    def short_description(self):
+        return self.description[:24] + "..."
+
     class Meta:
         ordering = ['id']
         verbose_name = "Recommendation"
@@ -70,10 +95,6 @@ class Action(CommonModel):
     """docstring for Action """
     rec = models.ForeignKey('plan.Rec')
     action_num = models.IntegerField(default=0)
-    description = models.TextField()
-    related = models.CharField(max_length=255, blank=True, default='')
-    responsible = models.CharField(max_length=128, blank=True, default='')
-    stakeholder = models.CharField(max_length=255, blank=True, default='')
     
     class Meta:
         ordering = ['id']
