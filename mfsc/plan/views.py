@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Sector, Goal, Rec, Action
+from .models import Sector, Goal, Rec, Action, Tag
 
 class SectorListView(ListView):
     model = Sector
@@ -33,3 +33,15 @@ class ActionDetailView(DetailView):
     # context_object_name = 'object'
     # template_name = 'stories/action_detail.html'
 
+
+class TagListView(ListView):
+    model = Tag
+    # context_object_name = 'object_list'
+    # template_name = 'plan/tag_list.html' 
+
+
+class TagDetailView(DetailView):
+    model = Tag
+    # context_object_name = 'object'
+    # template_name = 'stories/tag_detail.html'
+    # action_list defined in model

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC{% endblock %}
+
+{% block content_area %}
+
+
+  <h2>MFSC</h2>
+
+
+<a href="{% url 'plan:sector_list' %}">Plan</a>
+
+{% endblock content_area %}

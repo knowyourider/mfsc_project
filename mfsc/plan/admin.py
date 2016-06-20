@@ -24,9 +24,11 @@ class GoalAdmin(admin.ModelAdmin):
 
 admin.site.register(Goal, GoalAdmin)
 
-class ActionInline(admin.TabularInline):
+class ActionInline(admin.StackedInline):
     model = Action
     extra = 2
+    filter_horizontal = ['tags']    
+
 
 class RecAdmin(admin.ModelAdmin):
     #change_form_template = 'plan/admin/rec_change_form.html'
@@ -40,7 +42,6 @@ class RecAdmin(admin.ModelAdmin):
     list_display = ('truncated_description',  'full_rec_num', 'sector_goal')
     list_filter     = ['goal__sector'] 
     search_fields = ['description']
-    #filter_horizontal = ['people', 'evidence', 'contexts']    
 
     def truncated_description(self, obj):
         return obj.description[:40]

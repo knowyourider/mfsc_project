@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}MFSC Plan - Recommendations{% endblock %}
+{% block title %}MFSC Plan - Recommendation {{ object.goal.sector.id }}.{{ object.goal.goal_num }}.{{ object.rec_num }}{% endblock %}
 
 {% block breadcrumbs %}
 <a href="/plan/">Plan</a> |
@@ -40,6 +40,7 @@
     <th>id</th>
     <th>num</th>
     <th>Description</th>
+    <th>Tags</th>
     <th>Related</th>
     <th>Responsible</th>
     <th>Stakeholder</th>
@@ -52,6 +53,11 @@
     {{ action.rec.goal.sector.id }}.{{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
     </td>
     <td>{{ action.description|safe }}</td>
+    <td>
+      {% for tag in action.tags.all %}
+        {{ tag.slug }}{% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    </td>
     <td>{{ action.related }}</td>
     <td>{{ action.responsible }}</td>
     <td>{{ action.stakeholder }}</td>

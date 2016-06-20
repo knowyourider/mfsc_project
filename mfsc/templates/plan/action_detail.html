@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}MFSC Plan - Action{% endblock %}
+{% block title %}MFSC Plan - Action {{ object.rec.goal.sector.id }}.{{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}{% endblock %}
 
 {% block breadcrumbs %}
 <a href="/plan/">Plan</a> |

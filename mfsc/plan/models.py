@@ -95,10 +95,30 @@ class Action(CommonModel):
     """docstring for Action """
     rec = models.ForeignKey('plan.Rec')
     action_num = models.IntegerField(default=0)
-    
+    tags = models.ManyToManyField('plan.Tag', 
+        verbose_name='Tags for this item', blank=True)
+
     class Meta:
         ordering = ['id']
 
     def __str__(self):
         return self.description
 
+
+class Tag(models.Model):
+    """docstring for Tag"""
+    slug = models.SlugField('Tag short name', max_length=16, unique=True)
+    title = models.CharField(max_length=64)
+
+   # list of actions for given rec
+    @property
+    def action_list(self):
+        #return Action.objects.filter(rec_id=self.id)
+        return self.action_set.all()
+        #return [1,2,3] #  aTag.action_set.all()
+
+    class Meta:
+        ordering = ['id']
+
+    def __str__(self):
+        return self.title
