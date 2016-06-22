@@ -9,15 +9,18 @@
   <h1>Plan Sectors</h1>
 
 
-  <ul>
+  <table>
   {% for object in object_list %}
-    <li>
-      {{ object.id }}. <a href="{% url 'plan:sector_detail' object.slug %}">
-      {{ object.title|safe }}</a>
-    </li>
+  	<tr>
+      <td>{{ object.id }}</td>
+      <td><a href="{% url 'plan:sector_detail' object.slug %}">browse</a></td>
+      <td><a href="{% url 'plan:sector_table' object.slug %}">table</a></td>
+      <td>{{ object.title|safe }}</td>
+  	</tr>
   {% endfor %}
-  </ul>  
+  </table>
 
-<a href="{% url 'plan:tag_list' %}">Areas of Interest</a>
+
+<p><a href="{% url 'plan:tag_list' %}">Areas of Interest</a></p>
 
 {% endblock content_area %}

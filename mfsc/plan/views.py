@@ -11,27 +11,33 @@ class SectorListView(ListView):
 class SectorDetailView(DetailView):
     model = Sector
     # context_object_name = 'object'
-    # template_name = 'stories/sector_detail.html'
+    # template_name = 'plan/sector_detail.html'
+    # goal_list defined in model
+
+class SectorTableView(DetailView):
+    model = Sector
+    # context_object_name = 'object'
+    template_name = 'plan/sector_table.html'
     # goal_list defined in model
 
 
 class GoalDetailView(DetailView):
     model = Goal
     # context_object_name = 'object'
-    # template_name = 'stories/goal_detail.html'
+    # template_name = 'plan/goal_detail.html'
     # rec_list defined in model
 
 
 class RecDetailView(DetailView):
     model = Rec
     # context_object_name = 'object'
-    # template_name = 'stories/rec_detail.html'
+    # template_name = 'plan/rec_detail.html'
     # action_list defined in model
 
 class ActionDetailView(DetailView):
     model = Action
     # context_object_name = 'object'
-    # template_name = 'stories/action_detail.html'
+    # template_name = 'plan/action_detail.html'
 
 
 class TagListView(ListView):
@@ -43,5 +49,5 @@ class TagListView(ListView):
 class TagDetailView(DetailView):
     model = Tag
     # context_object_name = 'object'
-    # template_name = 'stories/tag_detail.html'
+    # template_name = 'plan/tag_detail.html'
     # action_list defined in model
