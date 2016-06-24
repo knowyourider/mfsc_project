@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Plan{% endblock %}
+
+{% block content_area %}
+
+<p><a href="/plan/">Plan</a></p>
+
+  <h1>Internal Plan View</h1>
+
+
+  <table>
+  {% for object in object_list %}
+  	<tr>
+      <td><a href="{% url 'plan:sector_table' object.slug %}">table</a></td>
+      <td>{{ object.title|safe }}</td>
+  	</tr>
+  {% endfor %}
+  </table>
+
+
+
+{% endblock content_area %}

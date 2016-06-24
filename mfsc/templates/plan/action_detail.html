@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}MFSC Plan - Action {{ object.rec.goal.sector.id }}.{{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}{% endblock %}
+{% block title %}MFSC Plan - Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}{% endblock %}
 
 {% block breadcrumbs %}
 <a href="/plan/">Plan</a> |
-<a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">{{ object.rec.goal.sector.title }}</a> </br>
-<a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goal:</a> {{ object.rec.goal.short_description }} </br>
-<a href="{% url 'plan:rec_detail' object.rec.id %}">Recommendation:</a> {{ object.rec.short_description }} 
+<a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">{{ object.rec.goal.sector.title }}</a> |
+<a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goal {{ object.rec.goal.goal_num }}:</a> {{ object.rec.goal.short_description }} |
+<a href="{% url 'plan:rec_detail' object.rec.id %}">Recommendation {{ object.rec.rec_num }}:</a> {{ object.rec.short_description }} 
 {% endblock breadcrumbs %}
 
 {% block content_area %}
-  <h1>Action {{ object.rec.goal.sector.id }}.{{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }} </h1>
+  <h1>Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }} </h1>
   <h2>{{ object.description }} </h2>
 
   <p>Background:</br>

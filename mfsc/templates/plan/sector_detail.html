@@ -8,7 +8,7 @@
 {% endblock breadcrumbs %}
 
 {% block content_area %}
-  <h1>Sector {{ object.id }}: {{ object.title }} </h1>
+  <h1>{{ object.title }} </h1>
 
   {{ object.body_text|safe }}
 
@@ -17,7 +17,7 @@
   {% for goal in object.goal_list %}
     <li>
       <a href="{% url 'plan:goal_detail' goal.id %}">
-      {{ goal.sector.id }}.{{ goal.goal_num }}</a>: {{ goal.description|safe }}
+      {{ goal.goal_num }} </a>: {{ goal.description|safe }}
     </li>
   {% endfor %}
   </ul>  

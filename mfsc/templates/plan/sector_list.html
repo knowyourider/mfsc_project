@@ -6,21 +6,16 @@
 {% block content_area %}
 
 
-  <h1>Plan Sectors</h1>
+  <h1>Plan</h1>
 
-
-  <table>
+<ul>
   {% for object in object_list %}
-  	<tr>
-      <td>{{ object.id }}</td>
-      <td><a href="{% url 'plan:sector_detail' object.slug %}">browse</a></td>
-      <td><a href="{% url 'plan:sector_table' object.slug %}">table</a></td>
-      <td>{{ object.title|safe }}</td>
-  	</tr>
+      <li><a href="{% url 'plan:sector_detail' object.slug %}">{{ object.title|safe }}</a></li>
   {% endfor %}
-  </table>
+</ul>
 
 
 <p><a href="{% url 'plan:tag_list' %}">Areas of Interest</a></p>
+<p><a href="{% url 'plan:internal_sector_list' %}">Internal View</a></p>
 
 {% endblock content_area %}

@@ -5,13 +5,14 @@
 
 {% block content_area %}
 
+<p><a href="/plan/">Plan</a></p>
 
   <h1>Areas of Interest</h1>
 
   <ul>
   {% for object in object_list %}
     <li>
-      {{ object.id }}. <a href="{% url 'plan:tag_detail' object.id %}">
+      <a href="{% url 'plan:tag_detail' object.id %}">
       {{ object.title|safe }}</a>
     </li>
   {% endfor %}

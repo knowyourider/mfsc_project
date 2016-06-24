@@ -7,6 +7,11 @@ class SectorListView(ListView):
     # context_object_name = 'object_list'
     # template_name = 'plan/sector_list.html' 
 
+class InternalSectorListView(ListView):
+    model = Sector
+    # context_object_name = 'object_list'
+    template_name = 'plan/internal_sector_list.html' 
+
 
 class SectorDetailView(DetailView):
     model = Sector

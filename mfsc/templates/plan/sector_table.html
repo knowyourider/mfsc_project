@@ -4,23 +4,23 @@
 {% block title %}MFSC Plan - {{ object.title }}{% endblock %}
 
 {% block breadcrumbs %}
-<a href="/plan/">Plan</a>
+<a href="/plan/">Plan</a>  | <a href="/plan/internal/">Internal View</a>
 {% endblock breadcrumbs %}
 
 {% block content_area %}
-  <h1>Sector {{ object.id }}: {{ object.title }} </h1>
+  <h1>{{ object.title }} </h1>
 
   
   <ul>
   {% for goal in object.goal_list %}
     <li>
       <strong>Goal:</strong> <a href="{% url 'plan:goal_detail' goal.id %}">
-      {{ goal.sector.id }}.{{ goal.goal_num }}</a>: {{ goal.description|safe }}
+      {{ goal.goal_num }}</a>: {{ goal.description|safe }}
       <ul>
       {% for rec in goal.rec_list %}
         <li>
           <strong>Recommendation:</strong> <a href="{% url 'plan:rec_detail' rec.id %}">
-          {{ rec.goal.sector.id }}.{{ rec.goal.goal_num }}.{{ rec.rec_num }}</a>: {{ rec.description|safe }}
+          {{ rec.goal.goal_num }}.{{ rec.rec_num }}</a>: {{ rec.description|safe }}
 
 
           <table>
@@ -33,7 +33,7 @@
             <tr>
               <td>
               <a href="{% url 'plan:action_detail' action.id %}">
-              {{ action.rec.goal.sector.id }}.{{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
+              {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
               </td>
               <td>{{ action.description|safe }}</td>
               <td>
