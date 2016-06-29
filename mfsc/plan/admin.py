@@ -58,11 +58,11 @@ class ActionAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,  {'fields': ['rec', 'action_num', 'description']}),
         ('Meta info',   {'fields': ['background', 'progress', 'metrics',
-            'organizations', 'tags', 'term']}),
+            'organizations', 'tags', 'actions', 'term']}),
         ('Notes',   {'fields': ['related', 'responsible', 'stakeholder']}),
     ]
     readonly_fields = ('rec', 'action_num', 'description')
-    filter_horizontal = ['organizations', 'tags']    
+    filter_horizontal = ['organizations', 'tags', 'actions']    
     list_display = ('truncated_description',  'act_num', 'goal_rec')
     list_filter     = ['rec__goal__sector'] 
     search_fields = ['description']

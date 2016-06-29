@@ -22,13 +22,14 @@
           <strong>Recommendation:</strong> <a href="{% url 'plan:rec_detail' rec.id %}">
           {{ rec.goal.goal_num }}.{{ rec.rec_num }}</a>: {{ rec.description|safe }}
 
-
           <table>
             <tr>
               <th>Action</th>
               <th>&nbsp;</th>
               <th>Description</th>
               <th>Tags</th>
+              <th>Old Related</th>
+              <th>New Related</th>
             </tr>
             {% for action in rec.action_list %}
             <tr>
@@ -36,18 +37,22 @@
               <a href="{% url 'plan:action_detail' action.id %}">
               {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
               </td>
-              <td><a href="/admin/plan/action/{{ action.id }}/change/">edit</a></td>
+              <td><a href="/admin/plan/action/{{ action.id }}/change/" target="edit">edit</a></td>
               <td>{{ action.description|safe }}</td>
               <td>
                 {% for tag in action.tags.all %}
                   {{ tag.slug }}{% if not forloop.last %}, {% endif %}
                 {% endfor %}
               </td>
+              <td>{{ action.related }}</td>
+              <td>
+                {% for action in action.actions.all %}
+                  <a href="{% url 'plan:action_detail' action.id %}">{{ action }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+              </td>
             </tr>
             {% endfor %}
           </table>
-
-
 
         </li>
       {% endfor %}

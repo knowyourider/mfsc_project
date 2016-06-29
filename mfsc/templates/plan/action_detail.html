@@ -39,12 +39,17 @@
     {% endfor %}
   </ul>
 
+  <h4>Related</h4>
+    {% for action in object.actions.all %}
+      <a href="{% url 'plan:action_detail' action.id %}">{{ action }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+
   <h4>Term: {{ object.get_term_display }}</h4>
 
 	<h3>Legacy notes:</h3>
 	<dl>
 	  <dt>Related:</dt>
-	  <dd>{{ object.relatd }}</dd>
+	  <dd>{{ object.related }}</dd>
 	  <dt>Responsible:</dt> <dd>{{ object.responsible }}</dd>
 	  <dt>Stakeholder:</dt>
 	  <dd>{{ object.relatd }}</dd>
