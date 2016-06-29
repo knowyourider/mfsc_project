@@ -26,6 +26,7 @@
           <table>
             <tr>
               <th>Action</th>
+              <th>&nbsp;</th>
               <th>Description</th>
               <th>Tags</th>
             </tr>
@@ -35,6 +36,7 @@
               <a href="{% url 'plan:action_detail' action.id %}">
               {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
               </td>
+              <td><a href="/admin/plan/action/{{ action.id }}/change/">edit</a></td>
               <td>{{ action.description|safe }}</td>
               <td>
                 {% for tag in action.tags.all %}

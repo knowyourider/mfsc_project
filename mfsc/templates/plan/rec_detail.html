@@ -11,28 +11,8 @@
 
 {% block content_area %}
 <h1>{{ object.goal.sector.title }} Recommenation {{ object.goal.goal_num }}.{{ object.rec_num }} </h1>
-<h2>{{ object.description }} </h2>
+<h4>{{ object.description }} </h4>
 
-<h4>Meta Info:</h4>
-<dl>
-  <dt>Background:</dt>
-  <dd>{{ object.background }}</dd>
-  <dt>Progress:</dt>
-  <dd>{{ object.progress }}</dd>
-  <dt>Organization:</dt>
-  <dd>[use stakeholder data?]</dd>
-  <dt>Metrics:</dt>
-  <dd>{{ object.metrics }}</dd>
-</dl>
-
-<h4>Legacy notes:</h4>
-<dl>
-  <dt>Related:</dt>
-  <dd>{{ object.relatd }}</dd>
-  <dt>Responsible:</dt> <dd>{{ object.responsible }}</dd>
-  <dt>Stakeholder:</dt>
-  <dd>{{ object.relatd }}</dd>
-</dl>
 
 <h3>Actions:</h3>
 <table>

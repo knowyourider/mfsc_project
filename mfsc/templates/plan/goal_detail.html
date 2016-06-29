@@ -10,16 +10,12 @@
 
 {% block content_area %}
   <h1>{{ object.sector.title }} Goal {{ object.goal_num }} </h1>
-  <h2>{{ object.description }} </h2>
+  <h4>{{ object.description }} </h4>
 
   {{ object.body_text|safe }}
 
-  <p>Background:</br>
-  Progress:</br>
-  Organization:</br>
-  Metrics:</p>
 
-  <h4>Recommendations:</h4>
+  <h3>Recommendations:</h3>
   <ul>
   {% for rec in object.rec_list %}
     <li>

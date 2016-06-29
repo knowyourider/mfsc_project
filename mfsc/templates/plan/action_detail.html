@@ -4,19 +4,50 @@
 {% block title %}MFSC Plan - Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}{% endblock %}
 
 {% block breadcrumbs %}
-<a href="/plan/">Plan</a> |
-<a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">{{ object.rec.goal.sector.title }}</a> |
-<a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goal {{ object.rec.goal.goal_num }}:</a> {{ object.rec.goal.short_description }} |
-<a href="{% url 'plan:rec_detail' object.rec.id %}">Recommendation {{ object.rec.rec_num }}:</a> {{ object.rec.short_description }} 
+	<a href="/plan/">Plan</a> |
+	<a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">{{ object.rec.goal.sector.title }}</a> |
+	<a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goal {{ object.rec.goal.goal_num }}:</a> 
+			{{ object.rec.goal.short_description }} |
+	<a href="{% url 'plan:rec_detail' object.rec.id %}">Recommendation 
+		{{ object.rec.rec_num }}:</a> {{ object.rec.short_description }} 
 {% endblock breadcrumbs %}
 
 {% block content_area %}
   <h1>Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }} </h1>
-  <h2>{{ object.description }} </h2>
+  <h4>{{ object.description }} </h4>
 
-  <p>Background:</br>
-  Progress:</br>
-  Organization:</br>
-  Metrics:</p>
+	<h3>Meta Info:</h3>
+  <h4>Background</h4>
+  {{ object.background|safe }}
+
+  <h4>Progress</h4>
+  {{ object.progress|safe }}
+
+  <h4>Metrics</h4>
+  {{ object.metrics|safe }}
+
+  <h4>Organizations</h4>
+  <ul>
+	  {% for organization in object.organizations.all %}
+	    <li>{{ organization.name }}</li>
+	  {% endfor %}
+  </ul>
+  <h3>Areas of Interest (Tags)</h3>
+  <ul>
+    {% for tag in object.tags.all %}
+      <li>{{ tag.slug }}</li>
+    {% endfor %}
+  </ul>
+
+  <h4>Term: {{ object.get_term_display }}</h4>
+
+	<h3>Legacy notes:</h3>
+	<dl>
+	  <dt>Related:</dt>
+	  <dd>{{ object.relatd }}</dd>
+	  <dt>Responsible:</dt> <dd>{{ object.responsible }}</dd>
+	  <dt>Stakeholder:</dt>
+	  <dd>{{ object.relatd }}</dd>
+	</dl>
 
 {% endblock content_area %}

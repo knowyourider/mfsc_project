@@ -1,29 +1,8 @@
 // option settings for Froala
 
-var froalaChapter = {
-	heightMin: 200,
-	linkAutoPrefix: '',
-	linkList: [
-		{
-			displayText: 'evidence',
-			href: '/supporting/evidenceitem/'
-		},
-		{
-			displayText: 'person',
-			href: '/supporting/person/'
-		},
-		{
-			displayText: 'context',
-			href: '/supporting/context/'
-		},
-		{
-			displayText: 'fast fact',
-			href: '/supporting/fastfact/'
-		}
-	],
-	linkStyles: {
-		pop_item: 'slimpop'
-	},
+var froalaMeta = {
+	heightMin: 300,
+	linkAlwaysBlank: true,
 	paragraphFormat: {
 		N: 'Normal',
 		DETAILS: 'read more'
