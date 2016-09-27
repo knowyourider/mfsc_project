@@ -16,11 +16,12 @@ Shell access:
 
 Activate virtenv:
 ::
-
 	source virtenv/bin/activate
+	cd ROOT
 
 Created special version of manage.py that calls settings.staging
 ::
+	cd mfsc
 	./stageman.py
 
 Database
