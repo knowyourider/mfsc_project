@@ -1,0 +1,25 @@
+footer {
+	background-color: $red;
+	color: $white-font-color;
+}
+
+.footer-wrapper {
+	@include outer-container;
+	padding: $base-spacing;
+}
+
+.footer-social--item {
+  display: inline-block;
+  font-family: icomoon;
+  font-size: $large-font-size * 2;
+  margin: $tiny-spacing;
+
+  a:link, a:visited {
+  	color: $red-tint;
+  }
+
+  a:hover {
+  	color: lighten( $red-tint, 40% );
+  	text-decoration: none;
+  }
+}

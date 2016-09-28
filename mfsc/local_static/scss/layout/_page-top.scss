@@ -1,0 +1,46 @@
+.banner {
+  background-color: white;
+  text-align: center; 
+  @include outer-container;
+
+  img {
+  }	
+}
+
+.top-nav-wrapper {
+  background-color: $main-nav-color; 
+  text-align: center; 
+}
+
+.top-nav {
+  @include outer-container;
+
+  border-bottom: 1px solid darken($main-nav-color, 0.10);
+	height: 3em;
+	padding: 0 $base-spacing;
+	text-transform: uppercase;
+
+  ul.top-nav-menu {
+		color: $green-tint;
+		padding-top: $small-spacing;
+
+		li {
+			display: inline-block;
+
+			&.selected {
+  			background-color: $green-tint;
+			}
+
+			a {
+				color: $white-font-color;
+				letter-spacing: 0.25em;
+				padding: 0 $base-spacing;
+			}
+
+			a:hover {
+				color: $red;
+				text-decoration: underline;
+			}
+		}
+	}	
+}

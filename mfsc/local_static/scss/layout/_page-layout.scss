@@ -1,0 +1,18 @@
+body {
+	background-color: $blue;
+}
+
+.page-wrapper {
+	background-color: $base-background-color;
+  padding: $base-spacing;
+
+	@include outer-container;
+}
+
+.wide-column {
+	@include span-columns (8);
+}
+
+.narrow-column {
+	@include span-columns (4);
+}

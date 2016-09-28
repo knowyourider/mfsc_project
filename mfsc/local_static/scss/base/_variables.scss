@@ -8,11 +8,11 @@ $heading-font-family: $helvetica;
 
 // Colors
 $blue: #0380CC;
-$blue-tint: tint($blue, 0.5);
+$blue-tint: lighten( $blue, 20%);
 $green: #869C3B;
-$green-tint: tint($green, 0.5);
+$green-tint: lighten( $green, 20% );
 $red: #C34619;
-$red-tint: tint($red, 0.5);
+$red-tint: lighten( $red, 20%);
 $brown: #79543C;
 $dark-gray: #545454;
 $medium-gray: #999;
@@ -32,6 +32,10 @@ $base-font-size: 1em;				/* body copy, 16pt */
 $small-font-size: 0.8em;		/* captions, 14pt */
 
 // Font Sizes - headings
+$large-header-size: 2.5em;
+$medlarge-header-size: 2em;
+$medium-header-size: 1.75em;
+$medsmall-header-size: $large-font-size;
 
 // Line height
 $base-line-height: 1.5;

@@ -12,3 +12,5 @@
 **/.sass-cache
 **/.sass-cache/*
 static/
+mfsc/local_static/design/images
+mfsc/local_static/design/plan/images

@@ -1,0 +1,7 @@
+.whats-new {
+	img, p {
+		@include span-columns (4 of 8);
+
+		margin-top: $small-spacing;
+	}
+}
