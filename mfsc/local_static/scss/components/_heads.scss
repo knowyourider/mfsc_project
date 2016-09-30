@@ -67,11 +67,13 @@ h4 {
 
 // this needs rethinking
 .sector-icon-header  {
-	position: relative;
+	
+	h4.crumbs {
+		padding-top: $base-spacing;
+	}
 
-	h1 {
-		position: absolute;
-		top: 35px;
-		left: 120px;
+	img {
+		float: left;
+		margin-right: $small-spacing;
 	}
 }

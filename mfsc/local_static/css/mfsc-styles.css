@@ -390,51 +390,51 @@ body {
 .row {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 4.34783%;
   width: 100%;
+  margin-top: 1.5em;
   padding-bottom: 1.5em; }
   .row:last-child {
     margin-right: 0; }
 
 .wide-column {
-  margin-top: 1.5em;
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 4.34783%;
   width: 100%; }
   @media screen and (min-width: 640px) {
     .wide-column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 65.88078%; }
+      margin-right: 4.34783%;
+      width: 65.21739%; }
       .wide-column:last-child {
         margin-right: 0; } }
   .wide-column:last-child {
     margin-right: 0; }
 
 .narrow-column {
-  margin-top: 1.5em;
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 4.34783%;
   width: 100%; }
   @media screen and (min-width: 640px) {
     .narrow-column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%; }
+      margin-right: 4.34783%;
+      width: 30.43478%; }
       .narrow-column:last-child {
         margin-right: 0; } }
   .narrow-column:last-child {
     margin-right: 0; }
 
 .sub-column {
+  margin-top: -1.5em;
   float: left;
   display: block;
-  margin-right: 3.57866%;
-  width: 48.21067%; }
+  margin-right: 6.66667%;
+  width: 46.66667%; }
   .sub-column:last-child {
     margin-right: 0; }
   .sub-column:nth-child(2) {
@@ -558,36 +558,37 @@ h4 {
 .green {
   background-color: #869C3B; }
 
-.sector-icon-header {
-  position: relative; }
-  .sector-icon-header h1 {
-    position: absolute;
-    top: 35px;
-    left: 120px; }
+.sector-icon-header h4.crumbs {
+  padding-top: 1.5em; }
+.sector-icon-header img {
+  float: left;
+  margin-right: 0.75em; }
 
 .whats-new img, .whats-new p {
   float: left;
   display: block;
-  margin-right: 3.57866%;
-  width: 48.21067%;
+  margin-right: 6.66667%;
+  width: 46.66667%;
   margin-top: 0.75em; }
   .whats-new img:last-child, .whats-new p:last-child {
     margin-right: 0; }
 
-.sector-icons-grid li.grid-item {
-  margin-bottom: 1.5em;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%; }
-  .sector-icons-grid li.grid-item:last-child {
-    margin-right: 0; }
-  .sector-icons-grid li.grid-item:nth-child(4n) {
-    margin-right: 0; }
-  .sector-icons-grid li.grid-item:nth-child(4n+1) {
-    clear: left; }
-  .sector-icons-grid li.grid-item img {
-    display: block; }
+.sector-icons-grid {
+  padding-top: 1.5em; }
+  .sector-icons-grid li.grid-item {
+    margin-bottom: 1.5em;
+    float: left;
+    display: block;
+    margin-right: 4.34783%;
+    width: 21.73913%; }
+    .sector-icons-grid li.grid-item:last-child {
+      margin-right: 0; }
+    .sector-icons-grid li.grid-item:nth-child(4n) {
+      margin-right: 0; }
+    .sector-icons-grid li.grid-item:nth-child(4n+1) {
+      clear: left; }
+    .sector-icons-grid li.grid-item img {
+      display: block; }
 
 ol.goals-list {
   margin: 0.75em 0; }

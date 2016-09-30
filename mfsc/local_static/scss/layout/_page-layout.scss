@@ -11,12 +11,13 @@ body {
 
 .row {
 	@include span-columns(12);
+	
+	margin-top: $base-spacing;
 	padding-bottom: $base-spacing;
 }
 
 .wide-column {
 //	border: 1px solid green;
-	margin-top: $base-spacing;
 	
 	// when screen is greater than or equal to 640
   @include media(640px) {
@@ -29,7 +30,6 @@ body {
 
 .narrow-column {
 //	border: 1px solid pink;
-	margin-top: $base-spacing;
 
 	// when screen is greater than or equal to 640
   @include media(640px) {
@@ -41,7 +41,8 @@ body {
 }
 
 .sub-column {
-//	border: 1px solid orange;
+	// counteracts row top margin to avoid double margins
+	margin-top: -$base-spacing;
 
 	@include span-columns(4 of 8);
 	@include omega (2);
