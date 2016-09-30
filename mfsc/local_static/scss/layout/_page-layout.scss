@@ -4,15 +4,45 @@ body {
 
 .page-wrapper {
 	background-color: $base-background-color;
-  padding: $base-spacing;
+  padding: $base-spacing $large-spacing $xlarge-spacing $large-spacing;
 
-	@include outer-container;
+	@include outer-container();
+}
+
+.row {
+	@include span-columns(12);
+	padding-bottom: $base-spacing;
 }
 
 .wide-column {
-	@include span-columns (8);
+//	border: 1px solid green;
+	margin-top: $base-spacing;
+	
+	// when screen is greater than or equal to 640
+  @include media(640px) {
+    @include span-columns(8 of 12);
+ }
+
+	// when screen is less than 640
+ 	@include span-columns (12);
 }
 
 .narrow-column {
-	@include span-columns (4);
+//	border: 1px solid pink;
+	margin-top: $base-spacing;
+
+	// when screen is greater than or equal to 640
+  @include media(640px) {
+    @include span-columns(4 of 12);
+  }
+
+	// when screen is less than 640
+  @include span-columns (12);
+}
+
+.sub-column {
+//	border: 1px solid orange;
+
+	@include span-columns(4 of 8);
+	@include omega (2);
 }

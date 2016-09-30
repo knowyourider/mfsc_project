@@ -1,0 +1,19 @@
+.pic-caption {
+	background-color: $green;
+	color: $white-font-color;
+	font-size: $small-font-size;
+	
+	p {
+		padding: $small-spacing;
+	}
+}
+
+.story-sidebar {
+	color: $white-font-color;
+	padding: $small-spacing;
+
+	h3, a {
+		color: $blue-tint;
+	}
+
+}

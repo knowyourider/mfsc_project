@@ -8,7 +8,7 @@ $heading-font-family: $helvetica;
 
 // Colors
 $blue: #0380CC;
-$blue-tint: lighten( $blue, 20%);
+$blue-tint: lighten( $blue, 40%);
 $green: #869C3B;
 $green-tint: lighten( $green, 20% );
 $red: #C34619;
@@ -33,9 +33,9 @@ $small-font-size: 0.8em;		/* captions, 14pt */
 
 // Font Sizes - headings
 $large-header-size: 2.5em;
-$medlarge-header-size: 2em;
-$medium-header-size: 1.75em;
-$medsmall-header-size: $large-font-size;
+$medlarge-header-size: 1.75em;
+$medium-header-size: 1.25em;
+$medsmall-header-size: $base-font-size;
 
 // Line height
 $base-line-height: 1.5;

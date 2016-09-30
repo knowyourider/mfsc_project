@@ -17,3 +17,8 @@ dl {
     margin: 0;
   }
 }
+
+// My Lists
+.tags-list, .related-actions-list {
+  padding-bottom: $base-spacing;
+}

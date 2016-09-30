@@ -1,0 +1,62 @@
+.sector-icons-grid {
+
+	li.grid-item {
+		margin-bottom: $base-spacing;
+
+	  @include span-columns(3);
+  	@include omega(4n);
+	
+		img {
+			display: block;
+		}
+	}
+}
+
+// ol.goals-list	{
+//   color: $green;
+// 	font-size: 3em;
+// 	line-height: 12pt;
+// 	list-style-position: outside;
+// 	list-style-type: decimal;
+// 	padding-left: 1em;
+
+// 	li {
+// 		margin-bottom: $tiny-spacing;
+
+// 		a {
+// 		  color: $base-font-color;
+//   		//font-size: $base-font-size;
+//   		text-decoration: underline;
+// 		}
+// 	}
+// }
+
+
+ol.goals-list {
+  margin: $small-spacing null null 0;
+}
+
+ol.goals-list > li {
+  counter-increment: customlistcounter;
+  clear: left;
+  margin-bottom: $base-spacing;
+  
+  a {
+		color: $base-font-color;
+		font-size: $base-font-size;
+  	text-decoration: underline;
+	}
+}
+
+ol.goals-list > li:before {
+  content: counter(customlistcounter) " ";
+  color: $green;
+  font-size: $large-font-size * 2;
+  float: left;
+  margin-top: -10px;
+  width: 0.75em;
+}
+
+ol.goals-list:first-child {
+  counter-reset: customlistcounter;
+}

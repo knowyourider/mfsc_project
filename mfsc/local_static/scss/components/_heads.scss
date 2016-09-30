@@ -2,6 +2,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: normal;
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
+	color: $blue;
 }
 
 h1 {
@@ -20,8 +21,15 @@ h4 {
 	 font-size: $medsmall-header-size;
 }
 
+.pullquote {
+	text-transform: none;
+	letter-spacing: normal;
+	padding-bottom: $small-spacing;
+}
+
 .bar {
 	color: $white-font-color;
+	height: 36px;
 	padding-left: $tiny-spacing;
 
 	a {
@@ -37,6 +45,33 @@ h4 {
 	background-color: $blue;
 }
 
+.green-head {
+	color: $green;
+}
+
+.red-head {
+	color: $red;
+}
+
+.blue-head {
+	color: $blue;
+}
+
+.white-head {
+	color: $white-font-color;
+}
+
 .green {
 	background-color: $green;
+}
+
+// this needs rethinking
+.sector-icon-header  {
+	position: relative;
+
+	h1 {
+		position: absolute;
+		top: 35px;
+		left: 120px;
+	}
 }
