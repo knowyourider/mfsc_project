@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <link rel="stylesheet" href="../../../css/mfsc-styles.css" type="text/css"/>
+  <!-- temp -->
+  <link rel="stylesheet" href="../../../css/expand.css" type="text/css"/>
+
+  <title>MFSC - The Plan: Land: Goal 1</title>
+
+  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $('.expander-trigger').click(function(){
+        // console.log("got to trigger");
+        // this works when in the a tag, and the hidden div immediately follows the a tag
+        // $(this).toggleClass("expander-hidden");
+        // this works when the a tag is inside of another element, in this case the li
+        $(this).parent().toggleClass("expander-hidden");
+      });
+
+    });    
+  </script>
+
+
+</head>
+
+<body>
+  <header>
+
+    <div class="banner">
+      <img src="../../images/mfsc-logo.svg">
+    </div>
+
+    <div class="top-nav-wrapper">
+
+      <nav class="top-nav" role="navigation">
+        <ul class="top-nav-menu">
+          <li class="selected"><a href="../../index.html">Home</a> | </li>
+          <li><a href="../index.html">The Plan</a> | </li>
+          <li><a href="../../projects/index.html">Projects</a> | </li>
+          <li><a href="../../stories/index.html">Stories</a> | </li>
+          <li><a href="../../about/index.html">About</a> | </li>
+          <li><a href="../../resources/index.html">Resources</a> | </li>
+          <li><a href="../../news/index.html">News</a></li>
+        </ul>
+      </nav>
+
+    </div><!--/top-nav-wrapper-->
+
+  </header>
+
+  <section class="page-wrapper">
+
+    <div class="sector-icon-header">
+      <img src="../images/sector-icon-land.png">
+      <h4 class="crumbs"><a href="../index.html">The Plan</a> &rarr; <a href="index.html">Sector</a></h4>
+      <h1>Land</h1>
+    </div>
+    
+    <div class="row">
+
+      <h2 class="bar green">Goal 1</h2>
+
+      <div class="narrow-column">
+
+        <h2 class="pullquote green-head">Farmers will be able to sustain economically viable operations on their land.</h2>
+
+      </div><!--/narrow-column-->
+
+      <div class="wide-column">
+
+        <p>Land is agriculture’s foundational infrastructure, and most farmers' primary asset. Accordingly, property taxes and land use regulations and programs play a large role in farm profitability and business viability. The State’s Chapter 61A program is an important tool, offering reduced property taxes on land in active agricultural use in recognition of the benefits it provides and the fewer municipal services it requires. And, as stated previously, the State’s Agricultural Preservation Restriction (APR) program is also a vitally important tool and accounts for approximately 71,000 acres of the 74,122 total acres of permanently protected farmland statewide, keeping the land in production and more affordable for current and future farmers.[1] Three other State programs – the Farm Viability Enhancement Program (FVEP), the APR Improvement Program (AIP), and the Matching Enterprise for Agriculture (MEGA) Program – provide business planning, technical assistance, and grants to help improve the productivity and profitability of Massachusetts farms. The FVEP offers assistance and grants in exchange for a short-term covenant to keep the land in farming. The AIP invests in infrastructure improvements to support new and expanding farm enterprises on land that has been permanently protected. And the MEGA program provides assistance and matching grants to new and expanding farmers who aspire to develop their farms into commercially viable operations.</p>
+        
+        <p><a href="#" class="read-more">more...</a></p>
+
+      </div><!--/wide-column-->
+    </div><!--/row-->
+
+    <div class="row">
+
+      <h2 class="bar red" id="recommendations">Recommendations</h2>
+
+      <!-- The expander-hidden class is applied to the li rather than to the <a>.
+      Toggling hidden class (in the + construct) needs to be on the element that immediately 
+      preceeds the controlled element -->
+      <ol class="expander"> <!-- class="rec-menu" -->
+        <li class="expander-hidden"><a href="javascript:void(0)" class="expander-trigger">1.1 Reduce the municipal tax burden on farms.</a></li>
+
+        <ol class="expander-content">
+          <li><a href="action-1-1-1.html">1.1.1 Enact legislation that provides a tax credit for agricultural buildings, exempting new or reconstructed agricultural buildings essential to a farm operation from local property taxes for a period of 10 years, provided the building remains in agricultural use.</a></li>
+
+          <li>1.1.2 Expand current law that allows towns to vote to waive excise tax on farm animals and equipment to include incorporated farming operations.</li>
+
+          <li>1.1.3 Enact legislation to exempt farmland eligible for Chapter 61A from municipal storm or floodwater fees.</li>
+
+          <li>1.1.4 To address concerns over potential loss of revenue to rural communities, explore ways to provide financial incentives to communities that enact farm-friendly zoning and tax policies, including through the Baker Administration’s Commonwealth Compact initiative.</li>
+        </ol>
+
+        <li class=" expander-hidden"><a href="javascript:void(0)" class="expander-trigger">1.2 Ensure that Chapter 61A valuations are based on use value.</a></li>
+
+        <ol class="expander-content">
+          <li>1.2.1 Modify Chapter 61A to direct the Farmland Valuation Advisory Commission to guide and limit municipalities setting their own farmland values, to ensure that values are based on use value, not sales value. The University of Massachusetts’ Department of Resource Economics should provide increased resources and expertise to the Farmland Valuation Advisory Committee in evaluating and updating farmland values across the Commonwealth.</li>
+
+          <li>1.2.2 Develop 61A valuation for forestland where trees are tapped for maple products.</li>
+
+          <li>1.2.3 Task the Department of Revenue (DOR) with creating a guidance document on Chapter 61A for local assessors and appraisers.</li>
+        </ol>
+
+      </ol>
+
+      <h3>test - orig</h3>
+      <div class="expander">
+        <a href="javascript:void(0)" class="expander-trigger expander-hidden">Expandable section</a>
+        <div class="expander-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
+        </div>
+      </div>
+
+      <h3>test - div, not  ol; a tag not in li</h3>
+      <div class="expander">
+        <a href="javascript:void(0)" class="expander-trigger expander-hidden">1.1 Reduce the municipal tax burden on farms.</a>
+
+        <div class="expander-content">
+          <ol>
+            <li><a href="action-1-1-1.html">1.1.1 Enact legislation that provides a tax credit for agricultural buildings, exempting new or reconstructed agricultural buildings essential to a farm operation from local property taxes for a period of 10 years, provided the building remains in agricultural use.</a></li>
+
+            <li>1.1.2 Expand current law that allows towns to vote to waive excise tax on farm animals and equipment to include incorporated farming operations.</li>
+
+            <li>1.1.3 Enact legislation to exempt farmland eligible for Chapter 61A from municipal storm or floodwater fees.</li>
+
+            <li>1.1.4 To address concerns over potential loss of revenue to rural communities, explore ways to provide financial incentives to communities that enact farm-friendly zoning and tax policies, including through the Baker Administration’s Commonwealth Compact initiative.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- hand made -->
+      <h3>test - roll my own</h3>
+      <ol class="expander"> <!-- class="rec-menu" -->
+        <li><a href="#" class="expander-trigger">1.2 Ensure that Chapter 61A valuations are based on use value.</a></li>
+
+        <div class="plain-hidden">
+          <ol>
+            <li>1.2.1 Modify Chapter 61A to direct the Farmland Valuation Advisory Commission to guide and limit municipalities setting their own farmland values, to ensure that values are based on use value, not sales value. The University of Massachusetts’ Department of Resource Economics should provide increased resources and expertise to the Farmland Valuation Advisory Committee in evaluating and updating farmland values across the Commonwealth.</li>
+
+            <li>1.2.2 Develop 61A valuation for forestland where trees are tapped for maple products.</li>
+
+            <li>1.2.3 Task the Department of Revenue (DOR) with creating a guidance document on Chapter 61A for local assessors and appraisers.</li>
+          </ol>
+        </div>
+
+
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.3 Encourage communities to enact zoning bylaws that permit ancillary commercial enterprises in areas zoned for agriculture.</a></li>
+
+          <ol class="plain-hidden">
+            <li>1.3.1 Expand “best practices” in Baker Administration’s Community Compact initiative to include zoning that allows ancillary commercial activities on farm properties, including accessory apartments.</li>
+           <li>1.x.1 Fully expend all existing bond authorizations for farm viability by 2018, and increase funding for the FVEP in subsequent authorizations.</li>
+          </ol>
+
+      </ol>
+
+
+
+    </div><!--/row-->
+
+  </section>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2016 Massachusetts Food System Collaborative</p>
+    </div>
+  </footer>
+
+</body>
+</html>
