@@ -8,6 +8,21 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <link rel="stylesheet" href="../../../css/mfsc-styles.css" type="text/css"/>
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $('.expander-trigger').click(function(){
+        // console.log("got to trigger");
+        // this works when in the a tag, and the hidden div immediately follows the a tag
+        // $(this).toggleClass("expander-hidden");
+        // this works when the a tag is inside of another element, in this case the li
+        $(this).toggleClass("expander-hidden");
+      });
+
+    });    
+  </script>
+
   <title>MFSC - The Plan: Land: Goal 1</title>
 
 </head>
@@ -57,9 +72,19 @@
 
       <div class="wide-column">
 
-        <p>Land is agriculture’s foundational infrastructure, and most farmers' primary asset. Accordingly, property taxes and land use regulations and programs play a large role in farm profitability and business viability. The State’s Chapter 61A program is an important tool, offering reduced property taxes on land in active agricultural use in recognition of the benefits it provides and the fewer municipal services it requires. And, as stated previously, the State’s Agricultural Preservation Restriction (APR) program is also a vitally important tool and accounts for approximately 71,000 acres of the 74,122 total acres of permanently protected farmland statewide, keeping the land in production and more affordable for current and future farmers.[1] Three other State programs – the Farm Viability Enhancement Program (FVEP), the APR Improvement Program (AIP), and the Matching Enterprise for Agriculture (MEGA) Program – provide business planning, technical assistance, and grants to help improve the productivity and profitability of Massachusetts farms. The FVEP offers assistance and grants in exchange for a short-term covenant to keep the land in farming. The AIP invests in infrastructure improvements to support new and expanding farm enterprises on land that has been permanently protected. And the MEGA program provides assistance and matching grants to new and expanding farmers who aspire to develop their farms into commercially viable operations.</p>
+        <p>Land is agriculture’s foundational infrastructure, and most farmers' primary asset. Accordingly, property taxes and land use regulations and programs play a large role in farm profitability and business viability. The State’s Chapter 61A program is an important tool, offering reduced property taxes on land in active agricultural use in recognition of the benefits it provides and the fewer municipal services it requires. And, as stated previously, the State’s Agricultural Preservation Restriction (APR) program is also a vitally important tool and accounts for approximately 71,000 acres of the 74,122 total acres of permanently protected farmland statewide, keeping the land in production and more affordable for current and future farmers.[1] Three other State programs – the Farm Viability Enhancement Program (FVEP), the APR Improvement Program (AIP), and the Matching Enterprise for Agriculture (MEGA) Program – provide business planning, technical assistance, and grants to help improve the productivity and profitability of Massachusetts farms.</p>
+
+        <details>
+          <summary class="read-more">more....</summary>
         
-        <p><a href="#" class="read-more">more...</a></p>
+          <p>These programs are valuable and necessary to keep land in farming and farmers on the land, but policy challenges and gaps remain. In the case of Chapter 61A, municipalities are allowed to set their own land valuations rather than those set by the State. Some municipalities that have chosen to do so have used rates based on farmland sales rather than farmland use, resulting in significant property tax increases for some farmers.[2] Farms which have retail operations or process their farm products on-farm rely on buildings as much as land for their operations to be financially viable. Yet unlike land, tax laws do not recognize this and farmers often face debilitating tax bills on buildings. Relatedly, where State law allows towns to vote to exempt farm equipment and animals on non-incorporated farms from excise tax, this provision does not extend to incorporated farms. Yet many family farms incorporate to protect their homes and personal assets from liability. Additionally, some communities charge farmers stormwater and flood water utility fees, which can range from relatively small for farmland to significant for farm buildings, and can include land eligible for Chapter 61A.</p>
+
+          <ol class="footnotes">
+            <li>See Agricultural Preservation Restriction Program summary report dated June 22, 2015, prepared by the MA Department of Agricultural Resources and presented to the Agricultural Lands Preservation Committee.</li>
+
+            <li>McKiernanan, Kathleen. (2013). Farmland reassessment spurs citizens’ petition. The Recorder, 10/25/13. Accessed November 2015 from http://goo.gl/MJV2hS</li>
+          </ol>
+        </details>
 
       </div><!--/wide-column-->
     </div><!--/row-->
@@ -67,44 +92,74 @@
     <div class="row">
 
       <h2 class="bar red" id="recommendations">Recommendations</h2>
-      <ol class="rec-menu">
-        <li>1.1 Reduce the municipal tax burden on farms.</li>
 
-          <ol>
+      <ol class="rec-menu">
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.1 Reduce the municipal tax burden on farms.</a>
+
+          <ol class="expander-content">
             <li><a href="action-1-1-1.html">1.1.1 Enact legislation that provides a tax credit for agricultural buildings, exempting new or reconstructed agricultural buildings essential to a farm operation from local property taxes for a period of 10 years, provided the building remains in agricultural use.</a></li>
 
-            <li>1.1.2 Expand current law that allows towns to vote to waive excise tax on farm animals and equipment to include incorporated farming operations.</li>
+            <li><a href="">1.1.2 Expand current law that allows towns to vote to waive excise tax on farm animals and equipment to include incorporated farming operations.</a></li>
 
-            <li>1.1.3 Enact legislation to exempt farmland eligible for Chapter 61A from municipal storm or floodwater fees.</li>
+            <li><a href="">1.1.3 Enact legislation to exempt farmland eligible for Chapter 61A from municipal storm or floodwater fees.</a></li>
 
-            <li>1.1.4 To address concerns over potential loss of revenue to rural communities, explore ways to provide financial incentives to communities that enact farm-friendly zoning and tax policies, including through the Baker Administration’s Commonwealth Compact initiative.</li>
+            <li><a href="">1.1.4 To address concerns over potential loss of revenue to rural communities, explore ways to provide financial incentives to communities that enact farm-friendly zoning and tax policies, including through the Baker Administration’s Commonwealth Compact initiative.</a></li>
           </ol>
+        </li>
 
-        <li>1.2 Ensure that Chapter 61A valuations are based on use value.</li>
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.2 Ensure that Chapter 61A valuations are based on use value.</a>
 
-          <ol>
-            <li>1.2.1 Modify Chapter 61A to direct the Farmland Valuation Advisory Commission to guide and limit municipalities setting their own farmland values, to ensure that values are based on use value, not sales value. The University of Massachusetts’ Department of Resource Economics should provide increased resources and expertise to the Farmland Valuation Advisory Committee in evaluating and updating farmland values across the Commonwealth.</li>
+          <ol class="expander-content">
+            <li><a href="">1.2.1 Modify Chapter 61A to direct the Farmland Valuation Advisory Commission to guide and limit municipalities setting their own farmland values, to ensure that values are based on use value, not sales value. The University of Massachusetts’ Department of Resource Economics should provide increased resources and expertise to the Farmland Valuation Advisory Committee in evaluating and updating farmland values across the Commonwealth.</a></li>
 
-            <li>1.2.2 Develop 61A valuation for forestland where trees are tapped for maple products.</li>
+            <li><a href="">1.2.2 Develop 61A valuation for forestland where trees are tapped for maple products.</a></li>
 
-            <li>1.2.3 Task the Department of Revenue (DOR) with creating a guidance document on Chapter 61A for local assessors and appraisers.</li>
+            <li><a href="">1.2.3 Task the Department of Revenue (DOR) with creating a guidance document on Chapter 61A for local assessors and appraisers.</a></li>
           </ol>
+        </li>
 
-        <li>1.3 Encourage communities to enact zoning bylaws that permit ancillary commercial enterprises in areas zoned for agriculture.</li>
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.3 Encourage communities to enact zoning bylaws that permit ancillary commercial enterprises in areas zoned for agriculture.</a>
 
-          <ol>
+          <ol class="expander-content">
             <li>1.3.1 Expand “best practices” in Baker Administration’s Community Compact initiative to include zoning that allows ancillary commercial activities on farm properties, including accessory apartments.</li>
           </ol>
+        </li>
 
-        <li>1.4 Provide sufficient funding through the Farm Viability Enhancement Program (FVEP) to enable farmers to access business planning assistance and capital for business improvements in exchange for farmland protection covenants.</li>
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.4 Provide sufficient funding through the Farm Viability Enhancement Program (FVEP) to enable farmers to access business planning assistance and capital for business improvements in exchange for farmland protection covenants.</a>
 
-          <ol>
+          <ol class="expander-content">
             <li>1.4.1 Fully expend all existing bond authorizations for farm viability by 2018, and increase funding for the FVEP in subsequent authorizations.</li>
           </ol>
+        </li>
 
-        <li>1.5 Ensure that farmers who are farming permanently protected land are able to access capital for infrastructure improvements.</li>
-        <li>1.6 Ensure that the Agricultural Preservation Restriction (APR) Program adequately considers farm viability and the infrastructure needs of current and future farmers.</li>
-        <li>1.7 Help farmers to more effectively mitigate damage to their farmland caused by man-made or natural events and disasters.</li>
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.5 Ensure that farmers who are farming permanently protected land are able to access capital for infrastructure improvements.</a>
+
+          <ol class="expander-content">
+            <li>1.5.1 Fund the APR Improvement Program (AIP) at a level that meets program demand, and expand AIP eligibility to farmland protected with Conservation Restrictions.</li>
+
+            <li>1.5.2 Educate commercial lenders about current values of permanently protected land, to encourage lending for farm infrastructure on protected land.</li>
+          </ol>
+        </li>
+
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.6 Ensure that the Agricultural Preservation Restriction (APR) Program adequately considers farm viability and the infrastructure needs of current and future farmers.</a>
+
+          <ol class="expander-content">
+            <li>1.6.1 Task the Agricultural Lands Preservation Committee with a review of APR regulations to consider whether regulatory or policy changes are needed to promote farm viability and allow for needed farm infrastructure.</li>
+
+            <li>1.6.2 Convene a working group to develop recommendations around housing on APRs.</li>
+          </ol>
+        </li>
+
+        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.7 Help farmers to more effectively mitigate damage to their farmland caused by man-made or natural events and disasters.</a>
+
+          <ol class="expander-content">
+            <li>1.7.1 Train Agriculture and Conservation Commissions on actions farmers may take under current law to manage on and off-farm beaver activity to avoid property damage. If needed, consider changes to state law to allow farmers recourse in the event of off-farm beaver activity that is damaging a farm’s crops or farmland.</li>
+
+            <li>1.7.2 Advocate for federal crop insurance products that would cover the loss of fruit trees and other perennial crops in the event of vandalism, flooding, wildlife, or other damage not covered by existing crop insurance policies.</li>
+
+            <li>1.7.3 Increase technical assistance to farmers around crop and livestock-specific climate change adaptation strategies. Include climate change adaptation strategies as eligible practices under USDA’s Environmental Quality Incentives Program (EQIP).</li>
+          </ol>
+        </li>
       </ol>
 
     </div><!--/row-->

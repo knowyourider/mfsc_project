@@ -13,24 +13,66 @@
 	}
 }
 
-// ol.goals-list	{
-//   color: $green;
-// 	font-size: 3em;
-// 	line-height: 12pt;
-// 	list-style-position: outside;
-// 	list-style-type: decimal;
-// 	padding-left: 1em;
+ol.rec-menu {
+  width: 100%;
 
-// 	li {
-// 		margin-bottom: $tiny-spacing;
+  li {
+    margin: $tiny-spacing 0;
+  }
 
-// 		a {
-// 		  color: $base-font-color;
-//   		//font-size: $base-font-size;
-//   		text-decoration: underline;
-// 		}
-// 	}
-// }
+  .expander-trigger {
+    border: 1px dotted $red;
+    color: $base-font-color;
+    cursor: pointer;
+    display: block;
+    padding: $small-spacing;
+    text-decoration: none;
+    user-select: none;
+
+    &::before {
+      //down pointing arrow
+      content: "\25BC";
+      font-size: $base-font-size;
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-trigger:not(.expander-hidden) {
+     background-color: $red;
+     color: white;
+  }
+
+  .expander-content li {
+    background-color: white;
+    font-size: $small-font-size;
+    line-height: $base-line-height;
+    padding: $small-spacing $large-spacing;
+
+    &:nth-child(even) {
+      background-color: lighten($green-tint, 25%);
+    }
+
+    a {
+     color: $base-font-color;      
+    }
+  }
+
+  .expander-hidden {
+    &::before {
+      //right pointing arrow
+      content: "\25BA";
+      font-size: $base-font-size;
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+
+.plain-hidden {
+  display: none;
+}
 
 
 ol.goals-list {

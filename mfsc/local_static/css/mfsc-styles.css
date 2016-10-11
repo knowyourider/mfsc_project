@@ -313,6 +313,14 @@ dl {
 .tags-list, .related-actions-list {
   padding-bottom: 1.5em; }
 
+.footnotes {
+  color: #999;
+  font-size: 0.8em;
+  list-style-type: decimal;
+  padding-left: 1.5em; }
+  .footnotes li {
+    padding-bottom: 0.375em; }
+
 table {
   border-collapse: collapse;
   margin: 0.75em 0;
@@ -589,6 +597,43 @@ h4 {
       clear: left; }
     .sector-icons-grid li.grid-item img {
       display: block; }
+
+ol.rec-menu {
+  width: 100%; }
+  ol.rec-menu li {
+    margin: 0.375em 0; }
+  ol.rec-menu .expander-trigger {
+    border: 1px dotted #C34619;
+    color: #545454;
+    cursor: pointer;
+    display: block;
+    padding: 0.75em;
+    text-decoration: none;
+    user-select: none; }
+    ol.rec-menu .expander-trigger::before {
+      content: "\25BC";
+      font-size: 1em;
+      margin-right: 0.5em; }
+  ol.rec-menu .expander-trigger:not(.expander-hidden) {
+    background-color: #C34619;
+    color: white; }
+  ol.rec-menu .expander-content li {
+    background-color: white;
+    font-size: 0.8em;
+    line-height: 1.5;
+    padding: 0.75em 3em; }
+    ol.rec-menu .expander-content li:nth-child(even) {
+      background-color: #e6edcf; }
+    ol.rec-menu .expander-content li a {
+      color: #545454; }
+  ol.rec-menu .expander-hidden::before {
+    content: "\25BA";
+    font-size: 1em; }
+  ol.rec-menu .expander-hidden + .expander-content {
+    display: none; }
+
+.plain-hidden {
+  display: none; }
 
 ol.goals-list {
   margin: 0.75em 0; }

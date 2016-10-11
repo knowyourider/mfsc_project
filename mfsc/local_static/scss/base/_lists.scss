@@ -22,3 +22,14 @@ dl {
 .tags-list, .related-actions-list {
   padding-bottom: $base-spacing;
 }
+
+.footnotes {
+  color: $medium-gray;
+  font-size: $small-font-size;
+  list-style-type: decimal;
+  padding-left: $base-spacing;
+
+  li {
+    padding-bottom: $tiny-spacing;
+  }
+}

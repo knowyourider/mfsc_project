@@ -24,15 +24,17 @@
     color: $action-color;
     cursor: pointer;
     display: block;
-    font-size: $expander-toggle-size;
-    margin-bottom: $expander-toggle-size;
-    padding-bottom: $expander-toggle-size / 4;
+    //font-size: $expander-toggle-size;
+    margin-bottom: $base-spacing;
+    padding-bottom: $tiny-spacing;
     text-decoration: none;
     user-select: none;
 
     &::before {
+      //down pointing arrow
       content: "\25BC";
-      font-size: $expander-arrow-width;
+      color: red;
+      font-size: $base-font-size;
       margin-right: 0.5em;
     }
   }
@@ -44,8 +46,9 @@
 
   .expander-hidden {
     &::before {
+      //right pointing arrow
       content: "\25BA";
-      font-size: $expander-arrow-width;
+      font-size: $base-font-size;
     }
   }
 

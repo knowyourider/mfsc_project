@@ -7,27 +7,17 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <link rel="stylesheet" href="../../../css/mfsc-styles.css" type="text/css"/>
-  <!-- temp -->
-  <link rel="stylesheet" href="../../../css/expand.css" type="text/css"/>
 
-  <title>MFSC - The Plan: Land: Goal 1</title>
-
-  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
+    
+    $('.rec-menu > li a').click(function() {
+    $(this).parent().find('ol').toggle();
+});
 
-      $('.expander-trigger').click(function(){
-        // console.log("got to trigger");
-        // this works when in the a tag, and the hidden div immediately follows the a tag
-        // $(this).toggleClass("expander-hidden");
-        // this works when the a tag is inside of another element, in this case the li
-        $(this).toggleClass("expander-hidden");
-      });
-
-    });    
   </script>
 
+  <title>MFSC - The Plan: Land: Goal 1</title>
 
 </head>
 
@@ -86,52 +76,9 @@
     <div class="row">
 
       <h2 class="bar red" id="recommendations">Recommendations</h2>
+      <ol class="rec-menu">
+        <li><a>1.1 Reduce the municipal tax burden on farms.</a>
 
-      <!-- The expander-hidden class is applied to the li rather than to the <a>.
-      Toggling hidden class (in the + construct) needs to be on the element that immediately  preceeds the controlled element -->
-      
-      <ol class="expander"> <!-- class="rec-menu" -->
-        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.1 Reduce the municipal tax burden on farms.</a>
-
-          <ol class="expander-content">
-            <li><a href="action-1-1-1.html">1.1.1 Enact legislation that provides a tax credit for agricultural buildings, exempting new or reconstructed agricultural buildings essential to a farm operation from local property taxes for a period of 10 years, provided the building remains in agricultural use.</a></li>
-
-            <li><a href="">1.1.2 Expand current law that allows towns to vote to waive excise tax on farm animals and equipment to include incorporated farming operations.</a></li>
-
-            <li><a href="">1.1.3 Enact legislation to exempt farmland eligible for Chapter 61A from municipal storm or floodwater fees.</a></li>
-
-            <li><a href="">1.1.4 To address concerns over potential loss of revenue to rural communities, explore ways to provide financial incentives to communities that enact farm-friendly zoning and tax policies, including through the Baker Administration’s Commonwealth Compact initiative.</a></li>
-          </ol>
-        </li>
-        
-        
-        <li><summary>1.2 Ensure that Chapter 61A valuations are based on use value.</summary>
-         <details> 
-            <ol>
-              <li>1.2.1 Modify Chapter 61A to direct the Farmland Valuation Advisory Commission to guide and limit municipalities setting their own farmland values, to ensure that values are based on use value, not sales value. The University of Massachusetts’ Department of Resource Economics should provide increased resources and expertise to the Farmland Valuation Advisory Committee in evaluating and updating farmland values across the Commonwealth.</li>
-
-              <li>1.2.2 Develop 61A valuation for forestland where trees are tapped for maple products.</li>
-
-              <li>1.2.3 Task the Department of Revenue (DOR) with creating a guidance document on Chapter 61A for local assessors and appraisers.</li>
-            </ol>
-
-        </li>
-        </details>
-      </ol>
-
-      <h3>test - orig</h3>
-      <div class="expander">
-        <a href="javascript:void(0)" class="expander-trigger expander-hidden">Expandable section</a>
-        <div class="expander-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
-        </div>
-      </div>
-
-      <h3>test - div, not  ol; a tag not in li</h3>
-      <div class="expander">
-        <a href="javascript:void(0)" class="expander-trigger expander-hidden">1.1 Reduce the municipal tax burden on farms.</a>
-
-        <div class="expander-content">
           <ol>
             <li><a href="action-1-1-1.html">1.1.1 Enact legislation that provides a tax credit for agricultural buildings, exempting new or reconstructed agricultural buildings essential to a farm operation from local property taxes for a period of 10 years, provided the building remains in agricultural use.</a></li>
 
@@ -141,15 +88,11 @@
 
             <li>1.1.4 To address concerns over potential loss of revenue to rural communities, explore ways to provide financial incentives to communities that enact farm-friendly zoning and tax policies, including through the Baker Administration’s Commonwealth Compact initiative.</li>
           </ol>
-        </div>
-      </div>
 
-      <!-- hand made -->
-      <h3>test - roll my own</h3>
-      <ol class="expander"> <!-- class="rec-menu" -->
-        <li><a href="#" class="expander-trigger">1.2 Ensure that Chapter 61A valuations are based on use value.</a></li>
+        </li>
 
-        <div class="plain-hidden">
+        <li>1.2 Ensure that Chapter 61A valuations are based on use value.
+
           <ol>
             <li>1.2.1 Modify Chapter 61A to direct the Farmland Valuation Advisory Commission to guide and limit municipalities setting their own farmland values, to ensure that values are based on use value, not sales value. The University of Massachusetts’ Department of Resource Economics should provide increased resources and expertise to the Farmland Valuation Advisory Committee in evaluating and updating farmland values across the Commonwealth.</li>
 
@@ -157,19 +100,29 @@
 
             <li>1.2.3 Task the Department of Revenue (DOR) with creating a guidance document on Chapter 61A for local assessors and appraisers.</li>
           </ol>
-        </div>
 
+        </li>
 
-        <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">1.3 Encourage communities to enact zoning bylaws that permit ancillary commercial enterprises in areas zoned for agriculture.</a></li>
+        <li>1.3 Encourage communities to enact zoning bylaws that permit ancillary commercial enterprises in areas zoned for agriculture.
 
-          <ol class="plain-hidden">
+          <ol>
             <li>1.3.1 Expand “best practices” in Baker Administration’s Community Compact initiative to include zoning that allows ancillary commercial activities on farm properties, including accessory apartments.</li>
-           <li>1.x.1 Fully expend all existing bond authorizations for farm viability by 2018, and increase funding for the FVEP in subsequent authorizations.</li>
           </ol>
 
+        </li>
+
+        <li>1.4 Provide sufficient funding through the Farm Viability Enhancement Program (FVEP) to enable farmers to access business planning assistance and capital for business improvements in exchange for farmland protection covenants.
+
+          <ol>
+            <li>1.4.1 Fully expend all existing bond authorizations for farm viability by 2018, and increase funding for the FVEP in subsequent authorizations.</li>
+          </ol>
+
+        </li>
+
+        <li>1.5 Ensure that farmers who are farming permanently protected land are able to access capital for infrastructure improvements.</li>
+        <li>1.6 Ensure that the Agricultural Preservation Restriction (APR) Program adequately considers farm viability and the infrastructure needs of current and future farmers.</li>
+        <li>1.7 Help farmers to more effectively mitigate damage to their farmland caused by man-made or natural events and disasters.</li>
       </ol>
-
-
 
     </div><!--/row-->
 
