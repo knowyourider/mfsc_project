@@ -250,7 +250,7 @@ select {
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple] {
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #ECECEC;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
@@ -262,7 +262,7 @@ select[multiple] {
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
   select[multiple]:hover {
-    border-color: #b1b1b1; }
+    border-color: #bdbdbd; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   select[multiple]:focus {
     border-color: #0380CC;
@@ -274,7 +274,7 @@ select[multiple] {
     cursor: not-allowed; }
     input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
     select[multiple]:disabled:hover {
-      border: 1px solid #ddd; }
+      border: 1px solid #ECECEC; }
 
 textarea {
   resize: vertical; }
@@ -328,13 +328,13 @@ table {
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #a6a6a6;
+  border-bottom: 1px solid #b1b1b1;
   font-weight: 600;
   padding: 0.75em 0;
   text-align: left; }
 
 td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ECECEC;
   padding: 0.75em 0; }
 
 tr,
@@ -370,7 +370,7 @@ a {
     color: #026099; }
 
 hr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ECECEC;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -517,7 +517,7 @@ footer {
 
 h1, h2, h3, h4, h5 {
   font-weight: normal;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: #0380CC; }
 
@@ -531,7 +531,8 @@ h3 {
   font-size: 1.25em; }
 
 h4 {
-  font-size: 1em; }
+  font-size: 1em;
+  padding: 0.375em; }
 
 .pullquote {
   text-transform: none;
@@ -540,8 +541,8 @@ h4 {
 
 .bar {
   color: #FFF;
-  height: 36px;
-  padding-left: 0.375em; }
+  padding-left: 0.375em;
+  margin-bottom: 0.375em; }
   .bar a {
     color: #FFF; }
 
@@ -627,7 +628,7 @@ ol.rec-menu {
     line-height: 1.5;
     padding: 0.75em 3em; }
     ol.rec-menu .expander-content li:nth-child(even) {
-      background-color: #e9f6ff; }
+      background-color: #ECECEC; }
     ol.rec-menu .expander-content li a {
       color: #545454; }
   ol.rec-menu .expander-hidden::before {

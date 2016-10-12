@@ -49,7 +49,7 @@ ol.rec-menu {
     padding: $small-spacing $large-spacing;
 
     &:nth-child(even) {
-      background-color: lighten($blue-tint, 15%);
+      background-color: $light-gray;
     }
 
     a {

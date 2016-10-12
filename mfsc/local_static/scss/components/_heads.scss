@@ -1,24 +1,25 @@
 h1, h2, h3, h4, h5 {
 	font-weight: normal;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.10em;
 	text-transform: uppercase;
 	color: $blue;
 }
 
 h1 {
-	 font-size: $large-header-size;
+	font-size: $large-header-size;
 }
 
 h2 {
-	 font-size: $medlarge-header-size;
+	font-size: $medlarge-header-size;
 }
 
 h3 {
-	 font-size: $medium-header-size;
+	font-size: $medium-header-size;
 }
 
 h4 {
-	 font-size: $medsmall-header-size;
+	font-size: $medsmall-header-size;
+	padding: $tiny-spacing;
 }
 
 .pullquote {
@@ -29,8 +30,9 @@ h4 {
 
 .bar {
 	color: $white-font-color;
-	height: 36px;
+	//height: 36px;
 	padding-left: $tiny-spacing;
+	margin-bottom: $tiny-spacing;
 
 	a {
 		color: $white-font-color;
