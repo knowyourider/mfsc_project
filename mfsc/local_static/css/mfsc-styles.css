@@ -572,6 +572,10 @@ h4 {
   float: left;
   margin-right: 0.75em; }
 
+.u-and-lc {
+  letter-spacing: 0;
+  text-transform: none; }
+
 .whats-new img, .whats-new p {
   float: left;
   display: block;
@@ -623,7 +627,7 @@ ol.rec-menu {
     line-height: 1.5;
     padding: 0.75em 3em; }
     ol.rec-menu .expander-content li:nth-child(even) {
-      background-color: #e6edcf; }
+      background-color: #e9f6ff; }
     ol.rec-menu .expander-content li a {
       color: #545454; }
   ol.rec-menu .expander-hidden::before {
@@ -634,6 +638,12 @@ ol.rec-menu {
 
 .plain-hidden {
   display: none; }
+
+ol.expander-content li.action-head {
+  background-color: #0380CC;
+  color: white;
+  letter-spacing: 0.2em;
+  text-transform: uppercase; }
 
 ol.goals-list {
   margin: 0.75em 0; }
