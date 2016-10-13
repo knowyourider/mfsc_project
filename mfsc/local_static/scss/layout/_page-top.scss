@@ -15,26 +15,31 @@
 .top-nav {
   @include outer-container;
 
-  border-bottom: 1px solid darken($main-nav-color, 0.10);
-	height: 3em;
-	padding: 0 $base-spacing;
+  //border-bottom: 1px solid darken($main-nav-color, 0.10);
+	//height: 3em;
 	text-transform: uppercase;
 
   ul.top-nav-menu {
 		color: $green-tint;
-		padding-top: $small-spacing;
+		padding: $small-spacing;
 
 		li {
+			border-right: 1px solid $green-tint;
 			display: inline-block;
 
 			&.selected {
+
+  			a {
   			background-color: $green-tint;
+				color: $red;
+				margin-left: -4px;
+				}
 			}
 
 			a {
 				color: $white-font-color;
 				letter-spacing: 0.25em;
-				padding: 0 $base-spacing;
+				padding: $small-spacing $base-spacing;
 			}
 
 			a:hover {
@@ -43,4 +48,9 @@
 			}
 		}
 	}	
+}
+
+// to ensure consistant height when titles vary
+.title-area {
+	min-height: 120px;
 }

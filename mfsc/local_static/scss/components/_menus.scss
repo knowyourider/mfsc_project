@@ -109,3 +109,19 @@ ol.goals-list > li:before {
 ol.goals-list:first-child {
   counter-reset: customlistcounter;
 }
+
+.story-menu {
+  li {
+    
+    margin-bottom: $small-spacing;
+
+    a {
+
+      img {
+        margin-right: $small-spacing;
+        max-width: 100px;
+        max-height: 100px;
+      }      
+    }
+  }
+}

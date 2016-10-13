@@ -170,6 +170,7 @@ h6 {
   margin: 0; }
 
 p {
+  font-size: 1.15em;
   margin: 0 0 1.5em 0; }
 
 a {
@@ -190,6 +191,10 @@ img,
 picture {
   margin: 0;
   max-width: 100%; }
+
+.date {
+  color: #999;
+  margin: 0; }
 
 .expander {
   width: 60%; }
