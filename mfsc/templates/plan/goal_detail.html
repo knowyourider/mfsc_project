@@ -3,26 +3,69 @@
 
 {% block title %}MFSC Plan - {{ object.sector.title }} Goal {{ object.goal_num }}{% endblock %}
 
-{% block breadcrumbs %}
-<a href="/plan/">Plan</a> |
-<a href="{% url 'plan:sector_detail' object.sector.slug %}">{{ object.sector.title }}</a> 
-{% endblock breadcrumbs %}
+{% block title_area %}
+  <div class="sector-icon-header">
+    <img src="{% static 'plan/icons/' %}sector-icon-{{ object.sector.slug }}.png">
+    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; <a href="{% url 'plan:sector_detail' object.sector.slug %}">Sector</h4>
+    <h1>{{ object.sector.title }}</h1>
+  </div>
+{% endblock title_area %}
 
 {% block content_area %}
-  <h1>{{ object.sector.title }} Goal {{ object.goal_num }} </h1>
-  <h4>{{ object.description }} </h4>
 
-  {{ object.body_text|safe }}
+<div class="row">
 
+  <h2 class="bar green">Goal {{ object.goal_num }}</h2>
 
-  <h3>Recommendations:</h3>
-  <ul>
+  <div class="narrow-column">
+
+    <h2 class="pullquote green-head">{{ object.description }}</h2>
+
+  </div><!--/narrow-column-->
+
+  <div class="wide-column">
+
+    {{ object.body_text|safe }}
+
+    <details>
+      <summary class="read-more">more....</summary>
+    
+      <p>[no field field for this yet] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      <ol class="footnotes">
+        <li>[footnotes marked up in wysiwyg?] Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,</li>
+
+        <li>McKiernanan, Kathleen. (2013). Farmland reassessment spurs citizens’ petition. The Recorder, 10/25/13. Accessed November 2015 from http://goo.gl/MJV2hS</li>
+      </ol>
+    </details>
+
+  </div><!--/wide-column-->
+</div><!--/row-->
+
+<div class="row">
+
+  <h2 class="bar red" id="recommendations">Recommendations</h2>
+
+  <ol class="rec-menu">
   {% for rec in object.rec_list %}
-    <li>
-      <a href="{% url 'plan:rec_detail' rec.id %}">
-      {{ rec.goal.goal_num }}.{{ rec.rec_num }}</a> {{ rec.description|safe }}
+    <li><a href="javascript:void(0)" class="expander-trigger expander-hidden">{{ rec.goal.goal_num }}.{{ rec.rec_num }} {{ rec.description|safe }}</a>
+
+      <ol class="expander-content">
+        <li class="action-head">Actions:</li>
+
+        {% for action in rec.action_list %}
+          <li>
+            <a href="{% url 'plan:action_detail' action.id %}">
+              {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }} 
+              {{ action.description|safe }}
+            </a>
+          </li>
+        {% endfor %} {# end action list #}
+      </ol>
     </li>
-  {% endfor %}
-  </ul>  
+  {% endfor %} {# end recommendation list #}
+  </ol>
+
+</div><!--/row-->
 
 {% endblock content_area %}

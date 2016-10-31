@@ -3,19 +3,59 @@
 
 {% block title %}MFSC Plan{% endblock %}
 
+{% block title_area %}
+  <h1>The Plan:</h1>
+  <h2 class="pullquote">Massachusetts Local Food Action Plan</h2>
+
+{% endblock title_area %}
+
 {% block content_area %}
 
+    <div class="narrow-column">
 
-  <h1>Plan</h1>
+      <h2 class="bar red">About the Plan</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p><a href="#" class="read-more">more...</a></p>
 
-<ul>
-  {% for object in object_list %}
-      <li><a href="{% url 'plan:sector_detail' object.slug %}">{{ object.title|safe }}</a></li>
-  {% endfor %}
-</ul>
+      <ul>
+        <li><a href="#" class="read-more">Full Plan</a> (17 MB PDF)</li>
+        <li><a href="#" class="read-more">Plan Summary</a> (.9 MB PDF)</li>
+        <li><a href="#" class="read-more">Plan Goal and Recommendations</a> (3 MB PDF)</li>
+      </ul>
 
+    </div><!--/narrow-column-->
 
-<p><a href="{% url 'plan:tag_list' %}">Areas of Interest</a></p>
-<p><a href="{% url 'plan:internal_sector_list' %}">Internal View</a></p>
+    <div class="wide-column">
+
+      <div class="row">
+        <div class="sub-column">
+
+          <h2 class="bar blue">Search the Plan</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        </div><!--/sub-column-->
+
+        <div class="sub-column">
+
+          <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="" method="GET">
+            <input type="hidden" name="sitesearch" value="" />
+            <label for="search-keywords"><input id="search-keywords" type="search" data-name="keywords" name="q" placeholder="Search" aria-label="Search" value="" required="required"></label>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </form>
+
+        </div><!--/sub-column-->
+      </div><!--/row-->
+
+      <div class="row">
+        <h2 class="bar green">Browse the Plan</h2>
+        <ul class="sector-icons-grid"> 
+			  {% for object in object_list %}
+          <li class="grid-item">
+            <a href="{% url 'plan:sector_detail' object.slug %}"><img src="{% static 'plan/icons/' %}sector-icon-{{ object.slug }}.png">{{ object.title|safe }}</a>
+          </li>
+			  {% endfor %}
+        </ul>
+      </div><!--/row-->
+    </div><!--/wide-column-->
 
 {% endblock content_area %}

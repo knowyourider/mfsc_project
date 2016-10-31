@@ -11,25 +11,66 @@
   <title>{% block title %}MFSC{% endblock %}</title>
 
 	{% block stylesheets %}
-    <!-- <link rel="stylesheet" href="{% static 'css/temp_pop.css' %}" type="text/css"/> -->
+    <link rel="stylesheet" href="{% static 'css/mfsc-styles.css' %}" type="text/css"/>
   {% endblock stylesheets %}
 
   {% block javascript %}
+    <script src="https://use.typekit.net/kke2mht.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    
+    <script src="{% static 'js/application.js' %}" type="text/javascript"></script>
   {% endblock javascript %}
 
 </head>
 
 <body>
-{% block full_page %}
+  <header>
+    <div class="banner">
+      <img src="{% static 'images/mfsc-logo.svg' %}">
+    </div>
+    <div class="top-nav-wrapper">
+      <nav class="top-nav" role="navigation">
+        <ul class="top-nav-menu">
+          <li><a href="/">Home</a></li>
+          <li class="selected"><a href="{% url 'plan:sector_list' %}">The Plan</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="../stories/index.html">Stories</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="../news/index.html">News</a></li>
+        </ul>
+      </nav>
+    </div><!--/top-nav-wrapper-->
+  </header>
 
-{% block breadcrumbs %}
-{% endblock breadcrumbs %}
+  <div class="page-wrapper">
+  {% block full_page %}
+    <header class="title-area">
+    {% block title_area %}
+        <div class="sector-icon-header">
+          <img src="../images/sector-icon-land.png">
+          <h4 class="crumbs"><a href="../index.html">The Plan</a> &rarr; <a href="index.html">Sector</a> &rarr; <a href="goal-1.html">Goals &amp; Recommendations</a></h4>
+          <h1>Land</h1>
+        </div>
+    {% endblock title_area %}
+    </header>
 
-{% block content_area %}
-  content goes here
-{% endblock content_area %}
+    {% block content_area %}
+      content goes here
+    {% endblock content_area %}
+    
+  {% endblock full_page %}
+  </div>
 
-{% endblock full_page %}
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2016 Massachusetts Food System Collaborative</p>
+    </div>
+  </footer>
+
 
 </body>
 </html>

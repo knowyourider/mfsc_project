@@ -58,7 +58,7 @@ class Goal(CommonModel):
    # short goal description
     @property
     def short_description(self):
-        return self.description[:24] + "..."
+        return self.description[:110] + "..."
 
     class Meta:
         ordering = ['id']
@@ -79,7 +79,7 @@ class Rec(CommonModel):
    # short rec description
     @property
     def short_description(self):
-        return self.description[:24] + "..."
+        return self.description[:70] + "..."
 
     class Meta:
         ordering = ['id']
@@ -108,7 +108,8 @@ class Action(CommonModel):
 
     def __str__(self):
         #return self.description
-        return self.rec.goal.sector.slug + " " + str(self.rec.goal.goal_num) + "." + str(self.rec.rec_num) + "." + str(self.action_num)
+        return self.rec.goal.sector.slug + " " + str(self.rec.goal.goal_num) + \
+        "." + str(self.rec.rec_num) + "." + str(self.action_num)
 
 
 class Tag(models.Model):

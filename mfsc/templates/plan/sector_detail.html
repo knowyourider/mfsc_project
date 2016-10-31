@@ -3,23 +3,50 @@
 
 {% block title %}MFSC Plan - {{ object.title }}{% endblock %}
 
-{% block breadcrumbs %}
-<a href="/plan/">Plan</a>
-{% endblock breadcrumbs %}
+{% block title_area %}
+  <div class="sector-icon-header">
+    <img src="{% static 'plan/icons/' %}sector-icon-{{ object.slug }}.png">
+    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a></h4>
+    <h1>{{ object.title }}</h1>
+  </div>
+{% endblock title_area %}
 
 {% block content_area %}
-  <h1>{{ object.title }} </h1>
+ 
+    <div class="row">
 
-  {{ object.body_text|safe }}
+      <div class="narrow-column">
 
-  <h4>Goals:</h4>
-  <ul>
-  {% for goal in object.goal_list %}
-    <li>
-      <a href="{% url 'plan:goal_detail' goal.id %}">
-      {{ goal.goal_num }} </a>: {{ goal.description|safe }}
-    </li>
-  {% endfor %}
-  </ul>  
+        <h2 class="bar green">Goals</h2>
+
+        <ol class="goals-list"> <!-- ul ? -->
+        {% for goal in object.goal_list %}
+          <li>{{ goal.goal_num }}
+            <a href="{% url 'plan:goal_detail' goal.id %}">
+             {{ goal.description|safe }}</a>
+          </li>
+        {% endfor %}
+        </ol>  
+
+      </div><!--/narrow-column-->
+
+      <div class="wide-column">
+
+        <div class="pic-caption">
+          <img src="{% static 'plan/fullpics/' %}sector-{{ object.slug }}.jpg">
+          <p>[ no field in db for this. Is it a caption?] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+        </div>
+
+        <h2 class="pullquote green-head">[no field for this sector heading.] Farmland is the foundational infrastructure for the State's agricultural industry.</h2>
+
+        {{ object.body_text|safe }}
+
+
+      </div><!--/wide-column-->
+      
+    </div><!--/row-->
 
 {% endblock content_area %}

@@ -3,56 +3,87 @@
 
 {% block title %}MFSC Plan - Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}{% endblock %}
 
-{% block breadcrumbs %}
-	<a href="/plan/">Plan</a> |
-	<a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">{{ object.rec.goal.sector.title }}</a> |
-	<a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goal {{ object.rec.goal.goal_num }}:</a> 
-			{{ object.rec.goal.short_description }} |
-	<a href="{% url 'plan:rec_detail' object.rec.id %}">Recommendation 
-		{{ object.rec.rec_num }}:</a> {{ object.rec.short_description }} 
-{% endblock breadcrumbs %}
+{% block title_area %}
+  <div class="sector-icon-header">
+    <img src="{% static 'plan/icons/' %}sector-icon-{{ object.rec.goal.sector.slug }}.png">
+    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; 
+    <a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">Sector &rarr; 
+    <a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goals &amp; Recommendations</a>
+    </h4>
+    <h1>{{ object.rec.goal.sector.title }}</h1>
+  </div>
+{% endblock title_area %}
 
 {% block content_area %}
-  <h1>Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }} </h1>
-  <h4>{{ object.description }} </h4>
 
-	<h3>Meta Info:</h3>
-  <h4>Background</h4>
-  {{ object.background|safe }}
+<div class="row">
 
-  <h4>Progress</h4>
-  {{ object.progress|safe }}
+  <div class="wide-column">
 
-  <h4>Metrics</h4>
-  {{ object.metrics|safe }}
+    <h4 class="green bar">Goal {{ object.rec.goal.goal_num }}: 
+    <span class="u-and-lc">{{ object.rec.goal.short_description }}</span></h4>
 
-  <h4>Organizations</h4>
-  <ul>
-	  {% for organization in object.organizations.all %}
-	    <li>{{ organization.name }}</li>
-	  {% endfor %}
-  </ul>
-  <h3>Areas of Interest (Tags)</h3>
-  <ul>
-    {% for tag in object.tags.all %}
-      <li>{{ tag.slug }}</li>
-    {% endfor %}
-  </ul>
+    <h4 class="red bar">Recommendation {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}: 
+    <span class="u-and-lc">{{ object.rec.short_description }}</span></h4>
 
-  <h4>Related</h4>
-    {% for action in object.actions.all %}
-      <a href="{% url 'plan:action_detail' action.id %}">{{ action }}</a>{% if not forloop.last %}, {% endif %}
-    {% endfor %}
+    <h2 class="blue bar">Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}</h2>
+    <p>{{ object.description }}</p>
 
-  <h4>Term: {{ object.get_term_display }}</h4>
+    <div class="row">
+      <div class="sub-column">
+      {% if object.background %}
+        <h2 class="blue-head">Background</h2>
+        {{ object.background|safe }}
+      {% endif %}
 
-	<h3>Legacy notes:</h3>
-	<dl>
-	  <dt>Related:</dt>
-	  <dd>{{ object.related }}</dd>
-	  <dt>Responsible:</dt> <dd>{{ object.responsible }}</dd>
-	  <dt>Stakeholder:</dt>
-	  <dd>{{ object.relatd }}</dd>
-	</dl>
+      {% if object.progress %}
+        <h2 class="blue-head">Progress</h2>
+        {{ object.progress|safe }}
+      {% endif %}
+
+      {% if object.metrics %}
+        <h2 class="blue-head">Metrics</h2>
+        {{ object.metrics|safe }}
+      {% endif %}
+
+      {% if object.organizations.all %}
+        <h2 class="blue-head">Organizations</h2>
+        <ul>
+          {% for organization in object.organizations.all %}
+            <li>{{ organization.name }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      </div><!--/sub-column-->
+
+      <div class="sub-column">
+      {% if object.actions.all %}
+        <h2 class="blue-head">Related Actions</h2>
+        <ul class="related-actions-list">
+        {% for action in object.actions.all %}
+          <li><a href="{% url 'plan:action_detail' action.id %}">{{ action }}</a></li>
+        {% endfor %}
+        </ul>                       
+      {% endif %}
+
+      {% if object.tags.all %}
+        <h2 class="blue-head">Tags</h2>
+        <ul class="tags-list">
+        {% for tag in object.tags.all %}
+          <li>{{ tag.title }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      </div><!--/sub-column-->
+
+    </div><!--/row-->
+
+  </div><!--/wide-column-->
+
+
+</div><!--/row-->
+
+
 
 {% endblock content_area %}
