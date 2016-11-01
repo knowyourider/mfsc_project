@@ -19,6 +19,15 @@ dl {
 }
 
 // My Lists
+.project-list {
+  list-style-type: disc;
+  margin-left: $base-spacing;
+
+  li {
+    margin-bottom: $base-spacing;
+  }
+}
+
 .tags-list, .related-actions-list {
   padding-bottom: $base-spacing;
 }

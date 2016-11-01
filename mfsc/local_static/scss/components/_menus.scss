@@ -125,3 +125,16 @@ ol.goals-list:first-child {
     }
   }
 }
+
+.project-menu {
+  //font-size: $base-font-size;
+
+  li {
+    margin-bottom: $base-spacing;
+
+    a {
+      font-weight: bold;
+      display: block;
+    }
+  }
+}

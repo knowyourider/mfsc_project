@@ -120,6 +120,12 @@ dl {
   dl dd {
     margin: 0; }
 
+.project-list {
+  list-style-type: disc;
+  margin-left: 1.5em; }
+  .project-list li {
+    margin-bottom: 1.5em; }
+
 .tags-list, .related-actions-list {
   padding-bottom: 1.5em; }
 
@@ -169,7 +175,7 @@ h6 {
   line-height: 1.2;
   margin: 0; }
 
-p {
+p, ul {
   font-size: 1.15em;
   margin: 0 0 1.5em 0; }
 

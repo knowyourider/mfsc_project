@@ -310,6 +310,12 @@ dl {
   dl dd {
     margin: 0; }
 
+.project-list {
+  list-style-type: disc;
+  margin-left: 1.5em; }
+  .project-list li {
+    margin-bottom: 1.5em; }
+
 .tags-list, .related-actions-list {
   padding-bottom: 1.5em; }
 
@@ -359,7 +365,7 @@ h6 {
   line-height: 1.2;
   margin: 0; }
 
-p {
+p, ul {
   font-size: 1.15em;
   margin: 0 0 1.5em 0; }
 
@@ -479,6 +485,8 @@ body {
     display: table; }
   .top-nav ul.top-nav-menu {
     color: #b6ca73;
+    font-size: 1em;
+    margin-bottom: 0;
     padding: 0.75em; }
     .top-nav ul.top-nav-menu li {
       border-right: 1px solid #b6ca73;
@@ -683,6 +691,12 @@ ol.goals-list:first-child {
     margin-right: 0.75em;
     max-width: 100px;
     max-height: 100px; }
+
+.project-menu li {
+  margin-bottom: 1.5em; }
+  .project-menu li a {
+    font-weight: bold;
+    display: block; }
 
 .news {
   margin-bottom: 3em; }
