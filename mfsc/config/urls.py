@@ -20,7 +20,8 @@ from django.contrib import admin
 urlpatterns = [
 
     url(r'^$', TemplateView.as_view(template_name="index.html")),
-    url(r'^projects/', include('projects.urls')),
+    url(r'^stories/', include('stories.urls', namespace='stories')),
     url(r'^plan/', include('plan.urls', namespace='plan')),
+    url(r'^projects/', include('projects.urls', namespace='projects')),
     url(r'^admin/', admin.site.urls),
 ]

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Stories{% endblock %}
+
+{% block title_area %}
+      <h1>Stories</h1>
+      <h2 class="pullquote">The people who make up our food systems.</h2>
+{% endblock title_area %}
+
+{% block content_area %}
+
+    <div class="narrow-column">
+
+      <h2 class="bar green">About Stories</h2>
+      <p>[no database field for this yet] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    </div><!--/narrow-column-->
+
+    <div class="wide-column">
+
+      <ul class="story-menu"> 
+			  {% for object in object_list %}
+          <li>
+            <a href="{% url 'stories:story_detail' object.slug %}">
+              <img src="{% static 'stories/menupics/' %}{{ object.slug }}.jpg">{{ object.title|safe }}</a>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    </div><!--/wide-column-->
+
+{% endblock content_area %}

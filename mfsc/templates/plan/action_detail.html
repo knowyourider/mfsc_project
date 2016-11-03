@@ -30,57 +30,73 @@
     <p>{{ object.description }}</p>
 
     <div class="row">
+
       <div class="sub-column">
-      {% if object.background %}
-        <h2 class="blue-head">Background</h2>
-        {{ object.background|safe }}
-      {% endif %}
+        {% if object.background %}
+          <h2 class="blue-head">Background</h2>
+          {{ object.background|safe }}
+        {% endif %}
 
-      {% if object.progress %}
-        <h2 class="blue-head">Progress</h2>
-        {{ object.progress|safe }}
-      {% endif %}
+        {% if object.progress %}
+          <h2 class="blue-head">Progress</h2>
+          {{ object.progress|safe }}
+        {% endif %}
 
-      {% if object.metrics %}
-        <h2 class="blue-head">Metrics</h2>
-        {{ object.metrics|safe }}
-      {% endif %}
+        {% if object.metrics %}
+          <h2 class="blue-head">Metrics</h2>
+          {{ object.metrics|safe }}
+        {% endif %}
 
-      {% if object.organizations.all %}
-        <h2 class="blue-head">Organizations</h2>
-        <ul>
-          {% for organization in object.organizations.all %}
-            <li>{{ organization.name }}</li>
+        {% if object.organizations.all %}
+          <h2 class="blue-head">Organizations</h2>
+          <ul>
+            {% for organization in object.organizations.all %}
+              <li>{{ organization.name }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        </div><!--/sub-column-->
+
+        <div class="sub-column">
+        {% if object.actions.all %}
+          <h2 class="blue-head">Related Actions</h2>
+          <ul class="related-actions-list">
+          {% for action in object.actions.all %}
+            <li><a href="{% url 'plan:action_detail' action.id %}">{{ action }}</a></li>
           {% endfor %}
-        </ul>
-      {% endif %}
-      </div><!--/sub-column-->
+          </ul>                       
+        {% endif %}
 
-      <div class="sub-column">
-      {% if object.actions.all %}
-        <h2 class="blue-head">Related Actions</h2>
-        <ul class="related-actions-list">
-        {% for action in object.actions.all %}
-          <li><a href="{% url 'plan:action_detail' action.id %}">{{ action }}</a></li>
-        {% endfor %}
-        </ul>                       
-      {% endif %}
-
-      {% if object.tags.all %}
-        <h2 class="blue-head">Tags</h2>
-        <ul class="tags-list">
-        {% for tag in object.tags.all %}
-          <li>{{ tag.title }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
+        {% if object.tags.all %}
+          <h2 class="blue-head">Tags</h2>
+          <ul class="tags-list">
+          {% for tag in object.tags.all %}
+            <li>{{ tag.title }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
 
       </div><!--/sub-column-->
-
     </div><!--/row-->
-
   </div><!--/wide-column-->
 
+  <div class="narrow-column">
+
+    {% if object.story_set.all %}
+      {% for story in object.story_set.all %}
+        <div class="story-sidebar blue">
+          <h3>Story</h3>
+          <h3 class="pullquote">{{ story.title|safe }}</h3>
+
+          <img src="images/grain-silo.jpg">
+          
+          {{ story.body_text|safe }}
+
+          <p>Related Actions: <a href="">Land 1.4</a>, <a href="">Land 1.5</a>, <a href="">Farming 3.1.2</a></p>
+        </div> <!-- /sidebar -->
+      {% endfor %}
+    {% endif %}
+  </div><!--/narrow-column-->
 
 </div><!--/row-->
 

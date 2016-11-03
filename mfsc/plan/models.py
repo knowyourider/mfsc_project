@@ -103,6 +103,11 @@ class Action(CommonModel):
     actions = models.ManyToManyField('plan.Action', 
         verbose_name='Other actions related to this action', blank=True)
 
+   # short goal description
+    @property
+    def short_description(self):
+        return self.description[:50] + "..."
+
     class Meta:
         ordering = ['id']
 

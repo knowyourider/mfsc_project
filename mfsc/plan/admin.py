@@ -42,10 +42,12 @@ class RecAdmin(admin.ModelAdmin):
         return obj.description[:40]
 
     def sector_goal(self, obj):
-        return obj.goal.sector.slug + ": " + str(obj.goal.goal_num) + ". " + obj.goal.description[:30]
+        return obj.goal.sector.slug + ": " + str(obj.goal.goal_num) + ". " + \
+        obj.goal.description[:30]
 
     def full_rec_num(self, obj):
-        return str(obj.goal.sector.id) + "." + str(obj.goal.goal_num) + "." + str(obj.rec_num)
+        return str(obj.goal.sector.id) + "." + str(obj.goal.goal_num) + "." + \
+        str(obj.rec_num)
 
     def sector(self, obj):
         return obj.goal.sector
@@ -71,10 +73,12 @@ class ActionAdmin(admin.ModelAdmin):
         return obj.description[:40]
 
     def goal_rec(self, obj):
-        return str(obj.rec.goal.goal_num) + ". " + obj.rec.goal.description[:20] + " - " + str(obj.rec.rec_num) + ". " + obj.rec.description[:20]
+        return str(obj.rec.goal.goal_num) + ". " + obj.rec.goal.description[:20] + \
+        " - " + str(obj.rec.rec_num) + ". " + obj.rec.description[:20]
 
     def act_num(self, obj):
-        return str(obj.rec.goal.sector.slug) + " " + str(obj.rec.goal.goal_num) + "." + str(obj.rec.rec_num) + "." + str(obj.action_num)
+        return str(obj.rec.goal.sector.slug) + " " + str(obj.rec.goal.goal_num) + \
+        "." + str(obj.rec.rec_num) + "." + str(obj.action_num)
 
     def sector(self, obj):
         return obj.rec.goal.sector
