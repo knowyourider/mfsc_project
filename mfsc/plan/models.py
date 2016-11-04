@@ -98,8 +98,8 @@ class Action(CommonModel):
     metrics = models.TextField(blank=True, default='')
     tags = models.ManyToManyField('plan.Tag', 
         verbose_name='Tags for this action', blank=True)
-    #organizations = models.ManyToManyField('plan.Organization', 
-    #    verbose_name='Organizations for this action', blank=True)
+    organizations = models.ManyToManyField('resources.Organization', 
+        verbose_name='Organizations related to this action', blank=True)
     actions = models.ManyToManyField('plan.Action', 
         verbose_name='Other actions related to this action', blank=True)
 

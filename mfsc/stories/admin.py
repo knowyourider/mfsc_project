@@ -9,7 +9,7 @@ class StoryAdmin(admin.ModelAdmin):
     ]
     #readonly_fields = ('slug', 'title', 'body_text')
     filter_horizontal = ['actions']    
-    list_display = ('title',  'slug')
+    list_display = ('title',  'slug', 'credit')
     #list_filter     = ['rec__goal__sector'] 
     search_fields = ['title']
 

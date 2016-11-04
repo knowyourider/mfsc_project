@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Organizations{% endblock %}
+
+{% block title_area %}
+      <h1>Search Results</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+    <div class="narrow-column">
+
+      <h2 class="bar green">Organizations</h2>
+      <p>[Guessing that the organization list might show up in the Plan search results page? Don]</p>
+
+    </div><!--/narrow-column-->
+
+    <div class="wide-column">
+
+      <ul class="story-menu"> 
+			  {% for object in object_list %}
+          <li>
+            <a href="#">{{ object.name|safe }}</a>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    </div><!--/wide-column-->
+
+{% endblock content_area %}

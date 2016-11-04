@@ -64,7 +64,7 @@ class ActionAdmin(admin.ModelAdmin):
         ('Notes',   {'fields': ['related', 'responsible', 'stakeholder']}),
     ]
     readonly_fields = ('rec', 'action_num', 'description')
-    filter_horizontal = ['tags', 'actions']    
+    filter_horizontal = ['organizations', 'tags', 'actions']    
     list_display = ('truncated_description',  'act_num', 'goal_rec')
     list_filter     = ['rec__goal__sector'] 
     search_fields = ['description']
