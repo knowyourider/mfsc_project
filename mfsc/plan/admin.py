@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sector, Goal, Rec, Action, Organization
+from .models import Sector, Goal, Rec, Action
 
 class SectorAdmin(admin.ModelAdmin):
     """docstring for ContentTypeAdmin"""
@@ -64,7 +64,7 @@ class ActionAdmin(admin.ModelAdmin):
         ('Notes',   {'fields': ['related', 'responsible', 'stakeholder']}),
     ]
     readonly_fields = ('rec', 'action_num', 'description')
-    filter_horizontal = ['organizations', 'tags', 'actions']    
+    filter_horizontal = ['tags', 'actions']    
     list_display = ('truncated_description',  'act_num', 'goal_rec')
     list_filter     = ['rec__goal__sector'] 
     search_fields = ['description']
@@ -85,11 +85,4 @@ class ActionAdmin(admin.ModelAdmin):
 
 admin.site.register(Action, ActionAdmin)
 
-
-class OrganizationAdmin(admin.ModelAdmin):
-    """docstring for OrganizationAdmin"""
-    fields = ['slug', 'name', 'link_url', 'town', 'phone']
-    list_display = ('slug', 'name', 'link_url', 'town', 'phone')
-            
-admin.site.register(Organization, OrganizationAdmin)
 

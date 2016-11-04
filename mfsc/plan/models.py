@@ -98,8 +98,8 @@ class Action(CommonModel):
     metrics = models.TextField(blank=True, default='')
     tags = models.ManyToManyField('plan.Tag', 
         verbose_name='Tags for this action', blank=True)
-    organizations = models.ManyToManyField('plan.Organization', 
-        verbose_name='Organizations for this action', blank=True)
+    #organizations = models.ManyToManyField('plan.Organization', 
+    #    verbose_name='Organizations for this action', blank=True)
     actions = models.ManyToManyField('plan.Action', 
         verbose_name='Other actions related to this action', blank=True)
 
@@ -132,15 +132,4 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.title
-
-class Organization(models.Model):
-    """docstring for Organization"""
-    slug = models.SlugField('Organization short name', max_length=32, unique=True)
-    name = models.CharField(max_length=128)
-    link_url = models.CharField(max_length=128, blank=True, default='')
-    town = models.CharField(max_length=64, blank=True, default='')
-    phone = models.CharField(max_length=24, blank=True, default='')
-
-    def __str__(self):
-        return self.name
-        
+       
