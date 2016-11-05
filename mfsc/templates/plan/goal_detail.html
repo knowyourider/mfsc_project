@@ -6,7 +6,7 @@
 {% block title_area %}
   <div class="sector-icon-header">
     <img src="{% static 'plan/icons/' %}sector-icon-{{ object.sector.slug }}.png">
-    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; <a href="{% url 'plan:sector_detail' object.sector.slug %}">Sector</h4>
+    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; <a href="{% url 'plan:sector_detail' object.sector.slug %}">Sector</a></h4>
     <h1>{{ object.sector.title }}</h1>
   </div>
 {% endblock title_area %}
@@ -19,24 +19,17 @@
 
   <div class="narrow-column">
 
-    <h2 class="pullquote green-head">{{ object.description }}</h2>
+    <h2 class="pullquote green-head">{{ object.description|safe }}</h2>
 
   </div><!--/narrow-column-->
 
   <div class="wide-column">
 
-    {{ object.body_text|safe }}
+    {{ object.first_para|safe }}
 
     <details>
       <summary class="read-more">more....</summary>
-    
-      <p>[no field field for this yet] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-      <ol class="footnotes">
-        <li>[footnotes marked up in wysiwyg?] Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,</li>
-
-        <li>McKiernanan, Kathleen. (2013). Farmland reassessment spurs citizens’ petition. The Recorder, 10/25/13. Accessed November 2015 from http://goo.gl/MJV2hS</li>
-      </ol>
+        {{ object.remaining_paras|safe }}
     </details>
 
   </div><!--/wide-column-->

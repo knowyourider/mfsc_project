@@ -42,11 +42,11 @@ var froalaSlim = {
 var froalaIntro = {
 	heightMin: 200,
 	pastePlain: true,
-	toolbarButtons: ['italic', 'quote',
+	toolbarButtons: ['italic', 'quote', 'formatOL', 'formatUL', 
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	toolbarButtonsMD: ['italic', 'quote',
+	toolbarButtonsMD: ['italic', 'quote', 'formatOL', 'formatUL', 
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	toolbarButtonsSM: ['italic', 'quote',
+	toolbarButtonsSM: ['italic', 'quote', 'formatOL', 'formatUL', 
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	width: '800'
 }

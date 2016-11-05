@@ -17,7 +17,7 @@ class GoalAdmin(admin.ModelAdmin):
             'body_text', 'term']}),
         ('Notes',   {'fields': ['responsible', 'stakeholder']}),
     ]
-    readonly_fields = ('sector', 'goal_num', 'description', 'body_text')
+    readonly_fields = ('sector', 'goal_num', 'description')
     list_display = ('description',  'goal_num', 'id', 'sector')
     list_filter     = ['sector'] # , 'edit_date'
     search_fields = ['description']

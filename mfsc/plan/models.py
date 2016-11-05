@@ -60,6 +60,22 @@ class Goal(CommonModel):
     def short_description(self):
         return self.description[:110] + "..."
 
+   # first paragraph of body text
+    @property
+    def first_para(self):
+        # find first paragraph end
+        i = self.body_text.find('</p>')
+        # return the substring from begining through that </p>
+        return self.body_text[0:i+4]
+
+   # remaining paragraphs of body text
+    @property
+    def remaining_paras(self):
+        # find first paragraph end
+        i = self.body_text.find('</p>')
+        # return the substring from after that to end
+        return self.body_text[i+4:]
+
     class Meta:
         ordering = ['id']
 
