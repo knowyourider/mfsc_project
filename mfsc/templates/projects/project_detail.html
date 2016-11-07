@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Projects - {{ object.title }}{% endblock %}
+
+{% block title_area %}
+  <h4 class="crumbs"><a href="{% url 'stories:story_list' %}">Projects</a></h4>
+  <h1>{{ object.title }}</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+  <div class="narrow-column">
+      <p>&nbsp;</p>
+  </div><!--/narrow-column-->
+
+  <div class="wide-column">
+
+    {{ object.body_text|safe }}
+
+    <h3 class="bar red">Key Action Item</h3>
+    
+    <p>action: {{ object.key_action.description|safe }} </p>
+
+    <h3 class="bar blue">Other Relevant Action Items</h3>
+
+    {% for action in object.actions.all %}
+      <p>
+        <a href="{% url 'plan:action_detail' action.id %}">
+          {{ action.rec.goal.sector.title }} {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a> 
+          {{ action.description|safe }}
+        
+      </p>
+    {% endfor %} {# end action list #}
+
+
+  </div><!--/wide-column-->
+
+{% endblock content_area %}

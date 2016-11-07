@@ -1,5 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
+from .models import Project
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the projects index.")
+class ProjectListView(ListView):
+    model = Project
+    # context_object_name = 'object_list'
+    # template_name = 'stories/project_list.html' 
+
+class ProjectDetailView(DetailView):
+    model = Project
+    # context_object_name = 'object'
+    # template_name = 'stories/project_detail.html'
+
