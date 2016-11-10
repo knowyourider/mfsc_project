@@ -12,7 +12,7 @@ class Story(models.Model):
         verbose_name='Actions related to this story', blank=True)
 
     class Meta:
-        ordering = ['slug']
+        ordering = ['id']
 
     def __str__(self):
         return self.title

@@ -8,5 +8,8 @@ class Organization(models.Model):
     town = models.CharField(max_length=64, blank=True, default='')
     phone = models.CharField(max_length=24, blank=True, default='')
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return self.name

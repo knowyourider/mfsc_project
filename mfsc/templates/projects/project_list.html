@@ -17,9 +17,9 @@
 
     </div><!--/narrow-column-->
 
-    <div class="project-menu">
+    <div class="wide-column">
 
-      <ul class="story-menu"> 
+      <ul class="project-menu"> 
 			  {% for object in object_list %}
           <li>
             <a href="{% url 'projects:project_detail' object.slug %}">{{ object.title|safe }}</a>

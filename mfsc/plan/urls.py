@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^goal/rec/(?P<pk>\d+)/$', views.RecDetailView.as_view(), name='rec_detail'),
     url(r'^goal/(?P<pk>\d+)/$', views.GoalDetailView.as_view(), name='goal_detail'),
     url(r'^tag/$', views.TagListView.as_view(), name='tag_list'),
+    url(r'^search/$', views.SearchListView.as_view(), name='search_list'),
     url(r'^tag/(?P<pk>\d+)/$', views.TagDetailView.as_view(), name='tag_detail'),
     url(r'^table/(?P<slug>\S+)/$', views.SectorTableView.as_view(), name='sector_table'),
     url(r'^(?P<slug>\S+)/$', views.SectorDetailView.as_view(), name='sector_detail'),

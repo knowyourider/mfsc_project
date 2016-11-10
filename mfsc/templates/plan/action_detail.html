@@ -20,11 +20,11 @@
 
   <div class="wide-column">
 
-    <h4 class="green bar">Goal {{ object.rec.goal.goal_num }}: 
-    <span class="u-and-lc">{{ object.rec.goal.short_description }}</span></h4>
+    <h4 class="green bar"><a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goal {{ object.rec.goal.goal_num }}: 
+    <span class="u-and-lc">{{ object.rec.goal.short_description }}</span></a></h4>
 
-    <h4 class="red bar">Recommendation {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}: 
-    <span class="u-and-lc">{{ object.rec.short_description }}</span></h4>
+    <h4 class="red bar"><a href="{% url 'plan:goal_detail' object.rec.goal.id %}#recommendations">Recommendation {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}: 
+        <span class="u-and-lc">{{ object.rec.short_description }}</span></a></h4>
 
     <h2 class="blue bar">Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.action_num }}</h2>
     <p>{{ object.description }}</p>
