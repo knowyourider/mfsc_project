@@ -39,7 +39,7 @@
           <li><a href="{% url 'projects:project_list' %}">Projects</a></li>
           <li><a href="{% url 'stories:story_list' %}">Stories</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="/resources/">Resources</a></li>
+          <li><a href="{% url 'resources:resource_list' %}">Resources</a></li>
           <li><a href="#">News</a></li>
         </ul>
       </nav>
@@ -63,7 +63,7 @@
     {% endblock content_area %}
     
   {% endblock full_page %}
-  </div>
+  </div> <!-- /page-wrapper -->
 
 
   <footer>

@@ -6,12 +6,29 @@
 
 {% block full_page %}
 
-  <h2>MFSC</h2>
+<div class="wide-column">
 
-  <p>Home</p>
-  <p>page</p>
-  <p>goes</p>
-  <p>here</p>
+	<img src="{% static 'images/apples.jpg' %}">
+	
+	<div class="whats-new">
+		<h2 class="bar green">What's New</h2>
+		<img src="{% static 'images/fishing.jpg' %}">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div><!--/whats-new-->
 
+</div><!--/wide-column-->
+
+<div class="narrow-column">
+
+	<h2 class="bar red">News</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+	<h2 class="bar blue"><a href="{% url 'resources:resource_list' %}">Resources</a></h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+	<h2 class="bar green">About Us</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+</div><!--/narrow-column-->
 
 {% endblock full_page %}
