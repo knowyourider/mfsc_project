@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Story
 
 class StoryAdmin(admin.ModelAdmin):
-    change_form_template = 'stories/admin/story_change_form.html'
+    change_form_template = 'stories/admin/body_text_change_form.html'
     fieldsets = [
         (None,  {'fields': ['slug', 'title', 'credit', 'body_text', 'actions']}),
         ('Notes',   {'fields': ['related', 'second_image']}),

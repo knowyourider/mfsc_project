@@ -4,9 +4,9 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name="resources/index.html"), 
-    	name='resource_list'),
+    url(r'^$',  views.ResourceListView.as_view(), name='resource_list'),
     url(r'^organization/$', views.OrganizationListView.as_view(), name='organization_list'),
+    url(r'^resourcepage/(?P<slug>\S+)/$', views.ResourcePageDetailView.as_view(), 
+    	name='resourcepage_detail'),
     #url(r'^(?P<slug>\S+)/$', views.StoryDetailView.as_view(), name='story_detail'),
-    #url(r'^table/(?P<slug>\S+)/$', views.StoryView.as_view(), name='sector_table'),
 ]

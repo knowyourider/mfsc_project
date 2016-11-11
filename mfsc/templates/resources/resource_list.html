@@ -24,9 +24,9 @@
       <ul class="project-list">
         <li><a href="{% url 'resources:organization_list' %}">Massachusetts organizations that support and advocate for the food system</a></li>
 
-        <li><a href="">State agencies that regulate and support the food system</a></li>
-
-        <li><a href="">Committees of the Legislature that consider laws related to the food system</a></li>
+        {% for resourcepage in object_list %}  
+          <li><a href="{% url 'resources:resourcepage_detail' resourcepage.slug %}">{{ resourcepage.title|safe}}</a></li>
+        {% endfor %}      
 
         <li><a href="http://www.masslegalservices.org/content/legislative-process-massachusetts-0" target=_blank>How an idea becomes a law in Massachusetts</a></li>
       </ul>

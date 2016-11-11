@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC Resources - {{ object.title }}{% endblock %}
+
+{% block title_area %}
+  <h4 class="crumbs"><a href="{% url 'resources:resource_list' %}">Resources</a></h4>
+  <h1>{{ object.title }}</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+  <div class="narrow-column">
+      <p>&nbsp;</p>
+  </div><!--/narrow-column-->
+
+  <div class="wide-column">
+
+    {{ object.body_text|safe }}
+
+
+  </div><!--/wide-column-->
+
+{% endblock content_area %}
