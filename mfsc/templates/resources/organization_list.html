@@ -13,7 +13,6 @@
     <div class="narrow-column">
 
       <h2 class="bar green">Organizations</h2>
-      <p>[result list]</p>
 
     </div><!--/narrow-column-->
 
@@ -21,9 +20,10 @@
 
       <ul class="story-menu"> 
 			  {% for object in object_list %}
-          <li>
-            {{ object.name|safe }} - {{ object.town }} - {{ object.phone }} - {{ object.link_url }}
-            </a>
+          <li><a href="{{ object.link_url }}">{{ object.name|safe }}</a> - 
+          {{ object.town }} - {{ object.phone }}<br/>
+          {{ object.description|safe }}
+            
           </li>
         {% endfor %}
       </ul>

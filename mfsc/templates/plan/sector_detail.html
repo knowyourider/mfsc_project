@@ -34,16 +34,11 @@
 
         <div class="pic-caption">
           <img src="{% static 'plan/fullpics/' %}sector-{{ object.slug }}.jpg">
-          <p>[ no field in db for this. Is it a caption?] Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.</p>
+          <p>{{ object.credit|safe }} </p>
         </div>
 
-        <h2 class="pullquote green-head">[no field for this sector heading.] Farmland is the foundational infrastructure for the State's agricultural industry.</h2>
-
-        {{ object.body_text|safe }}
-
+        <h2 class="pullquote green-head">{{ object.first_sentence|safe }}</h2>
+        {{ object.remaining_text|safe }}
 
       </div><!--/wide-column-->
       

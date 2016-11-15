@@ -3,7 +3,8 @@ from .models import Organization, ResourcePage
 
 class OrganizationAdmin(admin.ModelAdmin):
     """docstring for OrganizationAdmin"""
-    fields = ['slug', 'name', 'link_url', 'town', 'phone']
+    #change_form_template = 'resources/admin/blurb_change_form.html'
+    fields = ['slug', 'name', 'link_url', 'town', 'phone', 'description']
     list_display = ('slug', 'name', 'link_url', 'town', 'phone')
             
 admin.site.register(Organization, OrganizationAdmin)

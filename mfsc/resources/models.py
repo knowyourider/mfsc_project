@@ -7,6 +7,7 @@ class Organization(models.Model):
     link_url = models.CharField(max_length=128, blank=True, default='')
     town = models.CharField(max_length=64, blank=True, default='')
     phone = models.CharField(max_length=24, blank=True, default='')
+    description = models.TextField(blank=True, default='')
 
     class Meta:
         ordering = ['id']

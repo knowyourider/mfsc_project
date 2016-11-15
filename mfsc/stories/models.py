@@ -8,11 +8,12 @@ class Story(models.Model):
     credit = models.CharField(max_length=64, blank=True, default='')
     body_text = models.TextField(blank=True, default='')
     related = models.CharField(max_length=128, blank=True, default='')
+    ordinal = models.IntegerField('Order in Menu', default=99)
     actions = models.ManyToManyField('plan.Action', 
         verbose_name='Actions related to this story', blank=True)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['ordinal', 'id']
 
     def __str__(self):
         return self.title

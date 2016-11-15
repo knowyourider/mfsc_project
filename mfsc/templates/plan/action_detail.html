@@ -71,7 +71,7 @@
           <h2 class="blue-head">Tags</h2>
           <ul class="tags-list">
           {% for tag in object.tags.all %}
-            <li>{{ tag.title }}</li>
+            <li><a href="{% url 'plan:search_list' %}?q=&tags={{ tag.slug }}">{{ tag.title }}</a></li>
           {% endfor %}
           </ul>
         {% endif %}

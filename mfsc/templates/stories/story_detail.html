@@ -17,24 +17,24 @@
       <p>Image courtesy of {{ object.credit|safe }} </p>
 
     </div>
-    <h4 class="crumbs">Related Actions</h4>
-    <ul>
-    {% for action in object.actions.all %}
-      <li>
-        <a href="{% url 'plan:action_detail' action.id %}">
-          {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }} 
-          {{ action.short_description|safe }}
-        </a>
-      </li>
-    {% endfor %} {# end action list #}
-    </ul>
-
 
   </div><!--/narrow-column-->
 
   <div class="wide-column">
 
     <p>{{ object.body_text|safe }}</p>
+
+    <h4 class="crumbs">Related Actions</h4>
+    <ul>
+    {% for action in object.actions.all %}
+      <li>
+        <a href="{% url 'plan:action_detail' action.id %}">
+          {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }} 
+          {{ action.medium_description|safe }}
+        </a>
+      </li>
+    {% endfor %} {# end action list #}
+    </ul>
 
   </div><!--/wide-column-->
 

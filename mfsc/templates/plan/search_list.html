@@ -25,18 +25,18 @@
     <input type="submit" value="Go" />
     <p id="clear"><a href="#">clear search</a></p>
 
-    <h2 class="content-wrapper--head">Narrow Your
-      {% if form.q.value %}
-        Search
-      {% else %}
-        View
-      {% endif %}
+    <h2 class="content-wrapper--head">Narrow Your View
+      {# if form.q.value #}
+        <!-- Search -->
+      {# else #}
+        <!-- View -->
+      {# endif #}
     </h2>
     <nav>
       <h3>By Sector</h3>
       {{ form.secs }}
 
-      <h3>By Area of Interest</h3>
+      <h3>By Tags</h3>
       {{ form.tags }}
 
       <h3>By Organizations</h3>
@@ -49,12 +49,12 @@
     <div class="wide-column">
 
       <h2>
-        {{ result_count }} 
-        {% if form.q.value %}
-          Actions found matching your search
-        {% else %}
-          Actions in this view
-        {% endif %}
+        {{ result_count }} Actions in this view
+        {# if form.q.value #}
+          <!-- Actions found matching your search -->
+        {# else #}
+          <!-- Actions in this view -->
+        {# endif #}
       </h2>
 
       <ul class="story-menu"> 

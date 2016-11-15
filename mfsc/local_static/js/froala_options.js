@@ -1,5 +1,17 @@
 // option settings for Froala
 
+var froalaIntro = {
+	heightMin: 200,
+	pastePlain: true,
+	toolbarButtons: ['italic', 'quote', 'formatOL', 'formatUL', 
+		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+	toolbarButtonsMD: ['italic', 'quote', 'formatOL', 'formatUL', 
+		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+	toolbarButtonsSM: ['italic', 'quote', 'formatOL', 'formatUL', 
+		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+	width: '800'
+}
+
 var froalaMeta = {
 	heightMin: 300,
 	linkAlwaysBlank: true,
@@ -35,18 +47,6 @@ var froalaSlim = {
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	toolbarButtonsSM: ['italic', 'superscript',  
 		'paragraphFormat', 'formatOL', 'quote',  
-		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	width: '800'
-}
-
-var froalaIntro = {
-	heightMin: 200,
-	pastePlain: true,
-	toolbarButtons: ['italic', 'quote', 'formatOL', 'formatUL', 
-		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	toolbarButtonsMD: ['italic', 'quote', 'formatOL', 'formatUL', 
-		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	toolbarButtonsSM: ['italic', 'quote', 'formatOL', 'formatUL', 
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	width: '800'
 }

@@ -30,12 +30,31 @@ class Sector(models.Model):
     """docstring for Sector"""
     slug = models.SlugField('Sector short name', max_length=16, unique=True)
     title = models.CharField(max_length=32)
+    credit = models.CharField(max_length=64, blank=True, default='')
     body_text = models.TextField(blank=True, default='')
     
    # list of goals for given sector
     @property
     def goal_list(self):
         return Goal.objects.filter(sector_id=self.id)
+
+   # first ssentence of body text
+    @property
+    def first_sentence(self):
+        # find first sentence end
+        i = self.body_text.find('.')
+        # return the substring from begining through that .
+        # strip leading <p>
+        return self.body_text[3:i+1]
+
+   # remaining body text
+    @property
+    def remaining_text(self):
+        # find first sentence end
+        i = self.body_text.find('.')
+        # return the substring from after that to end
+        # add leading <p> that was striped with 1st sentence
+        return "<p>" + self.body_text[i+1:]
 
     class Meta:
         ordering = ['id']
@@ -119,10 +138,20 @@ class Action(CommonModel):
     actions = models.ManyToManyField('plan.Action', 
         verbose_name='Other actions related to this action', blank=True)
 
-   # short goal description
+   # short action description for colored header bar
     @property
     def short_description(self):
         return self.description[:50] + "..."
+
+   # medium action description for story page. Only truncate the very long ones
+    @property
+    def medium_description(self):
+        cutoff = 355
+        display_string = self.description
+        if len(display_string) > cutoff:
+            return display_string[:cutoff] + "..."
+        else:
+            return display_string
 
     class Meta:
         ordering = ['id']

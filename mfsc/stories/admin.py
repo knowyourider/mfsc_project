@@ -4,12 +4,12 @@ from .models import Story
 class StoryAdmin(admin.ModelAdmin):
     change_form_template = 'stories/admin/body_text_change_form.html'
     fieldsets = [
-        (None,  {'fields': ['slug', 'title', 'credit', 'body_text', 'actions']}),
+        (None,  {'fields': ['slug', 'title', 'credit', 'body_text', 'actions', 'ordinal']}),
         ('Notes',   {'fields': ['related', 'second_image']}),
     ]
     #readonly_fields = ('slug', 'title', 'body_text')
     filter_horizontal = ['actions']    
-    list_display = ('title',  'slug', 'credit')
+    list_display = ('title',  'slug', 'credit', 'ordinal')
     #list_filter     = ['rec__goal__sector'] 
     search_fields = ['title']
 

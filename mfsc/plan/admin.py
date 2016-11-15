@@ -4,9 +4,9 @@ from .models import Sector, Goal, Rec, Action
 class SectorAdmin(admin.ModelAdmin):
     """docstring for ContentTypeAdmin"""
     change_form_template = 'plan/admin/sector_change_form.html'
-    fields = ['slug', 'title', 'body_text']
-    readonly_fields = ('slug', 'title', 'body_text')
-    list_display = ('slug', 'id', 'title')
+    fields = ['slug', 'title', 'credit', 'body_text']
+    readonly_fields = ('slug', 'title')
+    list_display = ('slug', 'id', 'title', 'credit')
             
 admin.site.register(Sector, SectorAdmin)
 
