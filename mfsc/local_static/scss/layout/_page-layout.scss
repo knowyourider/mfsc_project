@@ -47,3 +47,7 @@ body {
 	@include span-columns(4 of 8);
 	@include omega (2);
 }
+
+.shift-right {
+	@include shift(4 of 12);
+}

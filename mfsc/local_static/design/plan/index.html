@@ -46,43 +46,35 @@
       <h2 class="pullquote">Massachusetts Local Food Action Plan</h2>
     </header>
     
-    <div class="narrow-column">
+    <div class="row">
 
-      <h2 class="bar red">About the Plan</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p><a href="#" class="read-more">more...</a></p>
+      <div class="wide-column shift-right">
 
-      <ul>
-        <li><a href="#" class="read-more">Full Plan</a> (17 MB PDF)</li>
-        <li><a href="#" class="read-more">Plan Summary</a> (.9 MB PDF)</li>
-        <li><a href="#" class="read-more">Plan Goal and Recommendations</a> (3 MB PDF)</li>
-      </ul>
+        <h2 class="bar red">About the Plan</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><a href="#" class="read-more">more...</a></p>
 
-    </div><!--/narrow-column-->
+      </div><!--/wide-column-->
+    </div><!--/row-->
 
-    <div class="wide-column">
+    <div class="row">
 
-      <div class="row">
-        <div class="sub-column">
+      <div class="narrow-column">
 
-          <h2 class="bar blue">Search the Plan</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h2 class="bar red">Download/Print</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-        </div><!--/sub-column-->
+        <ul>
+          <li><a href="#" class="read-more">Full Plan</a> (17 MB PDF)</li>
+          <li><a href="#" class="read-more">Plan Summary</a> (.9 MB PDF)</li>
+          <li><a href="#" class="read-more">Plan Goal and Recommendations</a> (3 MB PDF)</li>
+        </ul>
 
-        <div class="sub-column">
+      </div><!--/narrow-column-->
+      
+      <div class="narrow-column">
 
-          <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="" method="GET">
-            <input type="hidden" name="sitesearch" value="" />
-            <label for="search-keywords"><input id="search-keywords" type="search" data-name="keywords" name="q" placeholder="Search" aria-label="Search" value="" required="required"></label>
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </form>
-
-        </div><!--/sub-column-->
-      </div><!--/row-->
-
-      <div class="row">
-        <h2 class="bar green">Browse the Plan</h2>
+        <h2 class="bar green">Browse</h2>
         <ul class="sector-icons-grid"> 
           <li class="grid-item">
             <a href="land/index.html"><img src="images/sector-icon-land.png">Land</a>
@@ -120,8 +112,21 @@
             <a href="metrics/"><img src="images/sector-icon-metrics.png">Metrics</a>
           </li>
         </ul>
-      </div><!--/row-->
-    </div><!--/wide-column-->
+
+      </div><!--/narrow-column-->
+      <div class="narrow-column">
+
+        <h2 class="bar blue">Search</h2>
+        <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="" method="GET">
+          <input type="hidden" name="sitesearch" value="" />
+          <label for="search-keywords"><input id="search-keywords" type="search" data-name="keywords" name="q" placeholder="Search" aria-label="Search" value="" required="required"></label>
+          <button>Quick Search</button> <a href=""> Go to Full Search</a>
+        </form>
+
+      </div><!--/narrow-column-->
+
+   
+    </div><!--/row-->
 
   </section>
 

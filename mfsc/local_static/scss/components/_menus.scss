@@ -1,11 +1,12 @@
+// for sector icons on Plan main menu
 .sector-icons-grid {
   padding-top: $base-spacing;
 
 	li.grid-item {
 		margin-bottom: $base-spacing;
 
-	  @include span-columns(3);
-  	@include omega(4n);
+	  @include span-columns(2 of 4);
+  	@include omega(2n);
 	
 		img {
 			display: block;
@@ -13,6 +14,7 @@
 	}
 }
 
+// for recommendations/actions expanding list menu
 ol.rec-menu {
   width: 100%;
 
@@ -44,7 +46,7 @@ ol.rec-menu {
 
   .expander-content li {
     background-color: white;
-    font-size: $small-font-size;
+    font-size: $smallish-font-size;
     line-height: $base-line-height;
     padding: $small-spacing $large-spacing;
 
@@ -77,10 +79,13 @@ ol.rec-menu {
 ol.expander-content li.action-head {
   background-color: $blue;
   color: white;
+  font-size: $large-font-size;
   letter-spacing: 0.2em;
+  padding: 0 $base-spacing;
   text-transform: uppercase;
 }
 
+// for list of goals with big numbers
 ol.goals-list {
   margin: $small-spacing null null 0;
 }
@@ -110,24 +115,22 @@ ol.goals-list:first-child {
   counter-reset: customlistcounter;
 }
 
-.story-menu {
-  li {
-    
-    margin-bottom: $small-spacing;
+// for story menu
+.story-menu li {
+  
+  margin-bottom: $small-spacing;
 
-    a {
-
-      img {
-        margin-right: $small-spacing;
-        max-width: 100px;
-        max-height: 100px;
-      }      
-    }
-  }
+  a img {
+    border: $base-border;
+    margin-right: $small-spacing;
+    max-width: 100px;
+    max-height: 100px;
+    vertical-align: middle;
+  }      
 }
 
+// for project menu
 .project-menu {
-  //font-size: $base-font-size;
 
   li {
     margin-bottom: $base-spacing;
@@ -136,5 +139,14 @@ ol.goals-list:first-child {
       font-weight: bold;
       display: block;
     }
+  }
+}
+
+// for story page
+.related-actions {
+  margin-top: $small-spacing;
+
+  li {
+    margin-bottom: $small-spacing;
   }
 }
