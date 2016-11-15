@@ -5,7 +5,6 @@
 
 {% block title_area %}
       <h1>Resources</h1>
-      <h2 class="pullquote">The people who make up our food systems.</h2>
 {% endblock title_area %}
 
 {% block content_area %}
@@ -21,7 +20,7 @@
 
       <h3 class="bar blue">Massachusetts organizations and agencies</h3>
 
-      <ul class="project-list">
+      <ul class="resource-list">
         <li><a href="{% url 'resources:organization_list' %}">Massachusetts organizations that support and advocate for the food system</a></li>
 
         {% for resourcepage in object_list %}  
@@ -33,7 +32,7 @@
 
       <h3 class="bar green">Guides to food system advocacy</h3>
 
-      <ul class="project-list">
+      <ul class="resource-list">
         <li><a href="http://www.clf.org/wp-content/uploads/2014/03/1.New_England_Food_Policy_FULL.pdf" target=_blank>New England Food Policy: Building a Sustainable Food System</a></li>
 
         <li><a href="http://www.mass.gov/eea/docs/agr/boards-commissions/1989-1993-ma-framework-for-food-and-farm-policy-.pdf" target=_blank>The Massachusetts Farm and Food System: A Five-Year Policy Framework (1988)</a></li>
@@ -45,7 +44,7 @@
 
       <h3 class="bar red">Other New England organizations</h3>
 
-      <ul class="project-list">
+      <ul class="resource-list">
         <li><a href="https://ctfoodsystemalliance.com/" target=_blank>Connecticut Food System Alliance</a></li>
 
         <li><a href="http://mainefoodstrategy.org/" target=_blank>Maine Food Strategy</a></li>

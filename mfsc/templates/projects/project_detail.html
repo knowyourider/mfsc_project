@@ -4,17 +4,13 @@
 {% block title %}MFSC Projects - {{ object.title }}{% endblock %}
 
 {% block title_area %}
-  <h4 class="crumbs"><a href="{% url 'stories:story_list' %}">Projects</a></h4>
+  <h4 class="crumbs"><a href="{% url 'projects:project_list' %}">Projects</a></h4>
   <h1>{{ object.title }}</h1>
 {% endblock title_area %}
 
 {% block content_area %}
 
-  <div class="narrow-column">
-      <p>&nbsp;</p>
-  </div><!--/narrow-column-->
-
-  <div class="wide-column">
+    <div class="wide-column shift-right">
 
     {{ object.body_text|safe }}
 

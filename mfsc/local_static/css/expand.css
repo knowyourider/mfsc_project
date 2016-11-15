@@ -120,10 +120,10 @@ dl {
   dl dd {
     margin: 0; }
 
-.project-list {
+.project-list, .resource-list {
   list-style-type: disc;
   margin-left: 1.5em; }
-  .project-list li {
+  .project-list li, .resource-list li {
     margin-bottom: 1.5em; }
 
 .tags-list, .related-actions-list {

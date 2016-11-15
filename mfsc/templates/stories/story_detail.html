@@ -24,8 +24,9 @@
 
     <p>{{ object.body_text|safe }}</p>
 
-    <h4 class="crumbs">Related Actions</h4>
-    <ul>
+    <h2 class="blue-head">Related Actions</h2>
+    
+    <ul class="related-actions">    
     {% for action in object.actions.all %}
       <li>
         <a href="{% url 'plan:action_detail' action.id %}">
