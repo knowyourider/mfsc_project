@@ -37,8 +37,8 @@
           <p>{{ object.credit|safe }} </p>
         </div>
 
-<!--/ Don, this won't work cuz the p is a block level element -->
-        <span class="lead-sentence green-head">{{ object.first_sentence|safe }}</span>
+        {# leading <p> is stripped by code, and hard-wired here #} 
+        <p><span class="lead-sentence green-head">{{ object.first_sentence|safe }}</span>
         {{ object.remaining_text|safe }}
 
       </div><!--/wide-column-->

@@ -53,8 +53,8 @@ class Sector(models.Model):
         # find first sentence end
         i = self.body_text.find('.')
         # return the substring from after that to end
-        # add leading <p> that was striped with 1st sentence
-        return "<p>" + self.body_text[i+1:]
+        # (doesn't need leading <p>, that's preceeds span in template)
+        return self.body_text[i+1:]
 
     class Meta:
         ordering = ['id']
@@ -67,6 +67,7 @@ class Goal(CommonModel):
     """docstring for Goal"""
     sector = models.ForeignKey('plan.Sector')
     goal_num = models.IntegerField(default=0)
+    image_name = models.CharField('Story image name',  max_length=32, blank=True, default='')
     body_text = models.TextField(blank=True, default='')
     
    # list of recs for given goal
@@ -77,8 +78,13 @@ class Goal(CommonModel):
    # short goal description
     @property
     def short_description(self):
-        return self.description[:110] + "..."
-
+        cutoff = 110
+        display_string = self.description
+        if len(display_string) > cutoff:
+            return display_string[:cutoff] + "..."
+        else:
+            return display_string
+        
    # first paragraph of body text
     @property
     def first_para(self):
