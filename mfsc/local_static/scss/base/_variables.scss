@@ -29,6 +29,7 @@ $white-font-color: #FFF;
 // Font Sizes - body copy
 $large-font-size: 1.5em;		/* action text, 24pt */
 $base-font-size: 1em;				/* body copy, 16pt */
+$smallish-font-size: 0.9em;	
 $small-font-size: 0.8em;		/* captions, 14pt */
 
 // Font Sizes - headings
@@ -55,7 +56,7 @@ $base-background-color: white;
 $body-background-color: $blue;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: $medium-gray;
 $base-border: 1px solid $base-border-color;
 
 // Other Sizes
