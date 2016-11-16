@@ -36,5 +36,8 @@ input.search-go  {
 
 // for expanding/collapsing search criteria checkboxes
 .show-more {
-
+	border: 1px solid $medium-gray;
+  border-radius: $base-border-radius;
+  margin-bottom: $small-spacing;
+	padding: $tiny-spacing;
 }
