@@ -194,14 +194,9 @@ hr {
   border-top: 0;
   margin: 1.5em 0; }
 
-img,
-picture {
+img {
   margin: 0;
   max-width: 100%; }
-
-.date {
-  color: #999;
-  margin: 0; }
 
 .expander {
   width: 60%; }

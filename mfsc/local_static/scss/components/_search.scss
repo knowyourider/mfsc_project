@@ -1,0 +1,40 @@
+// Search page
+.search-controls {
+	
+	ul li label {
+		font-weight: normal;
+		font-size: $smallish-font-size;
+	}
+}
+
+input.search-field {
+	display: inline;
+	height: 40px;
+	margin-right: $tiny-spacing;
+	width: 75%;
+}
+
+input.search-go  {
+	display: inline;
+	height: 40px;
+	margin-top: -2px;
+	width: 20%;
+}
+
+.search-results {
+
+	margin-top: $small-spacing;
+
+	li {
+		margin-bottom: $base-spacing;
+
+		a {
+			font-weight: bold;
+		}
+	}
+}
+
+// for expanding/collapsing search criteria checkboxes
+.show-more {
+
+}
