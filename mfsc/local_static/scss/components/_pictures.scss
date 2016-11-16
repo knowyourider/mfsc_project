@@ -13,8 +13,14 @@
 	padding: $small-spacing;
 	margin-bottom: $base-spacing;
 
-	h3, a {
+	img {
+		margin-left: -($small-spacing);
+		@include fill-parent;
+	}
+}
+
+.story-sidebar.blue {
+	h2, h3, a {
 		color: $blue-tint;
 	}
-
 }
