@@ -6,6 +6,8 @@ class Project(models.Model):
         (0,'0 - Draft'),
         (1,'1 - Display'),
     )
+    PROJECT_MENU_ID = 3
+    menu = models.ForeignKey('sitewide.Menu', default=PROJECT_MENU_ID)
     slug = models.SlugField('Project short name', max_length=32, unique=True)
     title = models.CharField(max_length=48)
     menu_blurb = models.TextField(blank=True, default='')

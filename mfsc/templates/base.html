@@ -12,7 +12,7 @@
 
 	{% block stylesheets %}
     <link rel="stylesheet" href="{% static 'css/mfsc-styles.css' %}" type="text/css"/>
-    <link rel="stylesheet" href="{% static 'css/juliet2integrate.css' %}" type="text/css"/>
+    <!-- <link rel="stylesheet" href="{% static 'css/juliet2integrate.css' %}" type="text/css"/> -->
   {% endblock stylesheets %}
 
   {% block javascript %}
@@ -35,11 +35,18 @@
       <nav class="top-nav" role="navigation">
         <ul class="top-nav-menu">
           <li><a href="/">Home</a></li>
-          <li ><a href="{% url 'plan:sector_list' %}">The Plan</a></li> <!-- class="selected" -->
-          <li><a href="{% url 'projects:project_list' %}">Projects</a></li>
-          <li><a href="{% url 'stories:story_list' %}">Stories</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="{% url 'resources:resource_list' %}">Resources</a></li>
+
+          <li{% if object.menu.slug == "plan" or object_list.0.menu.slug == "plan" %} class="selected"{% endif %}><a href="{% url 'plan:sector_list' %}">The Plan</a></li>
+
+          <li{% if object.menu.slug == "projects" or object_list.0.menu.slug == "projects" %} class="selected"{% endif %}>
+            <a href="{% url 'projects:project_list' %}">Projects</a>
+          </li>
+
+          <li{% if object.menu.slug == "stories" or object_list.0.menu.slug == "stories" %} class="selected"{% endif %}><a href="{% url 'stories:story_list' %}">Stories</a></li>
+
+          <li{% if object.menu.slug == "about" %} class="selected"{% endif %}><a href="{% url 'resources:about_detail' 'about' %}">About</a></li>
+
+          <li{% if object.menu.slug == "resources" or object_list.0.menu.slug == "resources" %} class="selected"{% endif %}><a href="{% url 'resources:resource_list' %}">Resources</a></li>
           <li><a href="#">News</a></li>
         </ul>
       </nav>

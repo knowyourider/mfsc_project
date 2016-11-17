@@ -13,6 +13,8 @@ class CommonModel(models.Model):
         (5,'medium-long'),
         (6,'long'),
     )
+    PLAN_MENU_ID = 2
+    menu = models.ForeignKey('sitewide.Menu', default=PLAN_MENU_ID)
     term = models.IntegerField(default=0, choices=TERMS)
     description = models.TextField()
     related = models.CharField(max_length=128, blank=True, default='')
@@ -28,6 +30,8 @@ class CommonModel(models.Model):
 
 class Sector(models.Model):
     """docstring for Sector"""
+    PLAN_MENU_ID = 2
+    menu = models.ForeignKey('sitewide.Menu', default=PLAN_MENU_ID)
     slug = models.SlugField('Sector short name', max_length=16, unique=True)
     title = models.CharField(max_length=32)
     credit = models.CharField(max_length=64, blank=True, default='')

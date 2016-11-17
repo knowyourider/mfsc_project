@@ -1,6 +1,8 @@
 from django.db import models
 
 class Story(models.Model):
+    STORY_MENU_ID = 4
+    menu = models.ForeignKey('sitewide.Menu', default=STORY_MENU_ID)
     slug = models.SlugField('Story short name', max_length=32, unique=True)
     second_image = models.CharField(max_length=32, blank=True, default='')
     alt_shortname = models.CharField(max_length=32, blank=True, default='')

@@ -11,61 +11,61 @@
 
 {% block content_area %}
 
-    <div class="row">
+  <div class="row">
 
-      <div class="wide-column shift-right">
+    <div class="wide-column shift-right">
 
-        <h2 class="bar red">About the Plan</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p><a href="#" class="read-more">more...</a></p>
+      <h2 class="bar red">About the Plan</h2>
+      {{ object_list.0.menu.menu_blurb|safe }}
+      <p><a href="#" class="read-more">more...</a>Yada yada yada</p>
 
-      </div><!--/wide-column-->
+    </div><!--/wide-column-->
 
-    </div><!--/row-->
+  </div><!--/row-->
 
-    <div class="row">
+  <div class="row">
 
-      <div class="narrow-column">
+    <div class="narrow-column">
 
-        <h2 class="bar red">Download/Print</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h2 class="bar red">Download/Print</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-        <ul>
-          <li><a href="#" class="read-more">Full Plan</a> (17 MB PDF)</li>
-          <li><a href="#" class="read-more">Plan Summary</a> (.9 MB PDF)</li>
-          <li><a href="#" class="read-more">Plan Goal and Recommendations</a> (3 MB PDF)</li>
+      <ul>
+        <li><a href="#" class="read-more">Full Plan</a> (17 MB PDF)</li>
+        <li><a href="#" class="read-more">Plan Summary</a> (.9 MB PDF)</li>
+        <li><a href="#" class="read-more">Plan Goal and Recommendations</a> (3 MB PDF)</li>
+      </ul>
+
+    </div><!--/narrow-column-->
+
+    <div class="narrow-column">
+
+      <h2 class="bar green">Browse</h2>
+        <ul class="sector-icons-grid"> 
+        {% for object in object_list %}
+          <li class="grid-item">
+            <a href="{% url 'plan:sector_detail' object.slug %}"><img src="{% static 'plan/icons/' %}sector-icon-{{ object.slug }}.png">{{ object.title|safe }}</a>
+          </li>
+        {% endfor %}
         </ul>
 
-      </div><!--/narrow-column-->
+    </div><!--/narrow-column-->
 
-      <div class="narrow-column">
+    <div class="narrow-column">
 
-        <h2 class="bar green">Browse</h2>
-          <ul class="sector-icons-grid"> 
-          {% for object in object_list %}
-            <li class="grid-item">
-              <a href="{% url 'plan:sector_detail' object.slug %}"><img src="{% static 'plan/icons/' %}sector-icon-{{ object.slug }}.png">{{ object.title|safe }}</a>
-            </li>
-          {% endfor %}
-          </ul>
+      <h2 class="bar blue">Search</h2>
+      <p>Enter a key word here to search the Plan or link to the full search page for more search features.</p>
 
-      </div><!--/narrow-column-->
+      <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="" method="GET">
+        <input type="hidden" name="sitesearch" value="" />
+        <label for="search-keywords"><input id="search-keywords" type="search" data-name="keywords" name="q" placeholder="Search" aria-label="Search" value="" required="required"></label>
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </form>
 
-      <div class="narrow-column">
+        <p><button>Quick Search</button> <a href="{% url 'plan:search_list' %}">Go to Full Search</a></p>
 
-        <h2 class="bar blue">Search</h2>
-        <p>Enter a key word here to search the Plan or link to the full search page for more search features.</p>
+    </div><!--/narrow-column-->
 
-        <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="" method="GET">
-          <input type="hidden" name="sitesearch" value="" />
-          <label for="search-keywords"><input id="search-keywords" type="search" data-name="keywords" name="q" placeholder="Search" aria-label="Search" value="" required="required"></label>
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </form>
-
-          <p><button>Quick Search</button> <a href="{% url 'plan:search_list' %}">Go to Full Search</a></p>
-
-      </div><!--/narrow-column-->
-
-    </div><!--/row-->
+  </div><!--/row-->
 
 {% endblock content_area %}

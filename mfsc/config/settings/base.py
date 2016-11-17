@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'plan.apps.PlanConfig',
     'projects.apps.ProjectsConfig',
     'resources.apps.ResourcesConfig',
+    'sitewide.apps.SitewideConfig',
     'stories.apps.StoriesConfig',
     'django.contrib.admin',
     'django.contrib.auth',

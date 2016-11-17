@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC - About{% endblock %}
+
+{% block title_area %}
+  <h1>{{ object.title }}</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+  <div class="wide-column shift-right">
+
+    {{ object.body_text|safe }}
+
+  </div><!--/wide-column-->
+
+{% endblock content_area %}
