@@ -4,12 +4,19 @@
 {% block title %}MFSC - About{% endblock %}
 
 {% block title_area %}
-  <h1>{{ object.title }}</h1>
+  <h1>About the Collaborative</h1>
 {% endblock title_area %}
 
 {% block content_area %}
 
-  <div class="wide-column shift-right">
+<div class="narrow-column">
+
+  <h2 class="bar red">Contact Us</h2>
+  <p>If you’d like to be kept informed about the Collaborative’s activities, email <a href="mailto: winton@mafoodsystem.org" target="_top">Director Winton Pitcoff</a>.</p>
+
+</div>
+
+  <div class="wide-column">
 
     {{ object.body_text|safe }}
 
