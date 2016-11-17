@@ -4,8 +4,9 @@
 {% block title %}MFSC Actions{% endblock %}
 
 {% block title_area %}
-      <h1>Actions</h1>
-      <h2 class="pullquote">Search</h2>
+      <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a></h4>
+      <h1>Search the Plan</h1>
+
 {% endblock title_area %}
 
 {% block content_area %}
@@ -17,7 +18,7 @@
 
     <div class="narrow-column">
 
-      <h2 class="bar green">Search Criteria</h2>
+    <h4 class="red bar">Keyword Search </h4>
 
     <input type="search" name="q" value="{{ form.q.value }}" id="id_q" 
       placeholder="Search actions" class="search-field"/>
@@ -25,39 +26,38 @@
     <input type="submit" value="Go" />
     <p id="clear"><a href="#">clear search</a></p>
 
-    <h2 class="content-wrapper--head">Narrow Your View
-      {# if form.q.value #}
-        <!-- Search -->
-      {# else #}
-        <!-- View -->
-      {# endif #}
-    </h2>
-    <nav>
-      <h3>By Sector</h3>
-      {{ form.secs }}
+    <h4 class="red bar">Narrow Your View</h4>
 
-      <h3>By Tags</h3>
-      {{ form.tags }}
 
-      <h3>By Organizations</h3>
-      {{ form.orgs }}
 
-    </nav>
+    <section class="search-controls">
+      <div class="show-more">
+        <h4 class="red-head">By Sector</h4>
+        {{ form.secs }}
+      </div><!-- /show-more -->
+
+      <div class="show-more">
+        <h4 class="red-head">By Tag</h4>
+          {{ form.tags }}
+      </div>
+
+      <div class="show-more">
+        <h4 class="red-head">By Organization</h4>
+          {{ form.orgs }}
+      </div>
+
+    </section>
+
+
+
 
     </div><!--/narrow-column-->
 
     <div class="wide-column">
 
-      <h2>
-        {{ result_count }} Actions in this view
-        {# if form.q.value #}
-          <!-- Actions found matching your search -->
-        {# else #}
-          <!-- Actions in this view -->
-        {# endif #}
-      </h2>
+      <h2 class="red-head">{{ result_count }} Actions in this view</h2>
 
-      <ul class="story-menu"> 
+      <ul class="search-results"> 
         {% for action in object_list %}
           <li>
             <a href="{% url 'plan:action_detail' action.id %}">

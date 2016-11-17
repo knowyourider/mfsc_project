@@ -59,13 +59,16 @@
       <h2 class="bar blue">Search</h2>
       <p>Enter a key word here to search the Plan or link to the full search page for more search features.</p>
 
-      <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="" method="GET">
-        <input type="hidden" name="sitesearch" value="" />
-        <label for="search-keywords"><input id="search-keywords" type="search" data-name="keywords" name="q" placeholder="Search" aria-label="Search" value="" required="required"></label>
+      <form id="mfsc-plan-search" class="plan-search" data-action="/search" action="{% url 'plan:search_list' %}" method="GET">
+
+        <label for="search-keywords"><input type="search" name="q" value="" id="id_q" 
+            placeholder="Search actions" class="search-field"/>
+
+        </label>
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      </form>
 
         <p><button>Quick Search</button> <a href="{% url 'plan:search_list' %}">Go to Full Search</a></p>
+      </form>
 
     </div><!--/narrow-column-->
 
