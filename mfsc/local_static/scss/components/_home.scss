@@ -1,7 +1,34 @@
-.whats-new {
-	img, p {
-		@include span-columns (4 of 8);
-
-		margin-top: $small-spacing;
+.home-panel {
+	color: $white-font-color;
+	margin-bottom: $base-spacing;
+	overflow: auto;
+	padding-right: $small-spacing;
+	
+	a {
+		color: $white-font-color;
 	}
+
+	img {
+		float: left;
+		margin-right: $tiny-spacing;
+		@include span-columns (4 of 8);
+	}
+}
+
+.home-panel.green h3 {
+	color: $green-tint;
+}
+
+.home-panel.red h3 {
+	color: $red-tint;
+}
+
+.home-panel.blue h3 {
+	color: $blue-tint;
+}
+
+.whats-new img {
+	@include span-columns (4 of 8);
+	float: left;
+	margin-right: $base-spacing;
 }

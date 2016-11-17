@@ -1,47 +1,20 @@
 // for search results paging - taken from Mystic, needs refactoring
 #paging {
-  font-weight: 400;
 
-  @media screen and (min-width: 590px) and (max-width: 1088px) {
-    #paging {
-      font-size: 0.8em;
-    }
-  }
 }
 
 .previous {
-  float: left;
-  display: block;
-  margin-right: 3.57866%;
-  width: 22.316%;
-}
-
-.previous:last-child {
-  margin-right: 0;
+  @include span-columns(2 8);
 }
 
 .page-numbers {
-  float: left;
-  display: block;
-  margin-right: 3.57866%;
-  width: 48.21067%;
+  @include span-columns(4 8);
   text-align: center;
-}
-  
-.page-numbers:last-child {
-  margin-right: 0;
 }
 
 .next {
-  float: left;
-  display: block;
-  margin-right: 3.57866%;
-  width: 22.316%;
+  @include span-columns(2 8);
   text-align: right;
-}
-  
-.next:last-child {
-  margin-right: 0;
 }
 
 .page-nav, .page-nav--disabled, .page-nav--selected {
@@ -49,11 +22,32 @@
 }
 
 .page-nav, .page-nav--selected {
-  border: thin solid #dee3e7;
-  margin-right: 0.5em;
+  border: 1px solid $light-gray;
+  margin-right: $tiny-spacing;
   padding: 0 0 0 4px;
+
+  &:hover a {
+    background-color: $blue;
+    color: $white-font-color;
+    text-decoration: none;
+  }
 }
 
-.page-nav:hover, .page-nav--selected:hover {
-  background-color: #dee3e7;
+.next-link, .prev-link {
+  border: none;
+
+  &:hover a {
+    text-decoration: none;
+  }
+}
+
+.page-nav--selected {
+  background-color: $blue;
+  border: 1px solid $light-gray;
+  color: $white-font-color;
+  padding-right: $tiny-spacing;
+}
+
+.page-nav--disabled {
+  color: $medium-gray;
 }
