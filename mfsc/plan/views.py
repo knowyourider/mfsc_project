@@ -61,19 +61,11 @@ class SearchListView(FormMixin, ListView):
             """
             
             # tags - these narrow (and)
+            # so we don't go the Q route which seems more suited for OR
             if len(tag_list) > 0 : 
-                print("------ got to lan tag > 0 ")
-                qquery = Q(tags__slug=tag_list[0])
 
-                print("------ qquery initial: " + str(qquery))
-
-                for tag in tag_list[1:]:
-                    qquery.add((Q(tags__slug=tag)), Q.OR ) 
-
-                print("------ qquery after loop: " + str(qquery))
-
-
-                self.object_list = self.object_list.filter(qquery)
+                for idx, val in enumerate(tag_list):
+                    self.object_list = self.object_list.filter(tags__slug=tag_list[idx])
 
             # Organizations - widen (or)
             if len(org_list) > 0 : 
