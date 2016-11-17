@@ -9,6 +9,7 @@ class MenuAdmin(admin.ModelAdmin):
         #('Behind the scenes',   {'fields': ['status_num', 'ordinal']}), 
         # , 'classes': ['collapse']
     ]
+    readonly_fields = ('slug',)
     #filter_horizontal = ['actions']    
     list_display = ('title',  'slug', 'id')
     #list_filter     = ['rec__goal__sector'] 

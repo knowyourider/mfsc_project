@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'plan.apps.PlanConfig',
     'projects.apps.ProjectsConfig',
+    'news.apps.NewsConfig',
     'resources.apps.ResourcesConfig',
     'sitewide.apps.SitewideConfig',
     'stories.apps.StoriesConfig',

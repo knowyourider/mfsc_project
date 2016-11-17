@@ -47,7 +47,8 @@
           <li{% if object.menu.slug == "about" %} class="selected"{% endif %}><a href="{% url 'resources:about_detail' 'about' %}">About</a></li>
 
           <li{% if object.menu.slug == "resources" or object_list.0.menu.slug == "resources" %} class="selected"{% endif %}><a href="{% url 'resources:resource_list' %}">Resources</a></li>
-          <li><a href="#">News</a></li>
+
+          <li{% if object.menu.slug == "news" or object_list.0.menu.slug == "news" %} class="selected"{% endif %}><a href="{% url 'news:newsitem_list' %}">News</a></li>
         </ul>
       </nav>
     </div><!--/top-nav-wrapper-->

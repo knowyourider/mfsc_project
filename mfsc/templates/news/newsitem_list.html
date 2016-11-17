@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}MFSC News{% endblock %}
+
+{% block title_area %}
+      <h1>News</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+<div class="narrow-column">
+
+  <h2 class="bar blue">Recent Posts</h2>
+  <dl class="past-news">
+  {% for newsitem in object_list %}
+    <dt><a href="">{{ newsitem.title|safe }}</a></dt>
+    <dd class="date">{{ newsitem.posted|date:"F d, Y" }}</dd>
+  {% endfor %}
+  </dl>
+
+</div><!--/narrow-column-->
+
+<div class="wide-column">
+
+	{% for newsitem in object_list %}
+  <article class="news">
+    <p class="date">{{ newsitem.posted|date:"F d, Y" }}</p>
+    <h1 class="pullquote">{{ newsitem.title|safe }}</h1>
+    {{ newsitem.body_text|safe }}
+  </article>
+
+ {% endfor %}
+
+</div><!--/wide-column-->
+
+{% endblock content_area %}
