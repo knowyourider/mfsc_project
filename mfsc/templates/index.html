@@ -42,7 +42,7 @@
 		<div class="wide-column">		
 			
 			<div class="whats-new">
-				<h2 class="bar green">What's New</h2>
+				<h2 class="bar green"><a href="{% url 'news:newsitem_list' %}">What's New</a></h2>
 				<img src="{% static 'images/fishing.jpg' %}">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <p><a href="news/index.html" class="read-more">more...</a></p>
@@ -52,7 +52,7 @@
 
 		<div class="narrow-column">
 
-			<h2 class="bar red"><a href="news/index.html">News</a></h2>
+			<h2 class="bar red"><a href="{% url 'news:newsitem_list' %}">News</a></h2>
 			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 			<h2 class="bar blue"><a href="{% url 'resources:resource_list' %}">Resources</a></h2>

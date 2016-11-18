@@ -50,11 +50,14 @@
         {% if object.organizations.all %}
           <h2 class="blue-head">Organizations</h2>
           <ul>
-            {% for organization in object.organizations.all %}
-              <li>{{ organization.name }}</li>
-            {% endfor %}
+          {% for organization in object.organizations.all %}
+            <li><a href="{{ organization.link_url }}" target="orgainization">{{ organization.name|safe }}</a> - 
+            {{ organization.town }} - {{ organization.phone }}
+            </li>
+          {% endfor %}
           </ul>
         {% endif %}
+        
         </div><!--/sub-column-->
 
         <div class="sub-column">

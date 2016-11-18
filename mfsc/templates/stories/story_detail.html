@@ -22,7 +22,7 @@
 
   <div class="wide-column">
 
-    <p>{{ object.body_text|safe }}</p>
+    {{ object.body_text|safe }}
 
     <h2 class="blue-head">Related Actions</h2>
     
@@ -30,9 +30,8 @@
     {% for action in object.actions.all %}
       <li>
         <a href="{% url 'plan:action_detail' action.id %}">
-          {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }} 
+          {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
           {{ action.medium_description|safe }}
-        </a>
       </li>
     {% endfor %} {# end action list #}
     </ul>
