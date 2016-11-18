@@ -51,8 +51,9 @@
           <h2 class="blue-head">Organizations</h2>
           <ul>
           {% for organization in object.organizations.all %}
-            <li><a href="{{ organization.link_url }}" target="orgainization">{{ organization.name|safe }}</a> - 
-            {{ organization.town }} - {{ organization.phone }}
+            <li><a href="{{ organization.link_url }}" target="organization">{{ organization.name|safe }}</a>
+            <br/> 
+            {{ organization.town }}, {{ organization.phone }}
             </li>
           {% endfor %}
           </ul>

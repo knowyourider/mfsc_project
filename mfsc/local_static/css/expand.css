@@ -151,12 +151,12 @@ th {
 
 td {
   border-bottom: 1px solid #ADADAD;
-  padding: 0.75em 0; }
+  padding: 0.375em; }
 
 tr,
 td,
 th {
-  vertical-align: middle; }
+  vertical-align: top; }
 
 body {
   color: #545454;

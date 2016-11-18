@@ -35,9 +35,21 @@ input.search-go  {
 }
 
 // for expanding/collapsing search criteria checkboxes
-.show-more {
+.scontrol-box--list {
 	border: 1px solid $medium-gray;
   border-radius: $base-border-radius;
   margin-bottom: $small-spacing;
 	padding: $tiny-spacing;
+}
+
+.short-list {
+	border: 1px solid $light-gray;
+	height: 200px;
+	overflow: hidden;
+}
+
+.control-box--toggle {
+	font-size: $smallish-font-size;
+	text-align: right;
+	margin: 0;
 }

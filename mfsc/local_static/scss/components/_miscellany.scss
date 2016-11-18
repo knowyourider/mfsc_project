@@ -11,3 +11,20 @@
   color: $medium-gray;
   margin: 0;
 }
+
+//for organizations table
+.organizations {
+
+	td.title {
+		font-weight: bold;
+		width: 35%;
+	}
+
+	td.location, td.phone {
+		width: 15%;
+	}
+
+	td.blurb {
+		width: 35%;
+	}
+}

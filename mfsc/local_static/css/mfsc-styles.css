@@ -341,12 +341,12 @@ th {
 
 td {
   border-bottom: 1px solid #ADADAD;
-  padding: 0.75em 0; }
+  padding: 0.375em; }
 
 tr,
 td,
 th {
-  vertical-align: middle; }
+  vertical-align: top; }
 
 body {
   color: #545454;
@@ -530,6 +530,10 @@ footer {
     color: white;
     text-decoration: none; }
 
+.title-area {
+  min-height: 120px;
+  margin-bottom: 0.75em; }
+
 h1, h2, h3, h4, h5, .next-link, .prev-link {
   font-weight: normal;
   letter-spacing: 0.10em;
@@ -555,7 +559,8 @@ h4 {
   padding-bottom: 0.75em; }
 
 .lead-sentence {
-  font-size: 1.75em; }
+  font-size: 1.75em;
+  line-height: 0.75; }
 
 .bar {
   color: #FFF;
@@ -669,7 +674,7 @@ ol.rec-menu {
     color: white; }
   ol.rec-menu .expander-content li {
     background-color: white;
-    font-size: 0.9em;
+    font-size: 1em;
     line-height: 1.5;
     padding: 0.75em 3em; }
     ol.rec-menu .expander-content li:nth-child(even) {
@@ -746,6 +751,14 @@ ol.goals-list:first-child {
 .date {
   color: #ADADAD;
   margin: 0; }
+
+.organizations td.title {
+  font-weight: bold;
+  width: 35%; }
+.organizations td.location, .organizations td.phone {
+  width: 15%; }
+.organizations td.blurb {
+  width: 35%; }
 
 .previous {
   float: left;
@@ -840,10 +853,20 @@ input.search-go {
     .search-results li a {
       font-weight: bold; }
 
-.show-more {
+.scontrol-box--list {
   border: 1px solid #ADADAD;
   border-radius: 3px;
   margin-bottom: 0.75em;
   padding: 0.375em; }
+
+.short-list {
+  border: 1px solid #ECECEC;
+  height: 200px;
+  overflow: hidden; }
+
+.control-box--toggle {
+  font-size: 0.9em;
+  text-align: right;
+  margin: 0; }
 
 /*# sourceMappingURL=mfsc-styles.css.map */
