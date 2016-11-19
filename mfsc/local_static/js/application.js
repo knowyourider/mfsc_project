@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // for action list to expand from recommendation in goal_detail.html
   $('.expander-trigger').click(function(){
     // console.log("got to trigger");
     // this works when in the a tag, and the hidden div immediately follows the a tag
@@ -24,6 +25,38 @@ $(document).ready(function() {
     // submit
     $('form[name="menu"]').submit()
     
+  });
+
+  // toggle search box for checkboxes
+  // class is attached to p, though click is on a tag
+  $('.control-box--toggle').click(function(){
+    //console.log("----- got to more ");
+    // must be a better way to find what is actuall previous sibling
+    // toggle the short-list class
+    // $(this).parent().find(".control-box--list").toggleClass("short-list");
+    // $(this).parent().parent().find(".control-box--list").toggleClass("short-list");
+    $(this).parent().find(".control-box--list").toggleClass("short-list");
+    //$(this).parent().hide();
+    $(this).hide();
+    // console.log("----- p:nth-child(4): " + $(this).parent().parent().find("p:nth-child(4)").html());
+    // $(this).parent().parent().find("p:nth-child(4)").show();
+    $(this).parent().find("p:nth-child(4)").show();
+  });
+
+  // toggle search box for checkboxes
+  $('.control-box--fewer').click(function(){
+    // $(this).parent().parent().find(".control-box--list").toggleClass("short-list");
+    $(this).parent().find(".control-box--list").toggleClass("short-list");
+    $(this).hide();
+    // $(this).parent().parent().find("p:nth-child(3)").show();
+    $(this).parent().find("p:nth-child(3)").show();
+    // try scrolling
+    // scrollTop: $("#divToBeScrolledTo").offset().top
+    $('html,body').animate({
+        // scrollTop: $("#"+id).offset().top},
+        scrollTop: $("#by-tag").offset().top - 50},
+        'slow');
+    // scrollTop( 300 );
   });
 
   // ------- MENU PAGINATION ------

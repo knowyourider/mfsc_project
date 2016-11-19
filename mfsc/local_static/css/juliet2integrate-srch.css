@@ -1,0 +1,10 @@
+.hidden {
+  display: none; }
+
+.unhidden {
+  display: block; }
+
+.pointer {
+    cursor: pointer;
+}
+
