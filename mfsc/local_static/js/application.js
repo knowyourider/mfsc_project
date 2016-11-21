@@ -66,7 +66,7 @@ $(document).ready(function() {
 
   // more checkboxes
   // class is attached to p, though click is on "a" tag
-  $('.control-box--toggle').click(function(){
+  $('.control-box--more').click(function(){
     // toggle the short-list class
     $(this).parent().find(".control-box--list").toggleClass("short-list");
     $(this).hide();
