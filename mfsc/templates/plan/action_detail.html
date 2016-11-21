@@ -92,11 +92,18 @@
           <h3>Story</h3>
           <h3 class="pullquote">{{ story.title|safe }}</h3>
 
-          <img src="images/grain-silo.jpg">
-          
+          <img src="{% static 'stories/fullpics/' %}{{ story.slug }}.jpg">
+          <p>Image courtesy of {{ story.credit|safe }} </p>
+
           {{ story.body_text|safe }}
 
-          <p>Related Actions: <a href="">Land 1.4</a>, <a href="">Land 1.5</a>, <a href="">Farming 3.1.2</a></p>
+          <p>Related Actions: 
+          {% for action in story.actions.all %}
+              <a href="{% url 'plan:action_detail' action.id %}">
+                {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+          </p>
+
         </div> <!-- /sidebar -->
       {% endfor %}
     {% endif %}

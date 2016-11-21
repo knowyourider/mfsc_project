@@ -10,18 +10,19 @@
 
 {% block content_area %}
 
-    <div class="wide-column shift-right">
+<div class="row">
+  <table class="organizations">
+  {% for object in object_list %}
+    <tr>
+      <td class="title"><a href="{{ object.link_url }}" target="orgainization">{{ object.name|safe }}</a></td>
+      <td class="location">{{ object.town }}</td>
+      <td class="phone">{{ object.phone }}</td>
+      <td class="blurb">{{ object.description|safe }}</td>
+    </tr>
 
-      <ul class="resource-list">
-			  {% for object in object_list %}
-          <li><a href="{{ object.link_url }}" target="orgainization">{{ object.name|safe }}</a> - 
-          {{ object.town }} - {{ object.phone }}<br/>
-          {{ object.description|safe }}
-            
-          </li>
-        {% endfor %}
-      </ul>
+  {% endfor %}    
+  </table>
 
-    </div><!--/wide-column-->
+</div><!--/row -->
 
 {% endblock content_area %}
