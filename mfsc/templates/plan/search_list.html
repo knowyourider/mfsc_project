@@ -4,15 +4,15 @@
 {% block title %}MFSC Actions{% endblock %}
 
 {% block title_area %}
-      <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a></h4>
-      <h1>Search the Plan</h1>
-
+  <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a></h4>
+  <h1>Search the Plan Action Items</h1>
 {% endblock title_area %}
 
 {% block content_area %}
-  <form action="{{ request.get_full_path }}" method="GET" name="menu">
-  {# csrf_token #} 
-  {# JS for item selection will change method to post (and will change action) #}
+  <!-- <form action="{{ request.get_full_path }}" method="GET" name="menu"> -->
+  <form action="{% url 'plan:search_result_list' %}" method="GET" id="search-form" name="menu">
+    {# csrf_token #} 
+    {# JS for item selection will change method to post (and will change action) #}
     <input type="hidden" name="page" value="{{ page_number }}"/>
 
 
@@ -26,7 +26,7 @@
     <input type="submit" value="Go" />
     <p id="clear"><a href="#">clear search</a></p>
 
-    <h4 class="red bar">Narrow Your View</h4>
+    <h4 class="red bar">Refine Your Search</h4>
 
 
     <section class="search-controls">
@@ -63,63 +63,9 @@
 
     <div class="wide-column">
 
-      <h2 class="red-head">{{ result_count }} Actions in this view</h2>
-
-      <ul class="search-results"> 
-        {% for action in object_list %}
-          <li>
-            <a href="{% url 'plan:action_detail' action.id %}">
-              {{ action.rec.goal.sector.title }} {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>
-              {{ action.description|safe }}
-            
-          </li>
-        {% endfor %} {# end action list #}
-      </ul>
-
-      {% if is_paginated %}
-        {# JavaScript will change class="page-nav" click to form submission #}
-
-      <nav id="paging">
-        <ul class="previous">
-          {% if page_obj.has_previous %}
-            <li class="page-nav prev-link">
-              <a href="?page={{ page_obj.previous_page_number }}">&lang; prev</a>
-            </li>
-          {% else %}
-            <li class="page-nav--disabled prev-link">&lang; prev</li>
-          {% endif %}
-        </ul>
-
-
-        <ul class="page-numbers">
-          {% for page_number in paginator.page_range %}
-            {% if page_number = page_obj.number %}
-              <li class="page-nav--selected">{{ page_number }}</li>
-            {% else %}
-              <li class="page-nav">
-                <a href="?page={{ page_number }}">{{ page_number }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-
-        <ul class="next">
-          {% if page_obj.has_next %}
-            <li class="page-nav next-link">
-              <a href="?page={{ page_obj.next_page_number }}">next &rang;</a>
-            </li>
-          {% else %}
-            <li class="page-nav--disabled next-link">next &rang;</li>
-          {% endif %}
-
-        </ul>
-      </nav><!--/paging -->
-
-      {% endif %}
-
-    </form>
-
+      {% include "plan/_search_result_list.html" %}
 
     </div><!--/wide-column-->
 
+  </form>
 {% endblock content_area %}

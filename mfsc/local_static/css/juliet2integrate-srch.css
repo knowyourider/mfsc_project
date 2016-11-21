@@ -1,8 +1,8 @@
 .hidden {
   display: none; }
 
-.unhidden {
-  display: block; }
+// .unhidden {
+//  display: block; }
 
 .pointer {
     cursor: pointer;

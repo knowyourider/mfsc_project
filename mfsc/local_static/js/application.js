@@ -11,11 +11,48 @@ $(document).ready(function() {
 
   // ------- SEARCH SUBMIT ON CHECKBOX change ------
 
-  // assign click to checkboxes
+  // click on checkbox submits form
   $('input[type="checkbox"]').change(function(event){
-    // alert('radio button clicked value: ' + $(event.target).attr('value'));
-    $('form[name="menu"]').submit()   
+    // each time a new box is checked we should reset to page 1
+    // (if nothing else ther may not be a page 2 in new result)
+    $('#search-form').find('[type=hidden][name=page]').val('1')
+    $('#search-form').submit()   
   });
+
+  // Hijack submission and re-route to AJAX
+  // per: https://realpython.com/blog/python/django-and-ajax-form-submissions/
+  $('#search-form').on('submit', function(event){
+      event.preventDefault();
+      // console.log("-------form submitted!");  // sanity check
+      perform_search($('#search-form').serializeArray());
+  });
+
+  // AJAX for search results
+  function perform_search(formData) {
+    // console.log("---- create post is working!"); // sanity check
+    //var formData = $("#search-form").serializeArray()
+    $.ajax({
+        url : "results/", // the endpoint
+        type : "GET", // http method
+        data : formData, // data sent with the post request 
+        // handle a successful response
+        success : function(json) {
+            // console.log(json); // log the returned json to the console
+            $('.wide-column').html(json)
+            // scroll to top of results
+            $('html,body').animate({
+                scrollTop: $("#search-form").offset().top - 30},
+                'slow');
+        },
+
+        // handle a non-successful response
+        error : function(xhr,errmsg,err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status ); // provide a bit more info about the error to the console
+            $('.wide-column').html(xhr.responseText); 
+        }
+    });  };
 
   // ------- SEARCH ------
   // link to clear search
@@ -27,43 +64,35 @@ $(document).ready(function() {
     
   });
 
-  // toggle search box for checkboxes
-  // class is attached to p, though click is on a tag
+  // more checkboxes
+  // class is attached to p, though click is on "a" tag
   $('.control-box--toggle').click(function(){
-    //console.log("----- got to more ");
-    // must be a better way to find what is actuall previous sibling
     // toggle the short-list class
-    // $(this).parent().find(".control-box--list").toggleClass("short-list");
-    // $(this).parent().parent().find(".control-box--list").toggleClass("short-list");
     $(this).parent().find(".control-box--list").toggleClass("short-list");
-    //$(this).parent().hide();
     $(this).hide();
     // console.log("----- p:nth-child(4): " + $(this).parent().parent().find("p:nth-child(4)").html());
     // $(this).parent().parent().find("p:nth-child(4)").show();
     $(this).parent().find("p:nth-child(4)").show();
   });
 
-  // toggle search box for checkboxes
+  // fewer checkboxes
   $('.control-box--fewer').click(function(){
-    // $(this).parent().parent().find(".control-box--list").toggleClass("short-list");
     $(this).parent().find(".control-box--list").toggleClass("short-list");
-    $(this).hide();
-    // $(this).parent().parent().find("p:nth-child(3)").show();
-    $(this).parent().find("p:nth-child(3)").show();
-    // try scrolling
-    // scrollTop: $("#divToBeScrolledTo").offset().top
+    $(this).hide(); // hide fewer
+    $(this).parent().find("p:nth-child(3)").show(); // show more
+    // scroll to top of search box(es?) on fewer
     $('html,body').animate({
         // scrollTop: $("#"+id).offset().top},
         scrollTop: $("#by-tag").offset().top - 50},
         'slow');
-    // scrollTop( 300 );
   });
 
   // ------- MENU PAGINATION ------
 
   // Turn page selection into form submit
-  // aug and q parameters are in the form and will be submited 
-  $('#paging > ul > li.page-nav').click(function(event){
+  // q (and other?) parameters are in the form and will be submited? 
+  // document.on syntax required since this the markup was loaded by ajax.
+  $(document).on("click", "#paging", function(event){
     event.preventDefault();
     // get the page number from href
     var chosen_href = $(event.target).closest('li').children('a').attr('href');
@@ -71,8 +100,8 @@ $(document).ready(function() {
     // page number = href_split[1]  
     // alert('in page nav. page num: ' + href_split[1]); 
     // set the page number in the hidden field
-    $('form[name="menu"]').find('[type=hidden][name=page]').val(href_split[1])
-    $('form[name="menu"]').submit()
+    $('#search-form').find('[type=hidden][name=page]').val(href_split[1])
+    $('#search-form').submit()
   });
 
 

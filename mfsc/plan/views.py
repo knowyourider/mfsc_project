@@ -76,6 +76,10 @@ class SearchListView(FormMixin, ListView):
 
                 self.object_list = self.object_list.filter(qquery)
 
+        # test for null result
+        print("--- object_list length: " + str(len(self.object_list)))
+
+
         # remove any duplicates
         self.object_list = self.object_list.distinct()
 
