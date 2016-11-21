@@ -21,7 +21,7 @@
 
         <ol class="goals-list"> <!-- ul ? -->
         {% for goal in object.goal_list %}
-          <li>{{ goal.goal_num }}
+          <li><span class="number">{{ goal.goal_num }}</span>
             <a href="{% url 'plan:goal_detail' goal.id %}">
              {{ goal.description|safe }}</a>
           </li>

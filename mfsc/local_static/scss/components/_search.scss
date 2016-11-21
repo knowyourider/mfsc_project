@@ -17,7 +17,8 @@ input.search-field {
 input.search-go  {
 	display: inline;
 	height: 40px;
-	margin-top: -2px;
+	//not sure why this button isn't top aligning with search field...
+	margin-top: -4px;
 	width: 20%;
 }
 
@@ -35,21 +36,29 @@ input.search-go  {
 }
 
 // for expanding/collapsing search criteria checkboxes
-.scontrol-box--list {
-	border: 1px solid $medium-gray;
+.control-box--list {
+	border: 1px solid $light-gray;
   border-radius: $base-border-radius;
   margin-bottom: $small-spacing;
 	padding: $tiny-spacing;
 }
 
 .short-list {
-	border: 1px solid $light-gray;
 	height: 200px;
 	overflow: hidden;
 }
 
-.control-box--toggle {
+.control-box--more, .control-box--fewer {
 	font-size: $smallish-font-size;
 	text-align: right;
 	margin: 0;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+.hidden {
+  display: none;
 }
