@@ -87,33 +87,32 @@ ol.expander-content li.action-head {
 
 // for list of goals with big numbers
 ol.goals-list {
-  margin: $small-spacing null null 0;
+  list-style-type: none;
+  margin: $small-spacing null 0 0;
 }
 
 ol.goals-list > li {
-  counter-increment: customlistcounter;
-  clear: left;
-  margin-bottom: $base-spacing;
+  margin-top: $small-spacing;
   
   a {
 		color: $base-font-color;
+    display: inline-block;
 		font-size: $base-font-size;
+    margin: -2em 0 0 2em;
   	text-decoration: underline;
 	}
 }
 
-ol.goals-list > li:before {
-  content: counter(customlistcounter) " ";
+ol.goals-list li span.number {
   color: $green;
   font-size: $large-font-size * 2;
-  float: left;
-  margin-top: -10px;
+  line-height: 1em;
   width: 0.75em;
 }
 
-ol.goals-list:first-child {
-  counter-reset: customlistcounter;
-}
+//ol.goals-list:first-child {
+//  counter-reset: customlistcounter;
+//}
 
 // for story menu
 .story-menu li {

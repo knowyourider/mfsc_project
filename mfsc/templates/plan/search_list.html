@@ -5,7 +5,7 @@
 
 {% block title_area %}
   <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a></h4>
-  <h1>Search the Plan Action Items</h1>
+  <h1>Search the Plan's Action Items</h1>
 {% endblock title_area %}
 
 {% block content_area %}
@@ -18,7 +18,7 @@
 
     <div class="narrow-column">
 
-    <h4 class="red bar">Keyword Search </h4>
+    <h4 class="red bar">Keyword Search</h4>
 
     <input type="search" name="q" value="{{ form.q.value }}" id="id_q" 
       placeholder="Search actions" class="search-field"/>
@@ -36,8 +36,8 @@
         <div class="control-box--list short-list">
           {{ form.tags }}
         </div><!-- /control-box--list  /short-list -->
-        <p class="control-box--toggle pointer">show more</p>
-        <p class="control-box--fewer pointer hidden">show fewer</p>
+        <p class="control-box--more">show more</p>
+        <p class="control-box--fewer hidden">show fewer</p>
       </div>
 
       <div class="control-box">
@@ -45,15 +45,17 @@
           <div class="control-box--list short-list">
             {{ form.secs }}
           </div><!-- /control-box--list  /short-list -->
-          <p class="control-box--toggle">show more</p>
+        <p class="control-box--more">show more</p>
+        <p class="control-box--fewer hidden">show fewer</p>
       </div><!-- /show-more -->
 
-      <div class="show-more">
+      <div class="control-box">
         <h4 class="red-head">By Organization</h4>
           <div class="control-box--list short-list">
             {{ form.orgs }}
           </div><!-- /control-box--list  /short-list -->
-          <p class="control-box--toggle">show more</p>
+        <p class="control-box--more">show more</p>
+        <p class="control-box--fewer hidden">show fewer</p>
       </div>
 
     </section>
