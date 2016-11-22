@@ -8,19 +8,27 @@
 	}
 }
 
+.story-sidebar.blue {
+	h2, h3, a {
+		color: $blue-tint;
+	}
+}
+
 .story-sidebar {
 	color: $white-font-color;
 	padding: $small-spacing;
 	margin-bottom: $base-spacing;
 
+	// for story panel on home page
+	h1 a {
+		color: white !important;
+	}
+
 	img {
-		margin-left: -($small-spacing);
-		@include fill-parent;
+		//margin-left: -($small-spacing);
 	}
 }
 
-.story-sidebar.blue {
-	h2, h3, a {
-		color: $blue-tint;
-	}
+.caption {
+	font-size: $small-font-size;
 }

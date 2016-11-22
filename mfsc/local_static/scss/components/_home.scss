@@ -4,13 +4,17 @@
 	overflow: auto;
 	padding-right: $small-spacing;
 	
+	h1 {
+		margin-top: $tiny-spacing;
+	}
+	
 	a {
 		color: $white-font-color;
 	}
 
 	img {
 		float: left;
-		margin-right: $tiny-spacing;
+		//margin-right: $tiny-spacing;
 		@include span-columns (4 of 8);
 	}
 }

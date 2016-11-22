@@ -1,10 +1,40 @@
 .banner {
   background-color: white;
+ 	position: relative;
   text-align: center; 
   @include outer-container;
 
-  img {
+//not sure I need the following two lines
+  @include clearfix;
+  z-index: 999;
+
+  img.fish {
+ 		position: absolute;
+  	top: 80px;
+  	right: -40px;
   }	
+}
+
+// the MENU link that displays at mobile sizes
+.top-navigation-mobile-menu {
+  color: $green-tint;
+  display: block;
+  float: right;
+  line-height: $base-line-height;
+  margin: 0;
+  padding-right: $small-spacing;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  // don't show at large screen sizes
+  @include media ($large-screen) {
+    display: none;
+  }
+
+  &:focus,
+  &:hover {
+    color: $red;
+  }
 }
 
 .top-nav-wrapper {
@@ -18,41 +48,50 @@
   //border-bottom: 1px solid darken($main-nav-color, 0.10);
 	//height: 3em;
 	text-transform: uppercase;
-
-  ul.top-nav-menu {
-		color: $green-tint;
-		font-size: $base-font-size;
-		margin-bottom: 0;
-		padding: $small-spacing;
-
-		li {
-			border-right: 1px solid $green-tint;
-			display: inline-block;
-
-			&.selected {
-
-  			a {
-  			background-color: $green-tint;
-				color: $red;
-				margin-left: -4px;
-				}
-			}
-
-			a {
-				color: $white-font-color;
-				letter-spacing: 0.25em;
-				padding: $small-spacing $base-spacing;
-			}
-
-			a:hover {
-				color: $red;
-				text-decoration: underline;
-			}
-		}
-	}	
 }
 
-// to ensure consistant height when titles vary
-.title-area {
-	min-height: 120px;
+ul.top-nav-menu {
+  -webkit-transform-style: preserve-3d; // stop webkit flicker
+	color: $green-tint;
+  clear: both;
+  display: none;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 0;
+  width: 100%;
+  z-index: 99999;
+		//font-size: $base-font-size;
+	//margin-bottom: 0;
+	//padding: $small-spacing;
+
+	li {
+		border-right: 1px solid $green-tint;
+		//display: inline-block;
+
+    &.show {
+      display: inline-block;
+    }
+
+    @include media ($large-screen) {
+      display: inline-block;
+      text-align: center;
+    }
+
+		&.selected a {
+			background-color: $green-tint;
+			color: $red;
+			margin-left: -4px;
+		}
+	}
+
+	a {
+		color: $white-font-color;
+		letter-spacing: 0.25em;
+		padding: $small-spacing $base-spacing;
+	}
+
+	a:hover {
+		color: $red;
+		text-decoration: underline;
+	}
 }

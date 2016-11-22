@@ -17,7 +17,6 @@ body {
 }
 
 .wide-column {
-//	border: 1px solid green;
 	
 	// when screen is greater than or equal to 640
   @include media(640px) {
@@ -29,7 +28,6 @@ body {
 }
 
 .narrow-column {
-//	border: 1px solid pink;
 
 	// when screen is greater than or equal to 640
   @include media(640px) {
