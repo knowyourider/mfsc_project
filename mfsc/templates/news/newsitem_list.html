@@ -4,27 +4,33 @@
 {% block title %}MFSC News{% endblock %}
 
 {% block title_area %}
-      <h1>News</h1>
+  <h1>News</h1>
 {% endblock title_area %}
 
 {% block content_area %}
 
 <div class="narrow-column">
 
-  <h2 class="bar blue">Recent Posts</h2>
+  <h2 class="bar blue">
+  {% block news_head %}Recent Posts{% endblock %}
+  </h2>
   <dl class="past-news">
   {% for newsitem in object_list %}
-    <dt><a href="">{{ newsitem.title|safe }}</a></dt>
+    <dt><a href="#{{ newsitem.slug }}">{{ newsitem.title|safe }}</a></dt>
     <dd class="date">{{ newsitem.posted|date:"F d, Y" }}</dd>
   {% endfor %}
   </dl>
+
+  {% block news_link %}
+    <p><a href="{% url 'news:news_archive_list' %}">View Archive</a></p>
+  {% endblock news_link %}
 
 </div><!--/narrow-column-->
 
 <div class="wide-column">
 
 	{% for newsitem in object_list %}
-  <article class="news">
+  <article class="news" id="{{ newsitem.slug }}">
     <p class="date">{{ newsitem.posted|date:"F d, Y" }}</p>
     <h1 class="pullquote">{{ newsitem.title|safe }}</h1>
     {{ newsitem.body_text|safe }}

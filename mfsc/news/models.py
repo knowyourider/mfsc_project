@@ -15,6 +15,16 @@ class NewsItem(models.Model):
     is_active = models.BooleanField(default=True)
     on_homepage = models.BooleanField(default=False)
 
+   # short body text
+    @property
+    def short_body_text(self):
+        cutoff = 300
+        display_string = self.body_text
+        if len(display_string) > cutoff:
+            return display_string[:cutoff] + "...</p>"
+        else:
+            return display_string
+
     class Meta:
         ordering = ['-posted']
 

@@ -12,51 +12,13 @@
     <div class="narrow-column">
 
       <h2 class="bar green">About Resources</h2>
-      {{ object_list.0.menu.menu_blurb|safe }}
+      {{ object.menu.menu_blurb|safe }}
 
     </div><!--/narrow-column-->
 
     <div class="wide-column">
 
-      <h3 class="bar blue">Massachusetts organizations and agencies</h3>
-
-      <ul class="resource-list">
-        <li><a href="{% url 'resources:organization_list' %}">Massachusetts organizations that support and advocate for the food system</a></li>
-
-        {% for resourcepage in object_list %}  
-          <li><a href="{% url 'resources:resourcepage_detail' resourcepage.slug %}">{{ resourcepage.title|safe}}</a></li>
-        {% endfor %}      
-
-        <li><a href="http://www.masslegalservices.org/content/legislative-process-massachusetts-0" target=_blank>How an idea becomes a law in Massachusetts</a></li>
-      </ul>
-
-      <h3 class="bar green">Guides to food system advocacy</h3>
-
-      <ul class="resource-list">
-        <li><a href="http://www.clf.org/wp-content/uploads/2014/03/1.New_England_Food_Policy_FULL.pdf" target=_blank>New England Food Policy: Building a Sustainable Food System</a></li>
-
-        <li><a href="http://www.mass.gov/eea/docs/agr/boards-commissions/1989-1993-ma-framework-for-food-and-farm-policy-.pdf" target=_blank>The Massachusetts Farm and Food System: A Five-Year Policy Framework (1988)</a></li>
-
-        <li><a href="http://www.mass.gov/eea/docs/agr/boards-commissions/1976-food-and-ag-policy.pdf" target=_blank>A Policy for Food and Agriculture in Massachusetts (1976)</a></li>
-
-        <li><a href="http://www.mass.gov/eea/docs/agr/boards-commissions/governor-commission-on-food.pdf" target=_blank>In Search of a Food Policy (1974)</a></li>
-      </ul>
-
-      <h3 class="bar red">Other New England organizations</h3>
-
-      <ul class="resource-list">
-        <li><a href="https://ctfoodsystemalliance.com/" target=_blank>Connecticut Food System Alliance</a></li>
-
-        <li><a href="http://mainefoodstrategy.org/" target=_blank>Maine Food Strategy</a></li>
-
-        <li><a href="http://nhfoodstrategy.weebly.com/" target=_blank>New Hampshire Food Alliance</a></li>
-
-        <li><a href="http://rifoodcouncil.org/" target=_blank>Rhode Island Food Policy Council</a></li>
-
-        <li><a href="www.vtfarmtoplate.com" target=_blank>Vermont Farm to Plate</a></li>
-
-        <li><a href="http://www.foodsolutionsne.org/" target=_blank>Food Solutions New England</a></li>
-      </ul>
+    {{ object.body_text|safe }}
 
     </div><!--/wide-column-->
 

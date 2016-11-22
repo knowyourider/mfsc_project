@@ -6,62 +6,61 @@
 
 {% block full_page %}
 
-	<div class="row">
-		<div class="wide-column">
+<div class="row">
+	<div class="wide-column">
 
-			<div class="home-panel green">
-	      <img src="{% static 'images/market.jpg' %}">
-	      <h1><a href="{% url 'plan:sector_list' %}">The Plan</a></h1>
-	      <h3 class="pullquote">Massachusetts Local Food Action Plan</h3>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	    </div>
+	<div class="home-panel green">
+      <img src="{% static 'images/market.jpg' %}">
+      <h1><a href="{% url 'plan:sector_list' %}">The Plan</a></h1>
+      <h3 class="pullquote">Massachusetts Local Food Action Plan</h3>
+      {{ object.menu_blurb|safe }}
+    </div>
 
-			<div class="home-panel red">
-	      <img src="{% static 'images/realfood.jpg' %}">
-	      <h1><a href="{% url 'projects:project_list' %}">Projects</a></h1>
-	      <h3 class="pullquote">Initiatives of the Collaborative</h3>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	    </div>
+	<div class="home-panel red">
+      <img src="{% static 'images/realfood.jpg' %}">
+      <h1><a href="{% url 'projects:project_list' %}">Projects</a></h1>
+      <h3 class="pullquote">Initiatives of the Collaborative</h3>
+      {{ projects_menu.menu_blurb|safe }}
+    </div>
 
-		</div><!--/wide-column-->
+	</div><!--/wide-column-->
 
-		<div class="narrow-column">
-      <div class="story-sidebar blue">
-      	<h1><a href="{% url 'stories:story_list' %}">Stories</a></h1>
-        <h3 class="pullquote">The people who make up our food system</h3>
-
-        <img src="{% static 'images/apples-sm.jpg' %}">
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div><!--/story-sidebar-->
-		</div><!--/narrow-column-->
-	</div><!--/row-->
+	<div class="narrow-column">
+  <div class="story-sidebar blue">
+  	<h1><a href="{% url 'stories:story_list' %}">Stories</a></h1>
+    <h3 class="pullquote">The people who make up our food system</h3>
+    <img src="{% static 'images/apples-sm.jpg' %}">
+    {{ stories_menu.menu_blurb|safe }}
+  </div><!--/story-sidebar-->
+	</div><!--/narrow-column-->
+</div><!--/row-->
 
 
-	<div class="row">
-		<div class="wide-column">		
-			
-			<div class="whats-new">
-				<h2 class="bar green"><a href="{% url 'news:newsitem_list' %}">What's New</a></h2>
-				<img src="{% static 'images/fishing.jpg' %}">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p><a href="news/index.html" class="read-more">more...</a></p>
-			</div><!--/whats-new-->
+<div class="row">
+	<div class="wide-column">		
+		
+		<div class="whats-new">
+			<h2 class="bar green"><a href="{% url 'news:newsitem_list' %}">What's New</a></h2>
+			<img src="{% static 'images/fishing.jpg' %}">
+			<h4>{{ newsitem_list.0.title|safe }}</h4>
+			{{ newsitem_list.0.short_body_text|safe }}
+    <p><a href="{% url 'news:newsitem_list' %}#{{ newsitem_list.0.slug }}" class="read-more">more...</a></p>
+		</div><!--/whats-new-->
 
-		</div><!--/wide-column-->
+	</div><!--/wide-column-->
 
-		<div class="narrow-column">
+	<div class="narrow-column">
 
-			<h2 class="bar red"><a href="{% url 'news:newsitem_list' %}">News</a></h2>
-			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<h2 class="bar red"><a href="{% url 'news:newsitem_list' %}">News</a></h2>
+		{{ news_menu.menu_blurb|safe }}
 
-			<h2 class="bar blue"><a href="{% url 'resources:resource_list' %}">Resources</a></h2>
-			<p>Lolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<h2 class="bar blue"><a href="{% url 'resources:resource_list' %}">Resources</a></h2>
+		{{ resources_menu.menu_blurb|safe }}
 
-			<h2 class="bar green"><a href="{% url 'resources:about_detail' 'about' %}">About Us</a></h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		<h2 class="bar green"><a href="{% url 'resources:about_detail' 'about' %}">About Us</a></h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-		</div><!--/narrow-column-->
-	</div><!--/row-->
+	</div><!--/narrow-column-->
+</div><!--/row-->
 
 {% endblock full_page %}

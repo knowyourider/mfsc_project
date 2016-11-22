@@ -12,7 +12,7 @@
 
 	{% block stylesheets %}
     <link rel="stylesheet" href="{% static 'css/mfsc-styles.css' %}" type="text/css"/>
-    <link rel="stylesheet" href="{% static 'css/juliet2integrate-srch.css' %}" type="text/css"/>
+    <!-- <link rel="stylesheet" href="{% static 'css/juliet2integrate-srch.css' %}" type="text/css"/> -->
   {% endblock stylesheets %}
 
   {% block javascript %}
@@ -34,7 +34,7 @@
     <div class="top-nav-wrapper">
       <nav class="top-nav" role="navigation">
         <ul class="top-nav-menu">
-          <li><a href="/">Home</a></li>
+          <li{% if object.slug == "home" %} class="selected"{% endif %}><a href="/">Home</a></li>
 
           <li{% if object.menu.slug == "plan" or object_list.0.menu.slug == "plan" %} class="selected"{% endif %}><a href="{% url 'plan:sector_list' %}">The Plan</a></li>
 
@@ -46,7 +46,7 @@
 
           <li{% if object.menu.slug == "about" %} class="selected"{% endif %}><a href="{% url 'resources:about_detail' 'about' %}">About</a></li>
 
-          <li{% if object.menu.slug == "resources" or object_list.0.menu.slug == "resources" %} class="selected"{% endif %}><a href="{% url 'resources:resource_list' %}">Resources</a></li>
+          <li{% if object.menu.slug == "resources" or object_list.0.menu.slug == "resources" %} class="selected"{% endif %}><a href="{% url 'resources:resourcehome_detail' 'home' %}">Resources</a></li>
 
           <li{% if object.menu.slug == "news" or object_list.0.menu.slug == "news" %} class="selected"{% endif %}><a href="{% url 'news:newsitem_list' %}">News</a></li>
         </ul>

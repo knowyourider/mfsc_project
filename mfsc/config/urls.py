@@ -19,7 +19,8 @@ from django.contrib import admin
 
 urlpatterns = [
 
-    url(r'^$', TemplateView.as_view(template_name="index.html")),
+    #url(r'^$', TemplateView.as_view(template_name="index.html")),
+    url(r'^', include('sitewide.urls', namespace='sitewide')),
     url(r'^news/', include('news.urls', namespace='news')),
     url(r'^plan/', include('plan.urls', namespace='plan')),
     url(r'^projects/', include('projects.urls', namespace='projects')),

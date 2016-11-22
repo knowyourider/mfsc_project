@@ -1,0 +1,9 @@
+{% extends "news/newsitem_list.html" %}
+{% load staticfiles %}
+
+
+ {% block news_head %}Archived Posts{% endblock %}
+
+  {% block news_link %}
+    <p><a href="{% url 'news:newsitem_list' %}">View Current News</a></p>
+  {% endblock news_link %}
