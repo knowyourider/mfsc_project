@@ -509,8 +509,8 @@ body {
     display: table; }
 
 ul.top-nav-menu {
-  -webkit-transform-style: preserve-3d;
   color: #b6ca73;
+  -webkit-transform-style: preserve-3d;
   clear: both;
   display: none;
   margin: 0 auto;
@@ -518,13 +518,13 @@ ul.top-nav-menu {
   padding: 0;
   width: 100%;
   z-index: 99999; }
+  ul.top-nav-menu.show {
+    display: block; }
   ul.top-nav-menu li {
     border-right: 1px solid #b6ca73; }
-    ul.top-nav-menu li.show {
-      display: inline-block; }
     @media screen and (min-width: 53.75em) {
       ul.top-nav-menu li {
-        display: inline-block;
+        display: block;
         text-align: center; } }
     ul.top-nav-menu li.selected a {
       background-color: #b6ca73;

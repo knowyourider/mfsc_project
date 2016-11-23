@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // ------- GOAL PAGE RECOMMENDATION DROPDOWN ------
   // for action list to expand from recommendation in goal_detail.html
   $('.expander-trigger').click(function(){
     // console.log("got to trigger");
@@ -9,7 +10,30 @@ $(document).ready(function() {
     $(this).toggleClass("expander-hidden");
   });
 
-  // ------- SEARCH SUBMIT ON CHECKBOX change ------
+  
+  // ---------- NAVIGATION ----------
+  // This is happening on page load
+  // Assign var menuToggle to stand for the element js-top-navigation-mobile-menu
+  // and remove (unbind) any previous event handler
+  var menuToggle = $('#js-top-navigation-mobile-menu').unbind();
+  // Here, on page load, we're going to remove the class show
+  // .. if we happen to be in mobile mode, this will make sure the menu isn't dropped down
+  $('#js-top-navigation-menu').removeClass("show");
+  
+  // this adds click "listener" to the mobile MENU link
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    // toggle the primary mobile menu down (if it's up) and up (if already down)
+    $('#js-top-navigation-menu').slideToggle(function(){
+      // if css media query has hidden the full menu, then remove "full" style
+      // so that we get the plain list for mobile
+      if($('#js-top-navigation-menu').is(':hidden')) {
+        $('#js-top-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+  // ------- SEARCH ------
 
   // click on checkbox submits form
   $('input[type="checkbox"]').change(function(event){
@@ -54,7 +78,6 @@ $(document).ready(function() {
         }
     });  };
 
-  // ------- SEARCH ------
   // link to clear search
   $('#clear').click(function(event){
     // clear the value in the search field

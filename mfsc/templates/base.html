@@ -31,27 +31,39 @@
     <div class="banner">
       <img src="{% static 'images/mfsc-logo.svg' %}"><img src="{% static 'images/fish.png' %}">
     </div>
-    <div class="top-nav-wrapper">
-      <nav class="top-nav" role="navigation">
-        <ul class="top-nav-menu">
-          <li{% if object.slug == "home" %} class="selected"{% endif %}><a href="/">Home</a></li>
 
-          <li{% if object.menu.slug == "plan" or object_list.0.menu.slug == "plan" %} class="selected"{% endif %}><a href="{% url 'plan:sector_list' %}">The Plan</a></li>
+    <section class="top-navigation" role="banner">
 
-          <li{% if object.menu.slug == "projects" or object_list.0.menu.slug == "projects" %} class="selected"{% endif %}>
-            <a href="{% url 'projects:project_list' %}">Projects</a>
-          </li>
+      <div class="top-nav-wrapper">
 
-          <li{% if object.menu.slug == "stories" or object_list.0.menu.slug == "stories" %} class="selected"{% endif %}><a href="{% url 'stories:story_list' %}">Stories</a></li>
+        <a href="javascript:void(0)" id="js-top-navigation-mobile-menu" class="top-navigation-mobile-menu">MENU</a>
 
-          <li{% if object.menu.slug == "about" %} class="selected"{% endif %}><a href="{% url 'resources:about_detail' 'about' %}">About</a></li>
+        <nav class="top-nav" role="navigation">
 
-          <li{% if object.menu.slug == "resources" or object_list.0.menu.slug == "resources" %} class="selected"{% endif %}><a href="{% url 'resources:resourcehome_detail' 'home' %}">Resources</a></li>
+          <ul class="top-nav-menu show" id="js-top-navigation-menu">
+            <li{% if object.slug == "home" %} class="selected"{% endif %}><a href="/">Home</a></li>
 
-          <li{% if object.menu.slug == "news" or object_list.0.menu.slug == "news" %} class="selected"{% endif %}><a href="{% url 'news:newsitem_list' %}">News</a></li>
-        </ul>
-      </nav>
-    </div><!--/top-nav-wrapper-->
+            <li{% if object.menu.slug == "plan" or object_list.0.menu.slug == "plan" %} class="selected"{% endif %}><a href="{% url 'plan:sector_list' %}">The Plan</a></li>
+
+            <li{% if object.menu.slug == "projects" or object_list.0.menu.slug == "projects" %} class="selected"{% endif %}>
+              <a href="{% url 'projects:project_list' %}">Projects</a>
+            </li>
+
+            <li{% if object.menu.slug == "stories" or object_list.0.menu.slug == "stories" %} class="selected"{% endif %}><a href="{% url 'stories:story_list' %}">Stories</a></li>
+
+            <li{% if object.menu.slug == "about" %} class="selected"{% endif %}><a href="{% url 'resources:about_detail' 'about' %}">About</a></li>
+
+            <li{% if object.menu.slug == "resources" or object_list.0.menu.slug == "resources" %} class="selected"{% endif %}><a href="{% url 'resources:resourcehome_detail' 'home' %}">Resources</a></li>
+
+            <li{% if object.menu.slug == "news" or object_list.0.menu.slug == "news" %} class="selected"{% endif %}><a href="{% url 'news:newsitem_list' %}">News</a></li>
+          </ul>
+
+        </nav>
+
+      </div><!--/top-nav-wrapper-->
+
+    </section>
+
   </header>
 
   <div class="page-wrapper">

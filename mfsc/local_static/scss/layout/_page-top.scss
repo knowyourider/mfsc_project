@@ -51,8 +51,8 @@
 }
 
 ul.top-nav-menu {
-  -webkit-transform-style: preserve-3d; // stop webkit flicker
 	color: $green-tint;
+  -webkit-transform-style: preserve-3d; // stop webkit flicker
   clear: both;
   display: none;
   margin: 0 auto;
@@ -60,20 +60,20 @@ ul.top-nav-menu {
   padding: 0;
   width: 100%;
   z-index: 99999;
-		//font-size: $base-font-size;
+	//font-size: $base-font-size;
 	//margin-bottom: 0;
 	//padding: $small-spacing;
 
-	li {
+  &.show {
+    display: block;
+  }
+
+    li {
 		border-right: 1px solid $green-tint;
 		//display: inline-block;
 
-    &.show {
-      display: inline-block;
-    }
-
     @include media ($large-screen) {
-      display: inline-block;
+      display: block;
       text-align: center;
     }
 
