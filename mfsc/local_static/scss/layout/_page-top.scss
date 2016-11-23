@@ -45,8 +45,8 @@
 .top-nav {
   @include outer-container;
 
-  //border-bottom: 1px solid darken($main-nav-color, 0.10);
-	//height: 3em;
+  border-bottom: 1px solid darken($main-nav-color, 0.10);
+	height: 3em;
 	text-transform: uppercase;
 }
 
@@ -60,9 +60,6 @@ ul.top-nav-menu {
   padding: 0;
   width: 100%;
   z-index: 99999;
-	//font-size: $base-font-size;
-	//margin-bottom: 0;
-	//padding: $small-spacing;
 
   &.show {
     display: block;
@@ -72,7 +69,7 @@ ul.top-nav-menu {
     display: block;
     text-align: center;
   }
-
+//this is what makes the menu horizontal at large screen sizes
   li {
 		border-right: 1px solid $green-tint;
 		display: inline-block;

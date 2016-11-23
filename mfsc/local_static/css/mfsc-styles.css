@@ -502,6 +502,8 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: 1px solid #869c3b;
+  height: 3em;
   text-transform: uppercase; }
   .top-nav::after {
     clear: both;
@@ -833,7 +835,8 @@ ol.goals-list li span.number {
   width: 35%; }
 
 .from-wysiwyg ul {
-  list-style-type: disc; }
+  list-style-type: disc;
+  padding-left: 3em; }
 
 .previous {
   float: left;
