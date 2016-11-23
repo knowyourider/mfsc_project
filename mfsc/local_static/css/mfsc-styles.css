@@ -520,12 +520,13 @@ ul.top-nav-menu {
   z-index: 99999; }
   ul.top-nav-menu.show {
     display: block; }
+  @media screen and (min-width: 53.75em) {
+    ul.top-nav-menu {
+      display: block;
+      text-align: center; } }
   ul.top-nav-menu li {
-    border-right: 1px solid #b6ca73; }
-    @media screen and (min-width: 53.75em) {
-      ul.top-nav-menu li {
-        display: block;
-        text-align: center; } }
+    border-right: 1px solid #b6ca73;
+    display: inline-block; }
     ul.top-nav-menu li.selected a {
       background-color: #b6ca73;
       color: #C34619;

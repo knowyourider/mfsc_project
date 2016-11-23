@@ -68,14 +68,14 @@ ul.top-nav-menu {
     display: block;
   }
 
-    li {
-		border-right: 1px solid $green-tint;
-		//display: inline-block;
+  @include media ($large-screen) {
+    display: block;
+    text-align: center;
+  }
 
-    @include media ($large-screen) {
-      display: block;
-      text-align: center;
-    }
+  li {
+		border-right: 1px solid $green-tint;
+		display: inline-block;
 
 		&.selected a {
 			background-color: $green-tint;
