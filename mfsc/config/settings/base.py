@@ -131,4 +131,7 @@ STATICFILES_DIRS = (
     BASE_DIR.child("local_static"),
 )
 
+# STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'static')
+# in the Jelastic environment I need to put static inside of the project
+STATIC_ROOT = BASE_DIR.ancestor(1).child("static")
 
