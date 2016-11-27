@@ -10,9 +10,10 @@ class Organization(models.Model):
     town = models.CharField(max_length=64, blank=True, default='')
     phone = models.CharField(max_length=24, blank=True, default='')
     description = models.TextField(blank=True, default='')
+    ordinal = models.IntegerField('Order in Menu', default=99)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['ordinal']
 
     def __str__(self):
         return self.name

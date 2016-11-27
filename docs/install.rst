@@ -24,3 +24,6 @@ To install psycopg2 per
 
 To set up local Postgres client access to remote db:
 [Jelastic - Remote Access to PostgreSQL Database Server | Jelastic](https://docs.jelastic.com/remote-access-postgres)
+
+Here is where Apache is configured - /opt/repo/versions/2.4/etc/conf.d/openshift.conf
+Added an Alias for media

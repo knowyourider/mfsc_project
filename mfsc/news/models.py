@@ -16,6 +16,7 @@ class NewsItem(models.Model):
     on_homepage = models.BooleanField(default=False)
     # class ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, **options)
     news_image = models.ImageField(upload_to='news', blank=True)
+    credit = models.CharField('Image credit', max_length=64, blank=True, default='')
 
    # short body text
     @property
