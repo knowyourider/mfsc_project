@@ -14,6 +14,8 @@ class NewsItem(models.Model):
     posted = models.DateField('Date posted', null=True, blank=True)
     is_active = models.BooleanField(default=True)
     on_homepage = models.BooleanField(default=False)
+    # class ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, **options)
+    news_image = models.ImageField(upload_to='news', blank=True)
 
    # short body text
     @property

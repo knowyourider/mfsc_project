@@ -4,7 +4,7 @@ from .models import NewsItem
 
 class NewsItemAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,  {'fields': ['slug', 'title', 'posted', 'body_text', 
+        (None,  {'fields': ['slug', 'title', 'posted', 'body_text', 'news_image',
             'is_active', 'on_homepage']}),
     ]
     change_form_template = 'news/admin/body_text_change_form.html'

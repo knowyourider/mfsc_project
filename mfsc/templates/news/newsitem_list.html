@@ -33,6 +33,9 @@
   <article class="news" id="{{ newsitem.slug }}">
     <p class="date">{{ newsitem.posted|date:"F d, Y" }}</p>
     <h1 class="pullquote">{{ newsitem.title|safe }}</h1>
+    {% if newsitem.news_image %}
+      <img src="{{ newsitem.news_image.url }}">
+    {% endif %}
     {{ newsitem.body_text|safe }}
   </article>
 

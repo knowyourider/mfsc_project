@@ -135,3 +135,6 @@ STATICFILES_DIRS = (
 # in the Jelastic environment I need to put static inside of the project
 STATIC_ROOT = BASE_DIR.ancestor(1).child("static")
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.ancestor(1).child("media")
+
