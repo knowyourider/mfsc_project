@@ -24,12 +24,16 @@
 .page-nav, .page-nav--selected {
   border: 1px solid $light-gray;
   margin-right: $tiny-spacing;
-  padding: 0 0 0 4px;
+  line-height: $base-line-height * 1.25;
+  padding: 0 0 0 $tiny-spacing;
+
+  &:hover {
+    background-color: $blue;
+    text-decoration: none;
+  }
 
   &:hover a {
-    background-color: $blue;
     color: $white-font-color;
-    text-decoration: none;
   }
 }
 
