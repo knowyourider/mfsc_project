@@ -13,9 +13,41 @@
 	}
 
 	img {
-		float: left;
-		//margin-right: $tiny-spacing;
-		@include span-columns (4 of 8);
+		@include span-columns (6 of 12);
+
+		@include media (1100px) {
+			@include span-columns (4 of 8);
+		}
+	}
+
+	p {
+		@include span-columns (6 of 12);
+
+		@include media (1100px) {
+			@include span-columns (4 of 8);
+		}
+	}
+}
+
+.narrow-column .home-panel img, .narrow-column .home-panel p {
+	@include media (1100px) {
+		@include span-columns (4 of 4);
+	}
+}
+
+.narrow-column .home-panel {
+	padding-right: 0;
+
+	p, h3 {
+		padding: 0 $small-spacing 0 0;
+		
+		@include media (1100px) {
+			padding-left: $small-spacing;
+		}
+	}
+
+	h1 {
+		padding-left: $tiny-spacing;
 	}
 }
 
@@ -31,8 +63,13 @@
 	color: $blue-tint;
 }
 
+//.whats-new {
+//	@include span-columns (8 of 12);
+//}
+
 .whats-new img {
 	@include span-columns (4 of 8);
-	float: left;
-	margin-right: $base-spacing;
+	//float: left;
+	//margin-right: $base-spacing;
+	margin-bottom: $base-spacing;
 }

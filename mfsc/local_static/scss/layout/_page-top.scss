@@ -4,10 +4,6 @@
   text-align: center; 
   @include outer-container;
 
-//not sure I need the following two lines
-  @include clearfix;
-  z-index: 999;
-
   img.fish {
  		position: absolute;
   	top: 80px;
@@ -15,19 +11,23 @@
   }	
 }
 
+.top-nav-wrapper {
+  background-color: $main-nav-color; 
+	//there should be a way for the height of this to be determined by either MENU or li of top-nav-menu
+	height: 3.5em;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+}
+
 // the MENU link that displays at mobile sizes
 .top-navigation-mobile-menu {
   color: $green-tint;
   display: block;
-  float: right;
-  line-height: $base-line-height;
-  margin: 0;
-  padding-right: $small-spacing;
+  padding: $small-spacing;
   text-decoration: none;
-  text-transform: uppercase;
 
   // don't show at large screen sizes
-  @include media ($large-screen) {
+  @include media (1100px) {
     display: none;
   }
 
@@ -37,17 +37,8 @@
   }
 }
 
-.top-nav-wrapper {
-  background-color: $main-nav-color; 
-  text-align: center; 
-}
-
 .top-nav {
-  @include outer-container;
-
   border-bottom: 1px solid darken($main-nav-color, 0.10);
-	height: 3em;
-	text-transform: uppercase;
 }
 
 ul.top-nav-menu {
@@ -57,7 +48,6 @@ ul.top-nav-menu {
   display: none;
   margin: 0 auto;
   overflow: visible;
-  padding: 0;
   width: 100%;
   z-index: 99999;
 
@@ -65,26 +55,47 @@ ul.top-nav-menu {
     display: block;
   }
 
-  @include media ($large-screen) {
+  @include media (1100px) {
     display: block;
     text-align: center;
   }
 //this is what makes the menu horizontal at large screen sizes
   li {
-		border-right: 1px solid $green-tint;
-		display: inline-block;
+		//mobile sizes
+  	background-color: $main-nav-color; 
+		border-bottom: 1px solid $green-tint;
+		display: block;
+		font-size: $small-font-size;
+		padding: $tiny-spacing $small-spacing;
+
+  	//large sizes
+  	@include media (1100px) {
+			border-bottom: none;
+			display: inline-block;
+			font-size: $base-font-size;
+			padding: $small-spacing 0;
+		}
 
 		&.selected a {
-			background-color: $green-tint;
-			color: $red;
-			margin-left: -4px;
+  		//large sizes
+	  	@include media (1100px) {
+				background-color: $green-tint;
+				color: $red;
+				margin-left: -10px;
+				padding: $small-spacing $base-spacing;
+			}
 		}
 	}
 
 	a {
 		color: $white-font-color;
-		letter-spacing: 0.25em;
-		padding: $small-spacing $base-spacing;
+
+  	//large sizes
+  	@include media (1100px) {		
+			border-right: 1px solid $green-tint;
+			border-bottom: none;
+			padding: $small-spacing $base-spacing;
+		}
 	}
 
 	a:hover {

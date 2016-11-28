@@ -10,6 +10,10 @@
 
   <script src="https://use.typekit.net/kke2mht.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <script src="../js/application.js" type="text/javascript"></script>
+  
   <title>MFSC</title>
  
 </head>
@@ -30,9 +34,9 @@
 				<nav class="top-nav" role="navigation">
 
 					<ul class="top-nav-menu show" id="js-top-navigation-menu">
-						<li class="selected"><a href="#">Home</a></li>
+						<li><a href="#">Home</a></li>
 						<li><a href="plan/index.html">The Plan</a></li>
-						<li><a href="projects/index.html">Projects</a></li>
+						<li class="selected"><a href="projects/index.html">Projects</a></li>
 						<li><a href="stories/index.html">Stories</a></li>
 						<li><a href="About/index.html">About</a></li>
 						<li><a href="resources/index.html">Resources</a></li>
@@ -47,8 +51,7 @@
 	<section class="page-wrapper">
 
 	<div class="row">
-		<div class="wide-column">
-
+ 		<div class="wide-column">
 			<div class="home-panel green">
 	      <img src="images/market.jpg">
 	      <h1><a href="plan/index.html">The Plan</a></h1>
@@ -65,18 +68,16 @@
 
 		</div><!--/wide-column-->
 
-		<div class="narrow-column">
-      <div class="story-sidebar blue">
+ 		<div class="narrow-column">
+   		<div class="home-panel blue">
+        <img src="images/apples-sm.jpg">
       	<h1><a href="stories/index.html">Stories</a></h1>
         <h3 class="pullquote">The people who make up our food system</h3>
-
-        <img src="images/apples-sm.jpg">
-        
+       
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div><!--/story-sidebar-->
 		</div><!--/narrow-column-->
 	</div><!--/row-->
-
 
 	<div class="row">
 		<div class="wide-column">		
@@ -107,9 +108,11 @@
 	</section>
 
 	<footer>
-		<div class="footer-wrapper">
+		<div class="wide-column">
 			<p>&copy; 2016 Massachusetts Food System Collaborative</p>
+		</div><!--/wide-column-->
 
+		<div class="narrow-column">
 			<ul class="footer-social">
 	      <li class="footer-social--item">
 	        <a href="https://www.facebook.com/" target="_blank">
@@ -123,8 +126,7 @@
 	        </a>
 	      </li>
 	    </ul>
-
-		</div>
+		</div><!--/narrow-column-->
 	</footer>
 
 </body>

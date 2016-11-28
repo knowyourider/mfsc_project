@@ -17,25 +17,21 @@ body {
 }
 
 .wide-column {
-	
-	// when screen is greater than or equal to 640
-  @include media(640px) {
-    @include span-columns(8 of 12);
- }
-
-	// when screen is less than 640
  	@include span-columns (12);
+
+	// when screen is larger than 860rem
+  @include media(1100px) {
+    @include span-columns(8 of 12);
+ 	}
 }
 
 .narrow-column {
+ 	@include span-columns (12);
 
-	// when screen is greater than or equal to 640
-  @include media(640px) {
+	// when screen is larger than 860rem
+  @include media(1100px) {
     @include span-columns(4 of 12);
-  }
-
-	// when screen is less than 640
-  @include span-columns (12);
+ 	}
 }
 
 .sub-column {
