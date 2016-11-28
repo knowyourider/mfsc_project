@@ -31,12 +31,14 @@
 
   <div class="wide-column">
 
-    {{ object.first_para|safe }}
+    <div class="from-wysiwyg">
+      {{ object.first_para|safe }}
 
-    <details>
-      <summary class="read-more">more....</summary>
-        {{ object.remaining_paras|safe }}
-    </details>
+      <details>
+        <summary class="read-more">more....</summary>
+          {{ object.remaining_paras|safe }}
+      </details>
+    </div>
 
   </div><!--/wide-column-->
 </div><!--/row-->

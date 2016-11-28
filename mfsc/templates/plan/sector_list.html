@@ -20,11 +20,16 @@
     <div class="wide-column">
 
       <h2 class="bar red">About the Plan</h2>
-      {{ object_list.0.menu.first_para|safe }}
-    <details>
-      <summary class="read-more">more....</summary>
-        {{ object_list.0.menu.remaining_paras|safe }}
-    </details>
+      <div class="from-wysiwyg">
+
+        {{ object_list.0.menu.first_para|safe }}
+        <details>
+          <summary class="read-more">more....</summary>
+            {{ object_list.0.menu.remaining_paras|safe }}
+        </details>
+
+      </div>
+
 
     </div><!--/wide-column-->
 

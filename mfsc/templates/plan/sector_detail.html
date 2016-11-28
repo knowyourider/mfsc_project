@@ -37,9 +37,11 @@
           <p>{{ object.credit|safe }} </p>
         </div>
 
-        {# leading <p> is stripped by code, and hard-wired here #} 
-        <p><span class="lead-sentence green-head">{{ object.first_sentence|safe }}</span>
-        {{ object.remaining_text|safe }}
+        <div class="from-wysiwyg">
+          {# leading <p> is stripped by code, and hard-wired here #} 
+          <p><span class="lead-sentence green-head">{{ object.first_sentence|safe }}</span>
+          {{ object.remaining_text|safe }}
+        </div>
 
       </div><!--/wide-column-->
       

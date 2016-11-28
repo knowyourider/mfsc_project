@@ -12,7 +12,9 @@
 
     <div class="wide-column shift-right">
 
-    {{ object.body_text|safe }}
+    <div class="from-wysiwyg">
+      {{ object.body_text|safe }}     
+    </div>
 
     <h3 class="bar red">Key Action Item</h3>
     

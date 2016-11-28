@@ -22,7 +22,9 @@
 
   <div class="wide-column">
 
-    {{ object.body_text|safe }}
+    <div class="from-wysiwyg">
+      {{ object.body_text|safe }}     
+    </div>
 
     <h2 class="blue-head">Related Actions</h2>
     
