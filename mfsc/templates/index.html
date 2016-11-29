@@ -41,7 +41,11 @@
 		
 		<div class="whats-new">
 			<h2 class="bar green"><a href="{% url 'news:newsitem_list' %}">What's New</a></h2>
-			<img src="{% static 'images/fishing.jpg' %}">
+
+	    {% if newsitem_list.0.news_image %}
+				<img src="{{ newsitem_list.0.news_image.url }}">
+			{% endif %}
+			
 			<h3>{{ newsitem_list.0.title|safe }}</h3>
 			{{ newsitem_list.0.short_body_text|safe }}
     	<p><a href="{% url 'news:newsitem_list' %}#{{ newsitem_list.0.slug }}" class="read-more">more...</a></p>
@@ -58,7 +62,7 @@
 		{{ resources_menu.menu_blurb|safe }}
 
 		<h2 class="bar green"><a href="{% url 'resources:about_detail' 'about' %}">About Us</a></h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		{{ about_menu.menu_blurb|safe }}
 
 	</div><!--/narrow-column-->
 </div><!--/row-->
