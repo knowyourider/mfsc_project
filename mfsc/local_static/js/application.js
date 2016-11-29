@@ -110,6 +110,29 @@ $(document).ready(function() {
         'slow');
   });
 
+  // ------- MORE AND LESS TEXT ------
+
+  // more text
+  $('.body-text--more').click(function(){
+    $('#more-text').toggleClass("hidden");
+    $(this).hide();
+    // console.log("----- p:nth-child(4): " + $(this).parent().parent().find("p:nth-child(4)").html());
+    $('.body-text--less').show();
+    //$(this).parent().find("p:nth-child(4)").show();
+  });
+
+  // more text
+  $('.body-text--less').click(function(){
+    $('#more-text').toggleClass("hidden");
+    $(this).hide();
+    $('.body-text--more').show();
+    // scroll to or near top -- once the "more" text collapses we're down at the bottom
+    // of the page
+    $('html,body').animate({
+        scrollTop: $("#scroll-less-top").offset().top - 30},
+        'slow');
+  });
+
   // ------- MENU PAGINATION ------
 
   // Turn page selection into form submit

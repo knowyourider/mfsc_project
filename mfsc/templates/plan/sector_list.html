@@ -17,19 +17,21 @@
       <img src="{% static 'plan/icons/' %}New-Logo-Wide-300x112.png">
     </div><!--/narrow-column-->
 
-    <div class="wide-column">
+    <div class="wide-column" id="scroll-less-top">
 
       <h2 class="bar red">About the Plan</h2>
       <div class="from-wysiwyg">
 
         {{ object_list.0.menu.first_para|safe }}
-        <details>
-          <summary class="read-more">more....</summary>
-            {{ object_list.0.menu.remaining_paras|safe }}
-        </details>
+
+        <div id="more-text" class="hidden">
+          {{ object_list.0.menu.remaining_paras|safe }}
+        </div>
+
+        <p class="body-text--more">show more</p>
+        <p class="body-text--less hidden">show less</p>
 
       </div>
-
 
     </div><!--/wide-column-->
 

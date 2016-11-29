@@ -13,7 +13,7 @@
 
 {% block content_area %}
 
-<div class="row">
+<div class="row" id="scroll-less-top">
 
   <h2 class="bar green">Goal {{ object.goal_num }}</h2>
 
@@ -34,10 +34,13 @@
     <div class="from-wysiwyg">
       {{ object.first_para|safe }}
 
-      <details>
-        <summary class="read-more">more....</summary>
-          {{ object.remaining_paras|safe }}
-      </details>
+      <div id="more-text" class="hidden">
+        {{ object.remaining_paras|safe }}
+      </div>
+
+      <p class="body-text--more">show more</p>
+      <p class="body-text--less hidden">show less</p>
+
     </div>
 
   </div><!--/wide-column-->

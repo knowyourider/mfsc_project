@@ -1,0 +1,7 @@
+.body-text--more, .body-text--less {
+  font-size: 0.9em;
+  text-align: right;
+  margin: 0; }
+  .body-text--more:hover, .body-text--less:hover {
+    cursor: pointer;
+    text-decoration: underline; }
