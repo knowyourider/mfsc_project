@@ -11,7 +11,7 @@ def home_page(request):
     stories_menu = get_object_or_404(Menu, slug='stories')
     news_menu = get_object_or_404(Menu, slug='news')
     about_menu = get_object_or_404(Menu, slug='about')
-    newsitem_list = NewsItem.objects.filter(on_homepage=True)
+    newsitem_list = NewsItem.objects.filter(status_num=1)
 
     return render(request, "index.html", 
         {'object': object, 'resources_menu': resources_menu, 'stories_menu': stories_menu, 

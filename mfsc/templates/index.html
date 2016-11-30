@@ -45,8 +45,8 @@
 	    {% if newsitem_list.0.news_image %}
 				<img src="{{ newsitem_list.0.news_image.url }}">
 			{% endif %}
-			
-			<h3>{{ newsitem_list.0.title|safe }}</h3>
+
+			<h3><a href="{% url 'news:newsitem_list' %}#{{ newsitem_list.0.slug }}">{{ newsitem_list.0.title|safe }}</a></h3>
 			{{ newsitem_list.0.short_body_text|safe }}
     	<p><a href="{% url 'news:newsitem_list' %}#{{ newsitem_list.0.slug }}" class="read-more">more...</a></p>
 		</div><!--/whats-new-->

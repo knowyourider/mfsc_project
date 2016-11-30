@@ -72,6 +72,7 @@ class Goal(CommonModel):
     sector = models.ForeignKey('plan.Sector')
     goal_num = models.IntegerField(default=0)
     image_name = models.CharField('Story image name',  max_length=32, blank=True, default='')
+    credit = models.CharField('Image credit', max_length=64, blank=True, default='')
     body_text = models.TextField(blank=True, default='')
     
    # list of recs for given goal

@@ -14,7 +14,7 @@ class GoalAdmin(admin.ModelAdmin):
     change_form_template = 'plan/admin/goal_change_form.html'
     fieldsets = [
         (None,  {'fields': ['sector', 'goal_num', 'description', 
-            'image_name', 'body_text', 'term']}),
+            'image_name', 'credit', 'body_text', 'term']}),
         ('Notes',   {'fields': ['responsible', 'stakeholder']}),
     ]
     readonly_fields = ('sector', 'goal_num', 'description')

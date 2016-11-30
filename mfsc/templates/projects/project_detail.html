@@ -10,28 +10,40 @@
 
 {% block content_area %}
 
-    <div class="wide-column shift-right">
+<div class="narrow-column">
 
-    <div class="from-wysiwyg">
-      {{ object.body_text|safe }}     
+  {% for projectimage in object.projectimage_set.all %}
+    <div class="pic-caption">
+      <img src="{{ projectimage.image.url }}">
+      <p>Image courtesy of {{ projectimage.credit|safe }} </p>
     </div>
+    <!-- <p>&nbsp;</p> -->
+  {% endfor %}
+  <p>&nbsp;</p>
 
-    <h3 class="bar red">Key Action Item</h3>
+</div><!--/narrow-column-->
+
+<div class="wide-column">  <!-- shift-right -->
+
+<div class="from-wysiwyg">
+  {{ object.body_text|safe }}     
+</div>
+
+<h3 class="bar red">Key Action Item</h3>
+<p><a href="{% url 'plan:action_detail' object.key_action.id %}">{{ object.key_action.rec.goal.sector.title }} {{ object.key_action.rec.goal.goal_num }}.{{ object.key_action.rec.rec_num }}.{{ object.key_action.action_num }}:</a> {{ object.key_action.description|safe }} </p>
+
+<h3 class="bar blue">Other Relevant Action Items</h3>
+
+{% for action in object.actions.all %}
+  <p>
+    <a href="{% url 'plan:action_detail' action.id %}">
+      {{ action.rec.goal.sector.title }} {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a> 
+      {{ action.description|safe }}
     
-    <p><a href="{% url 'plan:action_detail' object.key_action.id %}">{{ object.key_action.rec.goal.sector.title }} {{ object.key_action.rec.goal.goal_num }}.{{ object.key_action.rec.rec_num }}.{{ object.key_action.action_num }}:</a> {{ object.key_action.description|safe }} </p>
-
-    <h3 class="bar blue">Other Relevant Action Items</h3>
-
-    {% for action in object.actions.all %}
-      <p>
-        <a href="{% url 'plan:action_detail' action.id %}">
-          {{ action.rec.goal.sector.title }} {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a> 
-          {{ action.description|safe }}
-        
-      </p>
-    {% endfor %} {# end action list #}
+  </p>
+{% endfor %} {# end action list #}
 
 
-  </div><!--/wide-column-->
+</div><!--/wide-column-->
 
 {% endblock content_area %}

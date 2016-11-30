@@ -3,11 +3,11 @@
 var froalaIntro = {
 	heightMin: 200,
 	pastePlain: true,
-	toolbarButtons: ['italic', 'quote', 'formatOL', 'formatUL', 
+	toolbarButtons: ['italic', 'quote', 'formatOL', 'formatUL', 'superscript',
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	toolbarButtonsMD: ['italic', 'quote', 'formatOL', 'formatUL', 
+	toolbarButtonsMD: ['italic', 'quote', 'formatOL', 'formatUL', 'superscript',
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
-	toolbarButtonsSM: ['italic', 'quote', 'formatOL', 'formatUL', 
+	toolbarButtonsSM: ['italic', 'quote', 'formatOL', 'formatUL', 'superscript',
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	width: '800'
 }
@@ -21,14 +21,34 @@ var froalaMeta = {
 	},
 	pastePlain: true,
 	toolbarButtons: ['italic', 'superscript',  
-		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 
+		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 'superscript',
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	toolbarButtonsMD: ['italic', 'superscript',  
-		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 
+		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 'superscript',
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	toolbarButtonsSM: ['italic', 'superscript',  
-		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 
+		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 'superscript',
 		'|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+	width: '800'
+}
+
+var froalaImage = {
+	heightMin: 300,
+	linkAlwaysBlank: true,
+	paragraphFormat: {
+		N: 'Normal',
+		DETAILS: 'read more'
+	},
+	pastePlain: true,
+	toolbarButtons: ['italic', 'superscript',  
+		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 'insertImage',
+		'superscript', '|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+	toolbarButtonsMD: ['italic', 'superscript',  
+		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 'insertImage',
+		'superscript', '|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+	toolbarButtonsSM: ['italic', 'superscript',  
+		'paragraphFormat', 'formatOL', 'quote', 'insertLink', 'insertImage',
+		'superscript', '|', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
 	width: '800'
 }
 
