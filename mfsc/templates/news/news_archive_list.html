@@ -1,9 +1,16 @@
 {% extends "news/newsitem_list.html" %}
 {% load staticfiles %}
 
+{% block title_area %}
+  <h1>News Archive</h1>
+{% endblock title_area %}
 
- {% block news_head %}Archived Posts{% endblock %}
+  <h2 class="bar green">
+	{% block news_head %}Archived Posts{% endblock %}
+	</h2>
 
   {% block news_link %}
-    <p><a href="{% url 'news:newsitem_list' %}">View Current News</a></p>
+  <h2 class="bar blue">    
+    <a href="{% url 'news:newsitem_list' %}">View Current News</a>
+  </h2>
   {% endblock news_link %}

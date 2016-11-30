@@ -616,7 +616,7 @@ h4 {
 
 .lead-sentence {
   font-size: 1.75em;
-  line-height: 0.75; }
+  line-height: 1; }
 
 .bar {
   color: #FFF;
@@ -918,15 +918,15 @@ ol.goals-list li span.number {
   .pic-caption p {
     padding: 0.75em; }
 
-.story-sidebar.blue h2, .story-sidebar.blue h3, .story-sidebar.blue a {
-  color: #9dd9fe; }
-
 .story-sidebar {
   color: #FFF;
   padding: 0.75em;
   margin-bottom: 1.5em; }
-  .story-sidebar h1 a {
-    color: white !important; }
+  .story-sidebar h3 {
+    color: #FFF; }
+
+.story-sidebar.blue h2, .story-sidebar.blue a {
+  color: #9dd9fe; }
 
 .caption {
   font-size: 0.8em; }

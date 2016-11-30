@@ -12,8 +12,9 @@
 <div class="narrow-column">
 
   <h2 class="bar blue">
-  {% block news_head %}Recent Posts{% endblock %}
+  {% block news_head %}Current Posts{% endblock %}
   </h2>
+
   <dl class="past-news">
   {% for newsitem in object_list %}
     <dt><a href="#{{ newsitem.slug }}">{{ newsitem.title|safe }}</a></dt>
@@ -22,7 +23,9 @@
   </dl>
 
   {% block news_link %}
-    <p><a href="{% url 'news:news_archive_list' %}">View Archive</a></p>
+    <h2 class="bar green">
+      <a href="{% url 'news:news_archive_list' %}">View News Archive</a>
+    </h2>
   {% endblock news_link %}
 
 </div><!--/narrow-column-->
