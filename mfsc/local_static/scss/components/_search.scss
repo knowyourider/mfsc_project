@@ -12,18 +12,22 @@ input.search-field {
 	height: 40px;
 	margin-right: $tiny-spacing;
 	width: 75%;
+
+	//at mobile sizes, layout into two columns
+	@include media (max-width 1100px) {
+		width: 50%;
+	}
 }
 
 input.search-go  {
 	display: inline;
 	height: 40px;
 	//not sure why this button isn't top aligning with search field...
-	margin-top: -4px;
+	margin-top: -6px;
 	width: 20%;
 }
 
 .search-results {
-
 	margin-top: $small-spacing;
 
 	li {
@@ -32,6 +36,14 @@ input.search-go  {
 		a {
 			font-weight: bold;
 		}
+	}
+}
+
+.control-box {
+	//at mobile sizes, layout into two columns
+	@include media (max-width 1100px) {
+ 		@include span-columns (6 of 12);
+		@include omega (2);
 	}
 }
 

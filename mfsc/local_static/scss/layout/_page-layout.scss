@@ -43,5 +43,10 @@ body {
 }
 
 .shift-right {
-	@include shift(4 of 12);
+	@include shift (4 of 12);
+
+	//at mobile sizes, don't shift
+	@include media (max-width 1100px) {
+		@include shift (0);
+	}
 }

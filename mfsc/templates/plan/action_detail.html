@@ -6,9 +6,10 @@
 {% block title_area %}
   <div class="sector-icon-header">
     <img src="{% static 'plan/icons/' %}sector-icon-{{ object.rec.goal.sector.slug }}.png">
-    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; 
-    <a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">Sector &rarr; 
-    <a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goals &amp; Recommendations</a>
+    <h4 class="crumbs">
+      <a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; 
+      <a href="{% url 'plan:sector_detail' object.rec.goal.sector.slug %}">Sector</a> &rarr; 
+      <a href="{% url 'plan:goal_detail' object.rec.goal.id %}">Goals &amp; Recommendations</a>
     </h4>
     <h1>{{ object.rec.goal.sector.title }}</h1>
   </div>
@@ -89,7 +90,7 @@
     {% if object.story_set.all %}
       {% for story in object.story_set.all %}
         <div class="story-sidebar blue">
-          <h3>Story</h3>
+          <h2>Story</h2>
           <h3 class="pullquote">{{ story.title|safe }}</h3>
 
           <img src="{% static 'stories/fullpics/' %}{{ story.slug }}.jpg">

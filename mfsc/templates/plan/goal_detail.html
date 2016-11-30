@@ -6,7 +6,10 @@
 {% block title_area %}
   <div class="sector-icon-header">
     <img src="{% static 'plan/icons/' %}sector-icon-{{ object.sector.slug }}.png">
-    <h4 class="crumbs"><a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; <a href="{% url 'plan:sector_detail' object.sector.slug %}">Sector</a></h4>
+    <h4 class="crumbs">
+      <a href="{% url 'plan:sector_list' %}">The Plan</a> &rarr; 
+      <a href="{% url 'plan:sector_detail' object.sector.slug %}">Sector</a>
+    </h4>
     <h1>{{ object.sector.title }}</h1>
   </div>
 {% endblock title_area %}
