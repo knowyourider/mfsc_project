@@ -5,12 +5,14 @@
   <h1>News Archive</h1>
 {% endblock title_area %}
 
+{% block news_head %}
   <h2 class="bar green">
-	{% block news_head %}Archived Posts{% endblock %}
+		Archived Posts
 	</h2>
+{% endblock %}
 
-  {% block news_link %}
-  <h2 class="bar blue">    
-    <a href="{% url 'news:newsitem_list' %}">View Current News</a>
-  </h2>
-  {% endblock news_link %}
+{% block news_link %}
+	<h2 class="bar blue">    
+		<a href="{% url 'news:newsitem_list' %}">View Current News</a>
+	</h2>
+{% endblock news_link %}
