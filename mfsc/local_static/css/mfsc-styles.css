@@ -601,6 +601,9 @@ h1, h2, h3, h4, h5, .next-link, .prev-link {
 
 h1 {
   font-size: 2.5em; }
+  @media screen and (max-width: 1100px) {
+    h1 {
+      font-size: 2em; } }
 
 h2 {
   font-size: 1.75em; }
@@ -917,7 +920,8 @@ ol.goals-list li span.number {
 .pic-caption {
   background-color: #869C3B;
   color: #FFF;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  margin-bottom: 1.5em; }
   @media screen and (max-width: 1100px) {
     .pic-caption {
       float: left;
@@ -925,6 +929,8 @@ ol.goals-list li span.number {
       margin-right: 4.34783%;
       width: 47.82609%; }
       .pic-caption:last-child {
+        margin-right: 0; }
+      .pic-caption:nth-child(2) {
         margin-right: 0; } }
   .pic-caption p {
     padding: 0.75em; }
@@ -940,6 +946,8 @@ ol.goals-list li span.number {
       margin-right: 4.34783%;
       width: 47.82609%; }
       .story-sidebar:last-child {
+        margin-right: 0; }
+      .story-sidebar:nth-child(2) {
         margin-right: 0; } }
   .story-sidebar h3 {
     color: #FFF; }
@@ -966,7 +974,7 @@ input.search-field {
 input.search-go {
   display: inline;
   height: 40px;
-  margin-top: -6px;
+  margin-top: -4px;
   width: 20%; }
 
 .search-results {
@@ -996,6 +1004,9 @@ input.search-go {
 .short-list {
   height: 200px;
   overflow: hidden; }
+  @media screen and (max-width: 1100px) {
+    .short-list {
+      overflow: scroll; } }
 
 .control-box--more, .control-box--fewer {
   font-size: 0.9em;
@@ -1004,6 +1015,9 @@ input.search-go {
   .control-box--more:hover, .control-box--fewer:hover {
     cursor: pointer;
     text-decoration: underline; }
+  @media screen and (max-width: 1100px) {
+    .control-box--more, .control-box--fewer {
+      display: none; } }
 
 .hidden {
   display: none; }

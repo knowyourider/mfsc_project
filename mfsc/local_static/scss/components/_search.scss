@@ -23,7 +23,7 @@ input.search-go  {
 	display: inline;
 	height: 40px;
 	//not sure why this button isn't top aligning with search field...
-	margin-top: -6px;
+	margin-top: -4px;
 	width: 20%;
 }
 
@@ -58,6 +58,10 @@ input.search-go  {
 .short-list {
 	height: 200px;
 	overflow: hidden;
+	
+	@include media (max-width 1100px) {
+		overflow: scroll;
+	}
 }
 
 .control-box--more, .control-box--fewer {
@@ -68,6 +72,11 @@ input.search-go  {
 	&:hover {
 		cursor: pointer;
 		text-decoration: underline;
+	}
+
+	//at mobile sizes, layout into two columns
+	@include media (max-width 1100px) {
+  	display: none;
 	}
 }
 

@@ -17,13 +17,11 @@
       <img src="{{ projectimage.image.url }}">
       <p>Image courtesy of {{ projectimage.credit|safe }} </p>
     </div>
-    <!-- <p>&nbsp;</p> -->
   {% endfor %}
-  <p>&nbsp;</p>
 
 </div><!--/narrow-column-->
 
-<div class="wide-column">  <!-- shift-right -->
+<div class="wide-column">
 
 <div class="from-wysiwyg">
   {{ object.body_text|safe }}     
