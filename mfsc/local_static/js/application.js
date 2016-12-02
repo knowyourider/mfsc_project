@@ -17,7 +17,8 @@ $(document).ready(function() {
   // and remove (unbind) any previous event handler
   var menuToggle = $('#js-top-navigation-mobile-menu').unbind();
   // Here, on page load, we're going to remove the class show
-  // .. if we happen to be in mobile mode, this will make sure the menu isn't dropped down
+  // .. if we happen to be in mobile mode, this will make sure the menu 
+  // isn't dropped down
   $('#js-top-navigation-menu').removeClass("show");
   
   // this adds click "listener" to the mobile MENU link
@@ -62,7 +63,7 @@ $(document).ready(function() {
         // handle a successful response
         success : function(json) {
             // console.log(json); // log the returned json to the console
-            $('.wide-column').html(json)
+            $('#results').html(json)
             // scroll to top of results
             $('html,body').animate({
                 scrollTop: $("#search-form").offset().top - 30},
@@ -71,19 +72,27 @@ $(document).ready(function() {
 
         // handle a non-successful response
         error : function(xhr,errmsg,err) {
-            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
-                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
-            console.log(xhr.status ); // provide a bit more info about the error to the console
-            $('.wide-column').html(xhr.responseText); 
+            //$('#results').html("<div class='alert-box alert radius' data-alert>
+            //Oops! We have encountered an error: "+errmsg+
+                //" <a href='#' class='close'>&times;</a></div>"); 
+                // add the error to the dom
+            console.log(xhr.status ); // provide a bit more info about 
+            // the error to the console
+            $('#results').html(errmsg + xhr.responseText); 
         }
     });  };
 
   // link to clear search
   $('#clear').click(function(event){
-    // clear the value in the search field
+    event.preventDefault();
+    var searchForm = $('#search-form')
+    // Clear entire form
     $('input[name="q"]').val('')
+    // searchForm.find('input:text').val('');
+    searchForm.find('input:checkbox')
+         .removeAttr('checked').removeAttr('selected');
     // submit
-    $('form[name="menu"]').submit()
+    searchForm.submit()
     
   });
 
@@ -93,7 +102,8 @@ $(document).ready(function() {
     // toggle the short-list class
     $(this).parent().find(".control-box--list").toggleClass("short-list");
     $(this).hide();
-    // console.log("----- p:nth-child(4): " + $(this).parent().parent().find("p:nth-child(4)").html());
+    // console.log("----- p:nth-child(4): " + $(this).parent().parent().
+      // find("p:nth-child(4)").html());
     // $(this).parent().parent().find("p:nth-child(4)").show();
     $(this).parent().find("p:nth-child(4)").show();
   });
@@ -116,7 +126,8 @@ $(document).ready(function() {
   $('.body-text--more').click(function(){
     $('#more-text').toggleClass("hidden");
     $(this).hide();
-    // console.log("----- p:nth-child(4): " + $(this).parent().parent().find("p:nth-child(4)").html());
+    // console.log("----- p:nth-child(4): " + $(this).parent().parent().
+      // find("p:nth-child(4)").html());
     $('.body-text--less').show();
     //$(this).parent().find("p:nth-child(4)").show();
   });
