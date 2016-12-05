@@ -1,11 +1,14 @@
 from django.contrib import admin
-from .models import Project, ProjectImage
+from .models import Project, ProjectImage, ProjectPdf
 
 
 class ImageInline(admin.TabularInline):
     model = ProjectImage
     extra = 1
 
+class PdfInline(admin.TabularInline):
+    model = ProjectPdf
+    extra = 1
 
 class ProjectAdmin(admin.ModelAdmin):
     change_form_template = 'projects/admin/project_change_form.html'
@@ -15,7 +18,7 @@ class ProjectAdmin(admin.ModelAdmin):
         ('Behind the scenes',   {'fields': ['status_num', 'ordinal']}), 
         # , 'classes': ['collapse']
     ]
-    inlines = [ImageInline]
+    inlines = [ImageInline, PdfInline]
     filter_horizontal = ['actions']    
     list_display = ('title',  'slug', 'key_action_id')
     #list_filter     = ['rec__goal__sector'] 
