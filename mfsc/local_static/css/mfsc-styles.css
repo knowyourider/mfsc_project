@@ -823,9 +823,9 @@ ol.goals-list > li {
   margin-top: 0.75em; }
   ol.goals-list > li a {
     color: #545454;
-    display: inline-block;
+    display: block;
     font-size: 1em;
-    margin: -2em 0 0 2em;
+    margin: -2em 0 1em 2em;
     text-decoration: underline; }
 
 ol.goals-list li span.number {
@@ -949,9 +949,6 @@ ol.goals-list li span.number {
         margin-right: 0; }
       .pic-caption:nth-child(2) {
         margin-right: 0; } }
-  @media screen and (max-width: 750px) {
-    .pic-caption {
-      float: right; } }
   .pic-caption p {
     padding: 0.75em; }
 

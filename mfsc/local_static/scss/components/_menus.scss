@@ -96,9 +96,9 @@ ol.goals-list > li {
   
   a {
 		color: $base-font-color;
-    display: inline-block;
+    display: block;
 		font-size: $base-font-size;
-    margin: -2em 0 0 2em;
+    margin: -2em 0 1em 2em;
   	text-decoration: underline;
 	}
 }
