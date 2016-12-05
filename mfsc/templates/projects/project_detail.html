@@ -19,6 +19,13 @@
     </div>
   {% endfor %}
 
+  {% if object.projectpdf_set.all %}
+    <h4>PDF files:</h4>
+    {% for projectpdf in object.projectpdf_set.all %}
+        <p><a href="{{ projectpdf.pdf_file.url }}" target="pdf">{{ projectpdf.title|safe }}</a> </p>
+    {% endfor %}
+  {% endif %}
+
 </div><!--/narrow-column-->
 
 <div class="wide-column">
