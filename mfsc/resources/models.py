@@ -13,7 +13,7 @@ class Organization(models.Model):
     ordinal = models.IntegerField('Order in Menu', default=99)
 
     class Meta:
-        ordering = ['ordinal']
+        ordering = ['name']
 
     def __str__(self):
         return self.name

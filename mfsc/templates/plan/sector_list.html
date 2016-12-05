@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}MFSC Plan{% endblock %}
+{% block title %}
+{{ block.super }} {# this brings in MA Food System Collaborative from base #}
+Plan{% endblock %}
 
 {% block title_area %}
   <h1>The Plan</h1>
@@ -24,12 +26,14 @@
 
         {{ object_list.0.menu.first_para|safe }}
 
-        <div id="more-text" class="hidden">
-          {{ object_list.0.menu.remaining_paras|safe }}
-        </div>
+        {% if object_list.0.menu.remaining_paras %}
+          <div id="more-text" class="hidden">
+            {{ object_list.0.menu.remaining_paras|safe }}
+          </div>
 
-        <p class="body-text--more">show more</p>
-        <p class="body-text--less hidden">show less</p>
+          <p class="body-text--more">show more</p>
+          <p class="body-text--less hidden">show less</p>
+        {% endif %}
 
       </div>
 
@@ -42,7 +46,7 @@
     <div class="narrow-column">
 
       <h2 class="bar red">Download/Print</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>These files are PDFs of the printed plan.</p>
 
       <ul>
         <li><a href="/static/plan/pdfs/MLFSPFull.pdf" target="pdf">Full Plan</a> (17 MB PDF)</li>

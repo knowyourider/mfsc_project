@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}MFSC Projects - {{ object.title }}{% endblock %}
+{% block title %}{{ block.super }} Projects - {{ object.title }}{% endblock %}
 
 {% block title_area %}
   <h4 class="crumbs"><a href="{% url 'projects:project_list' %}">Projects</a></h4>

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}MFSC Plan - {{ object.sector.title }} Goal {{ object.goal_num }}{% endblock %}
+{% block title %}
+{{ block.super }}
+Plan - {{ object.sector.title }} Goal {{ object.goal_num }}{% endblock %}
 
 {% block title_area %}
   <div class="sector-icon-header">
