@@ -37,6 +37,10 @@
 
 .narrow-column .home-panel {
 	padding-right: 0;
+	
+	@include media (1100px) {
+		min-height: 515px;
+	}
 
 	p, h3 {
 		padding: 0 $small-spacing 0 0;

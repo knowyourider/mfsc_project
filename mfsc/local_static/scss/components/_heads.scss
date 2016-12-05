@@ -27,10 +27,18 @@ h4 {
 	padding: $tiny-spacing;
 }
 
-.pullquote {
+.pullquote, .goal-text {
 	text-transform: none;
 	letter-spacing: normal;
 	padding-bottom: $small-spacing;
+}
+
+.goal-text {
+	//at phone sizes, float left
+	@include media(max-width 1100px) {
+		@include span-columns (6 of 12);
+		@include omega (2);
+	}
 }
 
 .lead-sentence {

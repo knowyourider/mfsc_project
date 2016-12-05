@@ -10,6 +10,11 @@
 		@include omega (2);
 	}
 
+	//at phone sizes, float left
+	@include media(max-width 750px) {
+		float: right;
+	}
+
 	p {
 		padding: $small-spacing;
 	}
