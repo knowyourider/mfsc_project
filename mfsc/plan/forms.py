@@ -34,3 +34,20 @@ class ActionSearchForm(forms.Form):
         widget  = forms.CheckboxSelectMultiple,
         required=False,
     )
+
+    def __init__(self, *args, **kwargs):
+        super(ActionSearchForm, self).__init__(*args, **kwargs)
+
+        # self.fields['orgs'].choices = Organization.objects.filter(pk__in=[1,4,5]).values_list('slug', 
+        #     'name').order_by('name')
+
+        self.fields['orgs'].choices = Organization.objects.all().values_list('slug', 
+            'name').order_by('name')
+
+        # self.fields['orgs'].choices = Organization.objects.filter( 
+            # id=Action.objects.all()[0].organizations[0].organization_id.values_list('slug', 
+        #     'name').order_by('name'))
+
+        # self.fields['orgs'].choices = Organization.objects.filter( 
+        # id__lt=5).values_list('slug', 
+        #     'name').order_by('name')

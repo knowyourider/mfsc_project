@@ -28,7 +28,11 @@
 </div>
 
 <h3 class="bar red">Key Action Item</h3>
-<p><a href="{% url 'plan:action_detail' object.key_action.id %}">{{ object.key_action.rec.goal.sector.title }} {{ object.key_action.rec.goal.goal_num }}.{{ object.key_action.rec.rec_num }}.{{ object.key_action.action_num }}:</a> {{ object.key_action.description|safe }} </p>
+{% if object.key_action.id %}
+  <p><a href="{% url 'plan:action_detail' object.key_action.id %}">{{ object.key_action.rec.goal.sector.title }} {{ object.key_action.rec.goal.goal_num }}.{{ object.key_action.rec.rec_num }}.{{ object.key_action.action_num }}:</a> {{ object.key_action.description|safe }} </p>
+{% else %}
+  <p>No key action id has been entered.</p>
+{% endif %}
 
 <h3 class="bar blue">Other Relevant Action Items</h3>
 
