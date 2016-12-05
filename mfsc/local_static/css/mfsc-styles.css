@@ -615,10 +615,21 @@ h4 {
   font-size: 1em;
   padding: 0.375em; }
 
-.pullquote {
+.pullquote, .goal-text {
   text-transform: none;
   letter-spacing: normal;
   padding-bottom: 0.75em; }
+
+@media screen and (max-width: 1100px) {
+  .goal-text {
+    float: left;
+    display: block;
+    margin-right: 4.34783%;
+    width: 47.82609%; }
+    .goal-text:last-child {
+      margin-right: 0; }
+    .goal-text:nth-child(2) {
+      margin-right: 0; } }
 
 .lead-sentence {
   font-size: 1.75em;
@@ -713,6 +724,9 @@ h4 {
 
 .narrow-column .home-panel {
   padding-right: 0; }
+  @media screen and (min-width: 1100px) {
+    .narrow-column .home-panel {
+      min-height: 515px; } }
   .narrow-column .home-panel p, .narrow-column .home-panel h3 {
     padding: 0 0.75em 0 0; }
     @media screen and (min-width: 1100px) {
@@ -781,7 +795,7 @@ ol.rec-menu {
     line-height: 1.5;
     padding: 0.75em 3em; }
     ol.rec-menu .expander-content li:nth-child(even) {
-      background-color: #ECECEC; }
+      background-color: #D2D2D2; }
     ol.rec-menu .expander-content li a {
       color: #545454; }
   ol.rec-menu .expander-hidden::before {
@@ -862,6 +876,9 @@ ol.goals-list li span.number {
 .from-wysiwyg ul {
   list-style-type: disc;
   padding-left: 3em; }
+.from-wysiwyg ol {
+  list-style-type: decimal;
+  padding-left: 3em; }
 
 .previous {
   float: left;
@@ -893,7 +910,7 @@ ol.goals-list li span.number {
   display: inline; }
 
 .page-nav, .page-nav--selected {
-  border: 1px solid #ECECEC;
+  border: 1px solid #D2D2D2;
   margin-right: 0.375em;
   line-height: 1.875;
   padding: 0 0 0 0.375em; }
@@ -910,7 +927,7 @@ ol.goals-list li span.number {
 
 .page-nav--selected {
   background-color: #0380CC;
-  border: 1px solid #ECECEC;
+  border: 1px solid #D2D2D2;
   color: #FFF;
   padding-right: 0.375em; }
 
@@ -932,6 +949,9 @@ ol.goals-list li span.number {
         margin-right: 0; }
       .pic-caption:nth-child(2) {
         margin-right: 0; } }
+  @media screen and (max-width: 750px) {
+    .pic-caption {
+      float: right; } }
   .pic-caption p {
     padding: 0.75em; }
 
@@ -996,7 +1016,7 @@ input.search-go {
       margin-right: 0; } }
 
 .control-box--list {
-  border: 1px solid #ECECEC;
+  border: 1px solid #D2D2D2;
   border-radius: 3px;
   margin-bottom: 0.75em;
   padding: 0.375em; }
