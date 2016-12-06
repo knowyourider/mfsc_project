@@ -33,7 +33,8 @@ class Sector(models.Model):
     PLAN_MENU_ID = 2
     menu = models.ForeignKey('sitewide.Menu', default=PLAN_MENU_ID)
     slug = models.SlugField('Sector short name', max_length=16, unique=True)
-    title = models.CharField(max_length=32)
+    title = models.CharField(max_length=48)
+    short_title = models.CharField(max_length=32, blank=True, default='')
     credit = models.CharField(max_length=64, blank=True, default='')
     body_text = models.TextField(blank=True, default='')
     

@@ -103,7 +103,7 @@ Plan - Action {{ object.rec.goal.goal_num }}.{{ object.rec.rec_num }}.{{ object.
 
           <p>Related Actions: 
           {% for action in story.actions.all %}
-              <a href="{% url 'plan:action_detail' action.id %}">{{ action.rec.goal.sector.title }}
+              <a href="{% url 'plan:action_detail' action.id %}">{{ action.rec.goal.sector.short_title }}
                 {{ action.rec.goal.goal_num }}.{{ action.rec.rec_num }}.{{ action.action_num }}</a>{% if not forloop.last %}, {% endif %}
           {% endfor %}
           </p>
