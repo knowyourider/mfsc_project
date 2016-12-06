@@ -42,20 +42,22 @@
 
       <div class="control-box">
         <h4 class="red-head">By Sector</h4>
-          <div class="control-box--list short-list">
-            {{ form.secs }}
-          </div><!-- /control-box--list  /short-list -->
+        <div class="control-box--list short-list">
+          {{ form.secs }}
+        </div><!-- /control-box--list  /short-list -->
         <p class="control-box--more">show more</p>
         <p class="control-box--fewer hidden">show fewer</p>
       </div><!-- /show-more -->
 
       <div class="control-box">
         <h4 class="red-head">By Organization</h4>
-          <div class="control-box--list short-list">
-            {{ form.orgs }}
-          </div><!-- /control-box--list  /short-list -->
-        <p class="control-box--more">show more</p>
-        <p class="control-box--fewer hidden">show fewer</p>
+        <div class="control-box--list short-list">
+          {{ form.orgs }}
+        </div><!-- /control-box--list  /short-list -->
+        {% if form.orgs|length > 5 %} 
+          <p class="control-box--more">show more</p>
+          <p class="control-box--fewer hidden">show fewer</p>
+        {% endif %}
       </div>
 
     </section>

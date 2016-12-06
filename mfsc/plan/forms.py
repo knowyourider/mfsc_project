@@ -1,6 +1,9 @@
 from django import forms
 from .models import Action, Sector, Tag
 from resources.models import Organization
+# for organization triming
+from django.db import connection
+import itertools
 
 class ActionSearchForm(forms.Form):
     """
@@ -35,19 +38,24 @@ class ActionSearchForm(forms.Form):
         required=False,
     )
 
+    # each time the form is loaded have init populate organizations
+    # with just the organizations that are associated with actions
     def __init__(self, *args, **kwargs):
         super(ActionSearchForm, self).__init__(*args, **kwargs)
 
-        # self.fields['orgs'].choices = Organization.objects.filter(pk__in=[1,4,5]).values_list('slug', 
-        #     'name').order_by('name')
+        # Going to use raw SQL to get directly at the plan_action_organizations table
+        cursor = connection.cursor()
+        # Get all the organization ids in that table
+        cursor.execute("SELECT organization_id FROM plan_action_organizations")
+        # return is in the form of tuples
+        org_id_tuples = cursor.fetchall()
+        # convert to flat list of integers and use set() to remove duplicates
+        org_ids = (list(set(itertools.chain(*org_id_tuples))))
 
-        self.fields['orgs'].choices = Organization.objects.all().values_list('slug', 
-            'name').order_by('name')
+        # print("--- ids: " + str(org_ids))
 
-        # self.fields['orgs'].choices = Organization.objects.filter( 
-            # id=Action.objects.all()[0].organizations[0].organization_id.values_list('slug', 
-        #     'name').order_by('name'))
+        self.fields['orgs'].choices = Organization.objects.filter(pk__in=org_ids).\
+            values_list('slug', 'name').order_by('name')
 
-        # self.fields['orgs'].choices = Organization.objects.filter( 
-        # id__lt=5).values_list('slug', 
-        #     'name').order_by('name')
+        # self.fields['orgs'].choices = Organization.objects.filter(pk__in=[1,4,5]).\
+        #     values_list('slug', 'name').order_by('name')
