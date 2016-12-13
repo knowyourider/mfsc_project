@@ -560,6 +560,10 @@ footer {
     clear: both;
     content: "";
     display: table; }
+  footer p a {
+    color: white; }
+    footer p a:hover {
+      color: #f5c4b3; }
 
 .footer-social--item {
   display: inline-block;
@@ -569,7 +573,7 @@ footer {
   .footer-social--item a:link, .footer-social--item a:visited {
     color: #ea7f58; }
   .footer-social--item a:hover {
-    color: white;
+    color: #fbe7e0;
     text-decoration: none; }
 
 @font-face {
