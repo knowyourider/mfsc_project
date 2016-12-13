@@ -445,15 +445,23 @@ body {
         margin-right: 0; } }
 
 .sub-column {
-  margin-top: -1.5em;
   float: left;
   display: block;
-  margin-right: 6.66667%;
-  width: 46.66667%; }
+  margin-right: 4.34783%;
+  width: 100%; }
   .sub-column:last-child {
     margin-right: 0; }
-  .sub-column:nth-child(2) {
-    margin-right: 0; }
+  @media screen and (min-width: 1100px) {
+    .sub-column {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 46.66667%;
+      margin-top: -1.5em; }
+      .sub-column:last-child {
+        margin-right: 0; }
+      .sub-column:nth-child(2) {
+        margin-right: 0; } }
 
 .shift-right {
   margin-left: 34.78261%; }
@@ -607,6 +615,9 @@ h1 {
 
 h2 {
   font-size: 1.75em; }
+  @media screen and (max-width: 1100px) {
+    h2 {
+      font-size: 1.4em; } }
 
 h3 {
   font-size: 1.25em; }
@@ -786,6 +797,9 @@ ol.rec-menu {
       content: "\25BC";
       font-size: 1em;
       margin-right: 0.5em; }
+    ol.rec-menu .expander-trigger:hover {
+      background-color: #C34619;
+      color: white; }
   ol.rec-menu .expander-trigger:not(.expander-hidden) {
     background-color: #C34619;
     color: white; }
@@ -956,16 +970,6 @@ ol.goals-list li span.number {
   color: #FFF;
   padding: 0.75em;
   margin-bottom: 1.5em; }
-  @media screen and (max-width: 1100px) {
-    .story-sidebar {
-      float: left;
-      display: block;
-      margin-right: 4.34783%;
-      width: 47.82609%; }
-      .story-sidebar:last-child {
-        margin-right: 0; }
-      .story-sidebar:nth-child(2) {
-        margin-right: 0; } }
   .story-sidebar h3 {
     color: #FFF; }
 

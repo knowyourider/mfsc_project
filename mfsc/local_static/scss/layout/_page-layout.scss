@@ -28,18 +28,22 @@ body {
 .narrow-column {
  	@include span-columns (12);
 
-	// when screen is larger than 860rem
+	// when screen is large
   @include media(1100px) {
     @include span-columns(4 of 12);
  	}
 }
 
 .sub-column {
-	// counteracts row top margin to avoid double margins
-	margin-top: -$base-spacing;
+	@include span-columns(12);
 
-	@include span-columns(4 of 8);
-	@include omega (2);
+	// when screen is large
+  @include media(1100px) {
+		@include span-columns(4 of 8);
+		@include omega (2);
+		// counteracts row top margin to avoid double margins
+		margin-top: -$base-spacing;		
+	}
 }
 
 .shift-right {
