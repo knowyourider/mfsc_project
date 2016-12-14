@@ -37,11 +37,16 @@ ol.rec-menu {
       font-size: $base-font-size;
       margin-right: 0.5em;
     }
+
+    &:hover {
+      background-color: $red;
+      color: white;
+    }
   }
 
   .expander-trigger:not(.expander-hidden) {
-     background-color: $red;
-     color: white;
+    background-color: $red;
+    color: white;
   }
 
   .expander-content li {

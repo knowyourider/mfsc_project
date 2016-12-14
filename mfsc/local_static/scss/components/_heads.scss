@@ -16,6 +16,11 @@ h1 {
 
 h2 {
 	font-size: $medlarge-header-size;
+	
+	//at mobile sizes, reduce font size
+	@include media (max-width 1100px) {
+		font-size: $medlarge-header-size * 0.8;
+	}
 }
 
 h3 {
