@@ -40,3 +40,8 @@ Backup with PGAdmin3
 
 Restore with PGAdmin3 connected to remote
 	- Restore opts #2 - Clean data first
+
+Misc
+--------
+
+Logs at: /opt/repo/logs/

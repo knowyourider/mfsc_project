@@ -5,7 +5,11 @@ from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
+ALLOWED_HOSTS = [
+"*"
+]
 
 # Application definition
 # only adds mod_wsgi.server
