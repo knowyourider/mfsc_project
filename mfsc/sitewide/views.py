@@ -6,6 +6,7 @@ def home_page(request):
 
     # get the various menu objects
     object = get_object_or_404(Menu, slug='home')
+    plan_menu = get_object_or_404(Menu, slug='plan')
     projects_menu = get_object_or_404(Menu, slug='projects')
     resources_menu = get_object_or_404(Menu, slug='resources')
     stories_menu = get_object_or_404(Menu, slug='stories')
@@ -14,6 +15,6 @@ def home_page(request):
     newsitem_list = NewsItem.objects.filter(status_num=1)
 
     return render(request, "index.html", 
-        {'object': object, 'resources_menu': resources_menu, 'stories_menu': stories_menu, 
-        'news_menu': news_menu, 'newsitem_list': newsitem_list, 
+        {'object': object, 'plan_menu': plan_menu, 'resources_menu': resources_menu, 
+        'stories_menu': stories_menu, 'news_menu': news_menu, 'newsitem_list': newsitem_list, 
         'projects_menu': projects_menu, 'about_menu': about_menu}) 

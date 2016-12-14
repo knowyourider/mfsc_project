@@ -14,9 +14,9 @@ urlpatterns = [
     url(r'^resourcepage/(?P<slug>\S+)/$', views.ResourcePageDetailView.as_view(), 
     	name='resourcepage_detail'),
     # special case of resourcepage for about
+    # url(r'^about/(?P<slug>\S+)/$', 
+    #     views.ResourcePageDetailView.as_view(template_name="resources/about_detail.html"), 
+    #     name='about_detail'),
     url(r'^about/(?P<slug>\S+)/$', 
-    	views.ResourcePageDetailView.as_view(template_name="resources/about_detail.html"), 
-    	name='about_detail'),
-    #url(r'^(?P<slug>\S+)/$', views.StoryDetailView.as_view(), 
-    	# name='story_detail'),
+    	views.about_page, name='about_detail'),
 ]

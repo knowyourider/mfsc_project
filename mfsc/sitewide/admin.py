@@ -4,7 +4,7 @@ from .models import Menu
 class MenuAdmin(admin.ModelAdmin):
     change_form_template = 'sitewide/admin/menu_blurb_change_form.html'
     fieldsets = [
-        (None,  {'fields': ['slug', 'title', 'menu_blurb']}),
+        (None,  {'fields': ['slug', 'title', 'menu_blurb', 'home_blurb']}),
         #('Related',   {'fields': ['key_action_id', 'actions']}),
         #('Behind the scenes',   {'fields': ['status_num', 'ordinal']}), 
         # , 'classes': ['collapse']

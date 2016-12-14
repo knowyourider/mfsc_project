@@ -7,6 +7,7 @@ class Menu(models.Model):
     slug = models.SlugField('Menu short name', max_length=32, unique=True)
     title = models.CharField(max_length=128)
     menu_blurb = models.TextField('About this menu', blank=True, default='')
+    home_blurb = models.TextField('Home page blurb', blank=True, default='')
 
    # first paragraph of body text
     @property
