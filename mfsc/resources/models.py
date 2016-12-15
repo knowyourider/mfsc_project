@@ -35,3 +35,20 @@ class ResourcePage(models.Model):
 
     def __str__(self):
         return self.slug
+
+class ResourcePdf(models.Model):
+    CATEGORIES = (
+        (0,'no category'),
+        (1,'category 1'),
+        (2,'category 2'),
+        (3,'category 3'),
+    )
+    category = models.IntegerField(default=0, choices=CATEGORIES)
+    pdf_file = models.FileField(upload_to='resources/pdfs')
+    handy_label = models.CharField(max_length=64)
+    
+    # class Meta:
+    #     ordering = ['pdf_file.name']
+
+    def __str__(self):
+        return self.handy_label

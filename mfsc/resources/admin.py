@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Organization, ResourcePage
+from .models import Organization, ResourcePage, ResourcePdf
 
 class OrganizationAdmin(admin.ModelAdmin):
     """docstring for OrganizationAdmin"""
@@ -21,3 +21,11 @@ class ResourcePageAdmin(admin.ModelAdmin):
     list_display = ('slug', 'title', 'ordinal')
             
 admin.site.register(ResourcePage, ResourcePageAdmin)
+
+class ResourcePdfAdmin(admin.ModelAdmin):
+    """docstring for ResourcePdf"""
+    fields = ['handy_label', 'pdf_file', 'category']
+    list_display = ('handy_label', 'pdf_file', 'category')
+    list_filter     = ['category'] 
+            
+admin.site.register(ResourcePdf, ResourcePdfAdmin)
