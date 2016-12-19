@@ -956,7 +956,8 @@ ol.goals-list li span.number {
   background-color: #869C3B;
   color: #FFF;
   font-size: 0.8em;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  text-align: center; }
   @media screen and (max-width: 1100px) {
     .pic-caption {
       float: left;
