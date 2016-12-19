@@ -15,7 +15,9 @@
   {% for projectimage in object.projectimage_set.all %}
     <div class="pic-caption">
       <img src="{{ projectimage.image.url }}">
-      <p>Image courtesy of {{ projectimage.credit|safe }} </p>
+      {% if projectimage.credit %}
+        <p>Image courtesy of {{ projectimage.credit|safe }} </p>
+      {% endif %}
     </div>
   {% endfor %}
 
