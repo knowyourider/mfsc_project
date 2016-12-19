@@ -3,7 +3,6 @@
 	color: $white-font-color;
 	font-size: $small-font-size;
 	margin-bottom: $base-spacing;
-	text-align: center;
 	
 	//at mobile sizes, stay one column wide
 	@include media(max-width 1100px) {
@@ -13,6 +12,10 @@
 
 	p {
 		padding: $small-spacing;
+	}
+
+	img {
+		min-width: 100%;
 	}
 }
 
