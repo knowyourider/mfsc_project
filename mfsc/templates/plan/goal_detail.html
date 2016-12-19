@@ -29,7 +29,9 @@ Plan - {{ object.sector.title }} Goal {{ object.goal_num }}{% endblock %}
     <div class="pic-caption">
     <!--/ Don, image path probably needs fixing -->
       <img src="{% static 'stories/fullpics/' %}{{ object.image_name }}.jpg">
-      <p>Image courtesy of {{ object.credit|safe }}</p>
+      {% if object.credit %}
+        <p>Image courtesy of {{ object.credit|safe }}</p>
+      {% endif %}
     </div>   
 
   </div><!--/narrow-column-->
