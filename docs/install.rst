@@ -27,3 +27,10 @@ To set up local Postgres client access to remote db:
 
 Here is where Apache is configured - /opt/repo/versions/2.4/etc/conf.d/openshift.conf
 Added an Alias for media
+
+Alias /robots.txt /opt/repo/ROOT/robots.txt
+Alias /favicon.ico /opt/repo/ROOT/favicon.ico
+Alias /images /opt/repo/ROOT/images
+Alias /static /opt/repo/ROOT/static
+Alias /media /opt/repo/ROOT/media
+

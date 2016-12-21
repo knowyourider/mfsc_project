@@ -150,6 +150,14 @@ class Action(CommonModel):
     actions = models.ManyToManyField('plan.Action', 
         verbose_name='Other actions related to this action', blank=True)
 
+   # has_related -- for admin filter
+    # @property
+    # def has_related(self):
+    #     if self.related:
+    #         return True
+    #     else:
+    #         return False
+
    # short action description for colored header bar
     @property
     def short_description(self):
