@@ -65,7 +65,7 @@ class ActionAdmin(admin.ModelAdmin):
     ]
     readonly_fields = ('rec', 'action_num', 'description')
     filter_horizontal = ['organizations', 'tags', 'actions']    
-    list_display = ('truncated_description',  'act_num', 'goal_rec', 'id', 'related')
+    list_display = ('truncated_description',  'act_num', 'goal_rec', 'id', 'has_assoc', 'related')
     # , 'has_related'
     list_filter     = ['rec__goal__sector'] 
     search_fields = ['description']

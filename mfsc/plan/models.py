@@ -158,6 +158,14 @@ class Action(CommonModel):
     #     else:
     #         return False
 
+    # has_assoc for admin filter
+    @property
+    def has_assoc(self):
+        if len(self.actions.all()) > 0: #.exists()
+            return True
+        else:
+            return "--"
+
    # short action description for colored header bar
     @property
     def short_description(self):
