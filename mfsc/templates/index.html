@@ -55,7 +55,7 @@
 		<h2 class="bar red"><a href="{% url 'news:newsitem_list' %}">News</a></h2>
 		{{ news_menu.home_blurb|safe }}
 
-		<h2 class="bar blue"><a href="{% url 'resources:resource_list' %}">Resources</a></h2>
+		<h2 class="bar blue"><a href="{% url 'resources:resourcehome_detail' 'home' %}">Resources</a></h2>
 		{{ resources_menu.home_blurb|safe }}
 
 		<h2 class="bar green"><a href="{% url 'resources:about_detail' 'about' %}">About Us</a></h2>
