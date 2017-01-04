@@ -26,7 +26,7 @@ SECRET_KEY = '-rml0a!xle(ux4yz#28ksx7$3e^dm4h)$18^27m(4*$81*-o8!'
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['mafoodsystem.org', 'env-6285052.dal.jelastic.vps-host.net']
+ALLOWED_HOSTS = ['mafoodsystem.org', 'www.mafoodsystem.org', 'env-6285052.dal.jelastic.vps-host.net']
 
 # Application definition
 
