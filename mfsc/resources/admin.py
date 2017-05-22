@@ -17,7 +17,7 @@ class ResourcePageAdmin(admin.ModelAdmin):
 	- resources - the hand-made menu pages that call the other resource pages
     """
     change_form_template = 'resources/admin/body_text_change_form.html'
-    fields = ['slug', 'title', 'body_text', 'ordinal', 'menu']
+    fields = ['slug', 'title', 'body_text', 'plain_text', 'ordinal', 'menu']
     list_display = ('slug', 'title', 'ordinal')
             
 admin.site.register(ResourcePage, ResourcePageAdmin)

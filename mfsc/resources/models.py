@@ -28,6 +28,7 @@ class ResourcePage(models.Model):
     slug = models.SlugField('Resource page short name', max_length=32, unique=True)
     title = models.CharField(max_length=128)
     body_text = models.TextField(blank=True, default='')
+    plain_text = models.TextField(blank=True, default='')
     ordinal = models.IntegerField('Order in Menu', default=99)
 
     class Meta:
