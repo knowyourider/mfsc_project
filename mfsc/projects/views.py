@@ -3,7 +3,8 @@ from django.views.generic import ListView, DetailView
 from .models import Project
 
 class ProjectListView(ListView):
-    model = Project
+    # model = Project
+    queryset = Project.objects.filter(status_num__gte=1)
     # context_object_name = 'object_list'
     # template_name = 'stories/project_list.html' 
 

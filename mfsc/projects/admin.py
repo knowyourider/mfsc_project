@@ -20,7 +20,7 @@ class ProjectAdmin(admin.ModelAdmin):
     ]
     inlines = [ImageInline, PdfInline]
     filter_horizontal = ['actions']    
-    list_display = ('title',  'slug', 'key_action_id')
+    list_display = ('title',  'slug', 'key_action_id', 'status_num')
     #list_filter     = ['rec__goal__sector'] 
     search_fields = ['title', 'slug']
 
