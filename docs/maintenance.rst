@@ -13,6 +13,7 @@ Shell access:
 ::
 
 	ssh 1664@gate.jelastic.eapps.com -p 3022
+	ssh 1721@gate.jelastic.eapps.com -p 3022
 
 Activate virtenv:
 ::

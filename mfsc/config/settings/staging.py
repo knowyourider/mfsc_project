@@ -14,7 +14,7 @@ DATABASES = {
         'NAME': 'mfscdb',
         'USER': 'mfscdb_user',
         'PASSWORD': 'eco$523',
-        'HOST': 'postgres11311-env-6285052.dal.jelastic.vps-host.net',
+        'HOST': 'postgres11311-env-6285052.njs.jelastic.vps-host.net',
         'PORT': '5432',
     }
 }
