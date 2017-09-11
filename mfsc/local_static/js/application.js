@@ -44,11 +44,17 @@ $(document).ready(function() {
     $('#search-form').submit()   
   });
 
+  // submit keyword
+  // intercept button in order to reset page param
+  $('#keysearch').click(function(){
+    $('#search-form').find('[type=hidden][name=page]').val('1')
+    $('#search-form').submit()   
+  });
+
   // Hijack submission and re-route to AJAX
   // per: https://realpython.com/blog/python/django-and-ajax-form-submissions/
   $('#search-form').on('submit', function(event){
       event.preventDefault();
-      // console.log("-------form submitted!");  // sanity check
       perform_search($('#search-form').serializeArray());
   });
 
@@ -80,7 +86,8 @@ $(document).ready(function() {
             // the error to the console
             $('#results').html(errmsg + xhr.responseText); 
         }
-    });  };
+    }); 
+  };
 
   // link to clear search
   $('#clear').click(function(event){
@@ -91,6 +98,8 @@ $(document).ready(function() {
     // searchForm.find('input:text').val('');
     searchForm.find('input:checkbox')
          .removeAttr('checked').removeAttr('selected');
+    // each time we clear we should reset to page 1
+    $('#search-form').find('[type=hidden][name=page]').val('1')
     // submit
     searchForm.submit()
     
