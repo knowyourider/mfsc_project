@@ -40,15 +40,16 @@ $(document).ready(function() {
   $('input[type="checkbox"]').change(function(event){
     // each time a new box is checked we should reset to page 1
     // (if nothing else ther may not be a page 2 in new result)
-    $('#search-form').find('[type=hidden][name=page]').val('1')
-    $('#search-form').submit()   
+    $('#search-form').find('[type=hidden][name=page]').val('1');
+    $('#search-form').submit();
   });
 
   // submit keyword
   // intercept button in order to reset page param
   $('#keysearch').click(function(){
+    console.log(" -- reached keysearch");
     $('#search-form').find('[type=hidden][name=page]').val('1')
-    $('#search-form').submit()   
+    $('#search-form').submit();
   });
 
   // Hijack submission and re-route to AJAX
