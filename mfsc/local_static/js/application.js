@@ -46,15 +46,15 @@ $(document).ready(function() {
 
   // submit keyword
   // intercept button in order to reset page param
-  // $('#keysearch').click(function(){
-  $('#keysearch').on('click', function() {
+  $('#keysearch').click(function(){
+  // $('#keysearch').on('click', function() {
     console.log(" -- reached keysearch");
     $('#search-form').find('[type=hidden][name=page]').val('1')
     $('#search-form').submit();
   });
 
-  // $('#keysearch').click(function(){
-  $('#keysearch2').on('click', function() {
+  $('#keysearch2').click(function(){
+  // $('#keysearch2').on('click', function() {
     console.log(" -- reached keysearch2");
     $('#search-form').find('[type=hidden][name=page]').val('1')
     $('#search-form').submit();
