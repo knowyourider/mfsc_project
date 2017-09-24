@@ -23,8 +23,8 @@
     <input type="search" name="q" value="{{ form.q.value }}" id="id_q" 
       placeholder="Search actions" class="search-field"/>
       
-    <input type="submit" value="Go" /> 
-    <!-- <input id="keysearch" type="button" value="Go" /> -->
+    <!-- <input type="submit" value="Go" />  -->
+    <input id="keysearch" type="button" value="Go" />
     <p id="clear"><a href="#">clear search</a></p>
 
     <h4 class="red bar">Refine Your Search</h4>
@@ -69,11 +69,6 @@
     <div class="wide-column" id="results">
 
       {% include "plan/_search_result_list.html" %}
-
-      <input id="keysearch" type="button" value="Test input" />
-      <!-- <button type="button" id="keysearch2">test button</button> -->
-      <p><a href="#" id="keysearch2">test search link</a></p>
-
 
     </div><!--/wide-column-->
 

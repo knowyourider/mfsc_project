@@ -53,13 +53,6 @@ $(document).ready(function() {
     $('#search-form').submit();
   });
 
-  $('#keysearch2').click(function(){
-  // $('#keysearch2').on('click', function() {
-    console.log(" -- reached keysearch2");
-    $('#search-form').find('[type=hidden][name=page]').val('1')
-    $('#search-form').submit();
-  });
-
   // Hijack submission and re-route to AJAX
   // per: https://realpython.com/blog/python/django-and-ajax-form-submissions/
   $('#search-form').on('submit', function(event){
