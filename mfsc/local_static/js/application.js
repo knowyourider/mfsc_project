@@ -48,7 +48,7 @@ $(document).ready(function() {
   // intercept button in order to reset page param
   $('#keysearch').click(function(){
   // $('#keysearch').on('click', function() {
-    console.log(" -- reached keysearch");
+    // console.log(" -- reached keysearch");
     $('#search-form').find('[type=hidden][name=page]').val('1')
     $('#search-form').submit();
   });
