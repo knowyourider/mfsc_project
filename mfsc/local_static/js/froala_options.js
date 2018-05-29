@@ -14,7 +14,7 @@ var froalaIntro = {
 
 var froalaMeta = {
 	heightMin: 300,
-	linkAlwaysBlank: true,
+	linkAlwaysBlank: false,
 	paragraphFormat: {
 		N: 'Normal',
 		DETAILS: 'read more'

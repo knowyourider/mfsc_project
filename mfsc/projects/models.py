@@ -31,7 +31,6 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
-
 class ProjectImage(models.Model):
     project = models.ForeignKey('projects.Project')
     image_num = models.IntegerField()
@@ -49,6 +48,46 @@ class ProjectPdf(models.Model):
     # slug = models.SlugField('pdf short name', max_length=32, unique=True)
     pdf_num = models.IntegerField()
     pdf_file = models.FileField(upload_to='projects/pdfs', blank=True)
+    title = models.CharField(max_length=48)
+    
+    class Meta:
+        ordering = ['pdf_num']
+
+    def __str__(self):
+        return self.title
+
+class Subproject(models.Model):
+    STATUS_NUMS = (
+        (0,'0 - Draft'),
+        (1,'1 - Display'),
+    )
+    project = models.ForeignKey('projects.Project')
+    slug = models.SlugField('Sub Project short name', max_length=32, unique=True)
+    title = models.CharField(max_length=48)
+    body_text = models.TextField(blank=True, default='')
+    key_action_id = models.IntegerField(null=True, blank=True)    
+    status_num = models.IntegerField(default=0, choices=STATUS_NUMS)
+
+    def __str__(self):
+        return self.title
+
+class SubprojectImage(models.Model):
+    subproject = models.ForeignKey('projects.Subproject')
+    image_num = models.IntegerField(blank=True, null=True)
+    image = models.ImageField(upload_to='subprojects', blank=True)
+    credit = models.CharField('Image credit', max_length=64, blank=True, default='')
+    
+    class Meta:
+        ordering = ['image_num']
+
+    def __str__(self):
+        return self.image.name
+
+class SubprojectPdf(models.Model):
+    subproject = models.ForeignKey('projects.Subproject')
+    # slug = models.SlugField('pdf short name', max_length=32, unique=True)
+    pdf_num = models.IntegerField(blank=True, null=True)
+    pdf_file = models.FileField(upload_to='subprojects/pdfs', blank=True)
     title = models.CharField(max_length=48)
     
     class Meta:

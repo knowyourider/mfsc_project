@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ block.super }} Projects - {{ object.project.title }} - {{ object.title }}{% endblock %}
+
+{% block title_area %}
+  <h4 class="crumbs"><a href="{% url 'projects:project_list' %}">Projects</a> | 
+    <a href="{% url 'projects:project_detail' object.project.slug %}">{{ object.project.title|safe }}</a></h4>
+  <h1>{{ object.title }}</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+<div class="narrow-column">
+  {% for projectimage in object.subprojectimage_set.all %}
+    <div class="pic-caption">
+      <img src="{{ projectimage.image.url }}">
+      {% if projectimage.credit %}
+        <p>Image courtesy of {{ projectimage.credit|safe }} </p>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {% if object.subprojectpdf_set.all %}
+    <h3>PDF files:</h3>
+    {% for projectpdf in object.subprojectpdf_set.all %}
+        <p><a href="{{ projectpdf.pdf_file.url }}" target="pdf">{{ projectpdf.title|safe }}</a> </p>
+    {% endfor %}
+  {% endif %}
+
+
+</div><!--/narrow-column-->
+
+<div class="wide-column">
+
+<div class="from-wysiwyg">
+  {{ object.body_text|safe }}     
+</div>
+
+
+</div><!--/wide-column-->
+
+{% endblock content_area %}

@@ -61,3 +61,8 @@ File accessed in Jelastic dashboard
         if ($http_X_Forwarded_Proto = http) {
                 return 302 https://$host$request_uri;
         }
+
+SSH RSA keys
+Need rsa with 2048
+::
+	ssh-keygen -t rsa -b 2048
