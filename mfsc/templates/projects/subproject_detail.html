@@ -4,7 +4,7 @@
 {% block title %}{{ block.super }} Projects - {{ object.project.title }} - {{ object.title }}{% endblock %}
 
 {% block title_area %}
-  <h4 class="crumbs"><a href="{% url 'projects:project_list' %}">Projects</a> | 
+  <h4 class="crumbs"><a href="{% url 'projects:project_list' %}">Projects</a> &gt;
     <a href="{% url 'projects:project_detail' object.project.slug %}">{{ object.project.title|safe }}</a></h4>
   <h1>{{ object.title }}</h1>
 {% endblock title_area %}

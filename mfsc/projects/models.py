@@ -9,7 +9,7 @@ class Project(models.Model):
     PROJECT_MENU_ID = 3
     menu = models.ForeignKey('sitewide.Menu', default=PROJECT_MENU_ID)
     slug = models.SlugField('Project short name', max_length=32, unique=True)
-    title = models.CharField(max_length=48)
+    title = models.CharField(max_length=128)
     menu_blurb = models.TextField(blank=True, default='', 
         help_text="Appears under title " \
         "on menu list. Don't add paragraph markup.")
@@ -48,7 +48,7 @@ class ProjectPdf(models.Model):
     # slug = models.SlugField('pdf short name', max_length=32, unique=True)
     pdf_num = models.IntegerField()
     pdf_file = models.FileField(upload_to='projects/pdfs', blank=True)
-    title = models.CharField(max_length=48)
+    title = models.CharField(max_length=64)
     
     class Meta:
         ordering = ['pdf_num']
@@ -63,7 +63,7 @@ class Subproject(models.Model):
     )
     project = models.ForeignKey('projects.Project')
     slug = models.SlugField('Sub Project short name', max_length=32, unique=True)
-    title = models.CharField(max_length=48)
+    title = models.CharField(max_length=128)
     body_text = models.TextField(blank=True, default='')
     key_action_id = models.IntegerField(null=True, blank=True)    
     status_num = models.IntegerField(default=0, choices=STATUS_NUMS)
@@ -88,7 +88,7 @@ class SubprojectPdf(models.Model):
     # slug = models.SlugField('pdf short name', max_length=32, unique=True)
     pdf_num = models.IntegerField(blank=True, null=True)
     pdf_file = models.FileField(upload_to='subprojects/pdfs', blank=True)
-    title = models.CharField(max_length=48)
+    title = models.CharField(max_length=64)
     
     class Meta:
         ordering = ['pdf_num']
