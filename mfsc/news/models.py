@@ -26,15 +26,12 @@ class NewsItem(models.Model):
     news_image = models.ImageField(upload_to='news', blank=True)
     credit = models.CharField('Image credit', max_length=64, blank=True, default='')
 
-   # short body text
+   # short body text - selects first paragraph
     @property
     def short_body_text(self):
-        cutoff = 300
         display_string = self.body_text
-        if len(display_string) > cutoff:
-            return display_string[:cutoff] + "...</p>"
-        else:
-            return display_string
+        para_end = display_string.find("</p>") + 4
+        return display_string[:para_end]
 
     class Meta:
         ordering = ['-posted']

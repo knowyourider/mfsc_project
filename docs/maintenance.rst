@@ -38,6 +38,10 @@ Local to Remote
 Backup with PGAdmin3
 	- Custom
 	- all default options
+path::
+	
+	/Users/don/Documents/Projects/MassFood/Data/DataBaks/remote/mfscdb_2019-02-20.backup
+
 
 Restore with PGAdmin3 connected to remote
 	- Restore opts #2 - Clean data first
