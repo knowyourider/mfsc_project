@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ block.super }} News - {{ object.title }}{% endblock %}
+
+{% block title_area %}
+  <h4 class="crumbs"><a href="{% url 'news:newsitem_list' %}">News</a></h4>
+  <h1>{{ object.title }}</h1>
+{% endblock title_area %}
+
+{% block content_area %}
+
+  <div class="narrow-column">
+
+    {% if newsitem.news_image %}
+      <div class="pic-caption">
+        <img src="{{ object.news_image.url }}">
+        <p>{{ object.credit|safe }} </p>
+      </div>
+    {% else %}
+      <div>
+        <p>&nbsp;</p>
+      </div>
+    {% endif %}
+
+  </div><!--/narrow-column-->
+
+  <div class="wide-column">
+
+    <div class="from-wysiwyg">
+      {{ object.body_text|safe }}     
+    </div>
+
+    {% if object.get_next %}
+      <p><a href="{% url 'news:newsitem_detail' object.get_next.slug %}">Next: <em>{{ object.get_next.title|safe }}</em></a></p>
+    {% endif %}
+
+
+  </div><!--/wide-column-->
+
+{% endblock content_area %}

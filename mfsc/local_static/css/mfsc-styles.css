@@ -1049,4 +1049,10 @@ input.search-go {
 .hidden {
   display: none; }
 
+/* .from-wysiwyg  */
+.learn-link {
+  top-margin: -100px;
+  /*color: #FF8000;*/
+}
+
 /*# sourceMappingURL=mfsc-styles.css.map */

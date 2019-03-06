@@ -11,24 +11,8 @@
 
 <div class="narrow-column">
 
-  {% block news_head %}
-    <h2 class="bar blue">
-      Current Posts
-    </h2>
-  {% endblock %}
-
-  <dl class="past-news">
-  {% for newsitem in object_list %}
-    <dt><a href="#{{ newsitem.slug }}">{{ newsitem.title|safe }}</a></dt>
-    <dd class="date">{{ newsitem.posted|date:"F d, Y" }}</dd>
-  {% endfor %}
-  </dl>
-
-  {% block news_link %}
-    <h2 class="bar green">
-      <a href="{% url 'news:news_archive_list' %}">View News Archive</a>
-    </h2>
-  {% endblock news_link %}
+  <h2 class="bar green">About News</h2>
+  {{ object_list.0.menu.menu_blurb|safe }}
 
 </div><!--/narrow-column-->
 
@@ -37,19 +21,54 @@
 	{% for newsitem in object_list %}
   <article class="news" id="{{ newsitem.slug }}">
     <p class="date">{{ newsitem.posted|date:"F d, Y" }}</p>
-    <h1 class="pullquote">{{ newsitem.title|safe }}</h1>
-
-    {% if newsitem.news_image %}
-      <div class="pic-caption"><img src="{{ newsitem.news_image.url }}"><p>{{ newsitem.credit|safe }} </p></div>
-    {% endif %}
+    <h2><a href="{% url 'news:newsitem_detail' newsitem.slug %}">{{ newsitem.title|safe }}</a></h2>
 
     <div class="from-wysiwyg">
-      {{ newsitem.body_text|safe }}
-    </div>
-    
-  </article>
+      {{ newsitem.short_body_text|safe }}
 
+      <p class="learn-link"><a href="{% url 'news:newsitem_detail' newsitem.slug %}">Learn more...</a></p>
+
+    </div>    
+  </article>
  {% endfor %}
+
+ {# Plan Search pagination is basded on search form. Need to lose id=paging here to avoid JS #}
+<nav>
+<ul class="previous">
+  {% if page_obj.has_previous %}
+    <li class="page-nav prev-link">
+      <a href="?page={{ page_obj.previous_page_number }}">&lang; prev</a>
+    </li>
+  {% else %}
+    <li class="page-nav--disabled prev-link">&lang; prev</li>
+  {% endif %}
+</ul>
+
+
+<ul class="page-numbers">
+  {% for page_number in paginator.page_range %}
+    {% if page_number == page_obj.number %}
+      <li class="page-nav--selected">{{ page_number }}</li>
+    {% else %}
+      <li class="page-nav">
+        <a href="?page={{ page_number }}">{{ page_number }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<ul class="next">
+  {% if page_obj.has_next %}
+    <li class="page-nav next-link">
+      <a href="?page={{ page_obj.next_page_number }}">next &rang;</a>
+    </li>
+  {% else %}
+    <li class="page-nav--disabled next-link">next &rang;</li>
+  {% endif %}
+
+</ul>
+</nav><!--/paging -->
+
 
 </div><!--/wide-column-->
 

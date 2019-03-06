@@ -33,6 +33,13 @@ class NewsItem(models.Model):
         para_end = display_string.find("</p>") + 4
         return display_string[:para_end]
 
+    # next, prev story, false if none
+    def get_next(self):
+        next_items = NewsItem.objects.filter(status_num__lt=4, posted__lt=self.posted)
+        if next_items:
+            return next_items.first()
+        return False
+
     class Meta:
         ordering = ['-posted']
 
