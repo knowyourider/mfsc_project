@@ -1051,8 +1051,7 @@ input.search-go {
 
 /* .from-wysiwyg  */
 .learn-link {
-  top-margin: -100px;
-  /*color: #FF8000;*/
+  margin-top: -1.4em;
 }
 
 /*# sourceMappingURL=mfsc-styles.css.map */

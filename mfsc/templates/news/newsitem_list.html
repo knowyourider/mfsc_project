@@ -25,9 +25,7 @@
 
     <div class="from-wysiwyg">
       {{ newsitem.short_body_text|safe }}
-
       <p class="learn-link"><a href="{% url 'news:newsitem_detail' newsitem.slug %}">Learn more...</a></p>
-
     </div>    
   </article>
  {% endfor %}
