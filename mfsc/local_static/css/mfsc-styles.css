@@ -1049,9 +1049,22 @@ input.search-go {
 .hidden {
   display: none; }
 
-/* .from-wysiwyg  */
+/* added by Don  */
 .learn-link {
   margin-top: -1.4em;
+}
+
+/* aka next */
+.news-older {
+  float: right;
+  text-align: right;
+  width: 40%;
+}
+
+.news-newer {
+  float: left;
+
+  width: 40%;
 }
 
 /*# sourceMappingURL=mfsc-styles.css.map */

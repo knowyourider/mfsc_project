@@ -5,6 +5,7 @@
 
 {% block title_area %}
   <h4 class="crumbs"><a href="{% url 'news:newsitem_list' %}">News</a></h4>
+  <p class="date">&nbsp;{{ object.posted|date:"F d, Y" }}</p>
   <h1>{{ object.title }}</h1>
 {% endblock title_area %}
 
@@ -31,8 +32,16 @@
       {{ object.body_text|safe }}     
     </div>
 
+    {% if object.get_prev %}
+      <p class="news-newer">&lang; Newer:<br/> 
+        <a href="{% url 'news:newsitem_detail' object.get_prev.slug %}">{{ object.get_prev.title|safe }}</a>
+      </p>
+    {% endif %}
+
     {% if object.get_next %}
-      <p><a href="{% url 'news:newsitem_detail' object.get_next.slug %}">Next: <em>{{ object.get_next.title|safe }}</em></a></p>
+      <p class="news-older">Older &rang;<br/>
+        <a href="{% url 'news:newsitem_detail' object.get_next.slug %}">{{ object.get_next.title|safe }}</a>
+      </p>
     {% endif %}
 
 

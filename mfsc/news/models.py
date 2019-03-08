@@ -40,6 +40,13 @@ class NewsItem(models.Model):
             return next_items.first()
         return False
 
+    def get_prev(self):
+        prev_items = NewsItem.objects.filter(status_num__lt=4, 
+            posted__gt=self.posted).order_by('posted')
+        if prev_items:
+            return prev_items.first()
+        return False
+
     class Meta:
         ordering = ['-posted']
 
